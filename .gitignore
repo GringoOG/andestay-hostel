@@ -36,6 +36,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local source photos / refs (deploy uses public/images only)
+.ref/
+foto Leňa/
+původní foto/
+public/images/lena/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
