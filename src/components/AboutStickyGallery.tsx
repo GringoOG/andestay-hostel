@@ -57,15 +57,15 @@ export function AboutStickyGallery() {
   const cards = t.aboutGallery.map((card, i) => (
     <article
       key={`${card.title}-${i}`}
-      className="w-[min(78vw,280px)] shrink-0 snap-center text-left sm:w-[300px] md:w-[340px]"
+      className="w-[min(78vw,280px)] shrink-0 snap-center text-left sm:w-[300px] md:w-[320px]"
     >
       <PhotoPlaceholder
         label={card.title}
         src={aboutGalleryImages[i] ?? aboutGalleryImages[0]}
-        className="aspect-[4/5] transition-transform duration-500 hover:scale-[1.02]"
+        className="aspect-[4/5] max-h-[min(48vh,380px)] w-full transition-transform duration-500 hover:scale-[1.02]"
       />
-      <div className="mt-3 grid gap-1.5 sm:mt-4 sm:gap-2 sm:grid-cols-[0.85fr_1.15fr] sm:items-start">
-        <h3 className="pb-0.5 font-display text-lg italic leading-snug text-[var(--serif-green)] sm:text-xl">
+      <div className="mt-3 grid grid-cols-[0.9fr_1.1fr] items-start gap-2 sm:mt-3.5">
+        <h3 className="font-display text-lg italic leading-snug text-[var(--serif-green)] sm:text-xl">
           {card.title}
         </h3>
         <p className="text-[0.82rem] leading-snug text-[var(--ink-soft)] sm:text-sm">
@@ -76,16 +76,16 @@ export function AboutStickyGallery() {
   ));
 
   const heading = (
-    <div className="site-wrap text-center">
+    <div className="site-wrap shrink-0 text-center">
       <Reveal>
         <span className="badge badge-dark">{t.aboutPage.featuresBadge}</span>
         <AnimatedHeading
           as="h2"
-          className="mx-auto mt-4 max-w-2xl font-display text-[1.85rem] italic leading-tight text-[var(--ink)] sm:mt-5 sm:text-4xl md:text-5xl"
+          className="mx-auto mt-3 max-w-2xl font-display text-[1.65rem] italic leading-tight text-[var(--ink)] sm:mt-4 sm:text-4xl md:text-[2.75rem]"
           text={t.aboutPage.featuresTitle}
           staggerMs={30}
         />
-        <div className="mx-auto mt-4 h-px w-16 bg-[var(--line)] sm:mt-5" />
+        <div className="mx-auto mt-3 h-px w-16 bg-[var(--line)] sm:mt-4" />
       </Reveal>
     </div>
   );
@@ -105,11 +105,12 @@ export function AboutStickyGallery() {
   }
 
   return (
-    <section ref={sectionRef} className="relative h-[280vh] bg-[var(--bg)] lg:h-[360vh]">
-      <div className="sticky top-0 flex h-[100svh] flex-col justify-center overflow-hidden py-12 md:py-16">
+    <section ref={sectionRef} className="relative h-[260vh] bg-[var(--bg)] lg:h-[320vh]">
+      <div className="sticky top-0 flex h-[100svh] flex-col justify-center gap-8 py-10 md:gap-10 md:py-12">
         {heading}
 
-        <div className="mt-10 overflow-hidden md:mt-12">
+        {/* Clip only horizontally so card captions stay visible */}
+        <div className="w-full overflow-x-clip">
           <div
             className="flex w-max gap-5 px-[max(1.25rem,calc((100vw-var(--max))/2))] will-change-transform md:gap-6"
             style={{ transform: `translate3d(${-progress * maxShift}px, 0, 0)` }}
@@ -118,7 +119,7 @@ export function AboutStickyGallery() {
           </div>
         </div>
 
-        <div className="site-wrap mt-8">
+        <div className="site-wrap shrink-0">
           <div className="mx-auto h-1 max-w-xs overflow-hidden rounded-full bg-[var(--bg-muted)]">
             <div
               className="h-full rounded-full bg-[var(--accent-green)] transition-[width] duration-75"
