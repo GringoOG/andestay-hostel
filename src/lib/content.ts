@@ -40,31 +40,31 @@ export const cabins = [
   {
     id: "double-room",
     name: "Double room",
-    blurb:
-      "Dvoulůžkový pokoj — two single beds for a comfortable night after the trail.",
-    price: 45,
+    blurb: "Two single beds for a comfortable night after the trail.",
+    /** Base nightly rate in Peruvian soles (from booking engine) */
+    pricePen: 98,
     features: [
-      "2 guests",
-      "2 single beds (jednolůžkové postele)",
-      "Mountain views from the cabin",
-      "Warm Andean textiles and wood interiors",
-      "Quiet hillside setting",
+      "Capacity: 2 adults",
+      "2 single beds",
+      "16 m²",
+      "Mountain view",
+      "Free Wi-Fi",
     ],
     photoLabel: "Double room interior",
-    /** IMG_8109 */
-    image: "/images/lena-8109.jpg",
+    /** Placeholder until dedicated double-room photo */
+    image: "/images/room-interior.jpg",
   },
   {
     id: "family-room",
     name: "Family room",
-    blurb: "Rodinný pokoj — one large double bed for couples or a small family stop.",
-    price: 65,
+    blurb: "One large double bed for couples or a small family stop.",
+    pricePen: 98,
     features: [
-      "2 guests (extra bed on request)",
-      "1 large double bed (velká manželská postel)",
-      "More space for bags and gear",
-      "Quiet corner of the hillside",
-      "Perfect after long hiking days",
+      "Capacity: 2 adults",
+      "1 large double bed",
+      "16 m²",
+      "Mountain view",
+      "Free Wi-Fi",
     ],
     photoLabel: "Family cabin with valley view",
     /** IMG_8364 */
@@ -73,14 +73,14 @@ export const cabins = [
   {
     id: "triple-room",
     name: "Triple room",
-    blurb: "Třílůžkový pokoj — three single beds for friends and small hiking groups.",
-    price: 75,
+    blurb: "Three single beds for friends and small hiking groups.",
+    pricePen: 158,
     features: [
-      "3 guests",
-      "3 single beds (jednolůžkové postele)",
-      "Room to spread out after long days",
-      "Shared mountain atmosphere",
-      "Best value for three travelers",
+      "Capacity: 3 adults",
+      "3 single beds",
+      "16 m²",
+      "Mountain view",
+      "Free Wi-Fi",
     ],
     photoLabel: "Triple room morning view",
     /** IMG_8107 */
@@ -89,38 +89,52 @@ export const cabins = [
   {
     id: "deluxe-room",
     name: "Deluxe",
-    blurb:
-      "Deluxe cabin for two — manželská postel and a private bathroom.",
-    price: 95,
+    blurb: "Deluxe cabin for two — double bed and a private bathroom.",
+    pricePen: 130,
     features: [
-      "2 guests",
-      "1 double bed (manželská postel)",
+      "Capacity: 2 adults",
+      "1 double bed",
       "Private bathroom",
-      "Extra comfort and privacy",
-      "Ideal for couples",
+      "Mountain view",
+      "Free Wi-Fi",
     ],
     photoLabel: "Deluxe cabin",
-    /** Placeholder — replace when you send the Deluxe photo */
-    image: "/images/lena-8363.jpg",
+    /** IMG_8109 */
+    image: "/images/lena-8109.jpg",
   },
   {
     id: "deluxe-family-room",
     name: "Deluxe family",
-    blurb:
-      "Deluxe family cabin — manželská postel plus one single bed, with a private bathroom.",
-    price: 115,
+    blurb: "Deluxe family cabin — double bed plus one single bed, with a private bathroom.",
+    pricePen: 150,
     features: [
-      "3 guests",
+      "Capacity: 3 adults",
       "1 double bed + 1 single bed",
       "Private bathroom",
-      "Space for a couple + child or friend",
-      "Extra comfort and privacy",
+      "Mountain view",
+      "Free Wi-Fi",
     ],
     photoLabel: "Deluxe family cabin",
     /** Placeholder — replace when you send the Deluxe family photo */
     image: "/images/lena-8363.jpg",
   },
 ] as const;
+
+/** Approx. soles per USD for display (rates change; PEN is the source of truth). */
+export const PEN_PER_USD = 3.4;
+
+export function priceUsdFromPen(pricePen: number): number {
+  return Math.round(pricePen / PEN_PER_USD);
+}
+
+export function formatRoomPrice(pricePen: number): { usd: number; pen: number; label: string } {
+  const usd = priceUsdFromPen(pricePen);
+  return {
+    usd,
+    pen: pricePen,
+    label: `$${usd} · PEN ${pricePen}`,
+  };
+}
 
 export const aboutCards = [
   {

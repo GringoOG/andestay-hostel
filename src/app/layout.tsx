@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Inter, Poppins } from "next/font/google";
+import { Instrument_Serif, Poppins } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
+/**
+ * Typography matches Cabana Mountain (Framer):
+ * - Poppins: body, UI, large sans headings (weights 200–700)
+ * - Instrument Serif italic: display accents (cabin names, “in nature.”, etc.)
+ */
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-ui",
+  weight: ["200", "300", "400", "500", "600", "700"],
+  variable: "--font-sans",
 });
 
 const instrument = Instrument_Serif({
@@ -36,11 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${poppins.variable} ${instrument.variable} h-full`}
-    >
-      <body className="flex min-h-full flex-col antialiased">
+    <html lang="en" className={`${poppins.variable} ${instrument.variable} h-full`}>
+      <body className="flex min-h-full flex-col font-sans antialiased">
         {children}
         <Footer />
       </body>

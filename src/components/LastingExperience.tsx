@@ -56,7 +56,7 @@ export function LastingExperience() {
 
           <Reveal>
             <h2
-              className="mx-auto max-w-xl text-center text-4xl font-medium tracking-tight sm:text-5xl"
+              className="mx-auto max-w-xl text-center text-4xl font-light tracking-[-0.04em] sm:text-5xl"
               style={{ transform: `scale(${1 + p * 0.06})`, opacity: 1 - p * 0.15 }}
             >
               A lasting experience

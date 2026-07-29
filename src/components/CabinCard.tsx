@@ -1,10 +1,12 @@
 import { BookButton } from "@/components/BookButton";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
-import { cabins } from "@/lib/content";
+import { cabins, formatRoomPrice } from "@/lib/content";
 
 type Cabin = (typeof cabins)[number];
 
 export function CabinCard({ cabin, reverse = false }: { cabin: Cabin; reverse?: boolean }) {
+  const price = formatRoomPrice(cabin.pricePen);
+
   return (
     <article className="overflow-hidden rounded-[var(--radius-lg)] bg-[rgba(255,255,255,0.45)] shadow-[0_10px_40px_rgba(20,24,20,0.06)]">
       <div
@@ -38,7 +40,8 @@ export function CabinCard({ cabin, reverse = false }: { cabin: Cabin; reverse?: 
 
           <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
             <p className="text-xl font-semibold tracking-tight">
-              $ {cabin.price}{" "}
+              ${price.usd}{" "}
+              <span className="text-[var(--ink-muted)]">·</span> PEN {price.pen}{" "}
               <span className="text-sm font-normal text-[var(--ink-muted)]">/ night</span>
             </p>
             <BookButton roomSlug={cabin.id} source="room-card" />
