@@ -62,6 +62,8 @@ export function LastingExperience() {
         <PhotoPlaceholder
           label="Misty mountains"
           src={images.lastingA}
+          sizes="(max-width: 640px) 100vw, 50vw"
+          quality={85}
           className="aspect-[16/10] shadow-lg"
         />
       </div>
@@ -75,6 +77,8 @@ export function LastingExperience() {
         <PhotoPlaceholder
           label="Cabins at night"
           src={images.lastingB}
+          sizes="(max-width: 640px) 100vw, 50vw"
+          quality={85}
           className="aspect-[16/10] shadow-lg"
         />
       </div>

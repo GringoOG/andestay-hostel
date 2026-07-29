@@ -65,6 +65,8 @@ export function CabinCard({ cabin, reverse = false }: { cabin: CabinMeta; revers
         <PhotoPlaceholder
           label={cabin.photoLabel}
           src={cabin.image}
+          sizes="(max-width: 1023px) 100vw, 50vw"
+          quality={85}
           className="order-1 aspect-[5/4] min-h-[200px] rounded-none sm:aspect-[4/5] sm:min-h-[300px] lg:order-none lg:aspect-auto lg:min-h-[480px]"
         />
       </div>

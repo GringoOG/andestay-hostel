@@ -62,6 +62,8 @@ export function AboutStickyGallery() {
       <PhotoPlaceholder
         label={card.title}
         src={aboutGalleryImages[i] ?? aboutGalleryImages[0]}
+        sizes="(max-width: 768px) 78vw, 320px"
+        quality={85}
         className="aspect-[4/5] max-h-[min(48vh,380px)] w-full transition-transform duration-500 hover:scale-[1.02]"
       />
       <div className="mt-3 grid grid-cols-1 items-start gap-1.5 min-[380px]:grid-cols-[0.9fr_1.1fr] min-[380px]:gap-2 sm:mt-3.5">

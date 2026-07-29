@@ -30,6 +30,8 @@ export function AboutFeaturesGrid() {
                 <PhotoPlaceholder
                   label={card.title}
                   src={aboutCardImages[i] ?? aboutCardImages[0]}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                  quality={85}
                   className="aspect-[4/5]"
                 />
                 <div className="mt-3 grid gap-1.5 sm:mt-4 sm:gap-2 sm:grid-cols-[0.85fr_1.15fr] sm:items-start">

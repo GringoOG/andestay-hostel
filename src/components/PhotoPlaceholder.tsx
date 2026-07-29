@@ -10,6 +10,10 @@ type PhotoPlaceholderProps = {
   objectPosition?: string;
   /** Fill a positioned parent (e.g. absolute inset-0 hero) */
   fillParent?: boolean;
+  /** Responsive sizes hint — keep tight on mobile for faster downloads */
+  sizes?: string;
+  /** 80–85 = sharp on retina phones, still lean via AVIF/WebP */
+  quality?: number;
 };
 
 export function PhotoPlaceholder({
@@ -20,6 +24,8 @@ export function PhotoPlaceholder({
   priority = false,
   objectPosition = "center",
   fillParent = false,
+  sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 900px",
+  quality = 85,
 }: PhotoPlaceholderProps) {
   if (!src) {
     return (
@@ -41,7 +47,8 @@ export function PhotoPlaceholder({
         alt={label}
         fill
         priority={priority}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 900px"
+        quality={quality}
+        sizes={sizes}
         className={imageClassName || "object-cover"}
         style={{ objectPosition }}
       />

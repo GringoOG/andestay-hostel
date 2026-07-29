@@ -25,6 +25,8 @@ export default function AboutPage() {
               src={images.aboutHero}
               priority
               objectPosition="50% 78%"
+              sizes="(max-width: 768px) 100vw, 1180px"
+              quality={88}
               className="aspect-[4/5] min-h-[280px] rounded-[1.25rem] sm:aspect-[2.35/1] sm:min-h-[240px] sm:rounded-[var(--radius-lg)] md:aspect-[2.6/1] md:min-h-0"
             />
             <div className="pointer-events-none absolute inset-0 photo-green-veil" />
