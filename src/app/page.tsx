@@ -24,15 +24,14 @@ export default function HomePage() {
             src={images.hero}
             priority
             fillParent
-            objectPosition="35% 45%"
+            objectPosition="50% 42%"
             className="rounded-none scale-105 animate-[heroZoom_18s_ease-out_forwards]"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(10,16,12,0.72)] via-[rgba(10,16,12,0.4)] to-[rgba(10,16,12,0.22)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,16,12,0.62)] via-transparent to-[rgba(10,16,12,0.28)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,16,12,0.78)] via-[rgba(10,16,12,0.28)] to-[rgba(10,16,12,0.35)]" />
 
-        <div className="site-wrap relative flex min-h-[100svh] flex-col justify-end pb-16 pt-[calc(var(--nav-h)+3rem)] md:pb-24">
-          <div className="max-w-3xl">
+        <div className="site-wrap relative flex min-h-[100svh] flex-col items-center justify-end pb-16 pt-[calc(var(--nav-h)+3rem)] text-center md:pb-24">
+          <div className="flex w-full max-w-3xl flex-col items-center">
             <span className="badge badge-light animate-[fadeUp_0.8s_ease_both]">
               {heroCopy.badge}
             </span>
@@ -41,7 +40,7 @@ export default function HomePage() {
               {heroCopy.support}
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4 animate-[fadeUp_1s_ease_0.55s_both]">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 animate-[fadeUp_1s_ease_0.55s_both]">
               <div className="flex items-center">
                 {images.avatars.map((src) => (
                   <div
@@ -55,7 +54,7 @@ export default function HomePage() {
                   +56
                 </div>
               </div>
-              <p className="max-w-[14rem] text-sm text-white/85">
+              <p className="max-w-[16rem] text-sm text-white/85">
                 One of the <strong className="font-semibold text-white">most popular</strong>{" "}
                 accommodations among guests.
               </p>

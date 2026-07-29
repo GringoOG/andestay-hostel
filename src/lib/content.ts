@@ -40,12 +40,12 @@ export const cabins = [
   {
     id: "double-room",
     name: "Double room",
-    blurb: "Two single beds for a comfortable night after the trail.",
+    blurb: "Two single beds or 1 large double bed for a comfortable night after the trail.",
     /** Base nightly rate in Peruvian soles (from booking engine) */
     pricePen: 98,
     features: [
       "Capacity: 2 adults",
-      "2 single beds",
+      "2 single beds or 1 large double bed",
       "16 m²",
       "Mountain view",
       "Free Wi-Fi",
@@ -264,21 +264,39 @@ export const floatingQuotes = [
 
 export const testimonials = [
   {
-    name: "Liam S.",
-    from: "from California/USA",
-    text: "We stayed in the family room and it was simply amazing. The sunrise view over the valley is breathtaking. The cabin is so cozy and made us feel at home.",
+    name: "Jonas K.",
+    from: "from Berlin, Germany",
+    text: "After a long day on the Salkantay trek, AndeStay felt like a real reward. The homemade dinner and American breakfast were excellent — we didn’t have to think about food at all. Warm hospitality and quiet mountain air.",
+    avatar: "/images/avatar-1.jpg",
+  },
+  {
+    name: "Camille R.",
+    from: "from Lyon, France",
+    text: "We loved the Deluxe room with the private bathroom. The view from the window was unreal at sunrise. Everything felt clean, cozy, and thoughtfully prepared for trekkers.",
+    avatar: "/images/avatar-2.jpg",
+  },
+  {
+    name: "Michael T.",
+    from: "from Colorado, USA",
+    text: "Perfect stop between trek stages. Free Wi-Fi, comfortable beds, and that included dinner made our evening so easy. The hosts made us feel welcome from the first minute.",
+    avatar: "/images/avatar-3.jpg",
+  },
+  {
+    name: "Tomáš P.",
+    from: "from Prague, Czechia",
+    text: "We stayed in the triple room with friends and it was exactly what we needed after the trail. Great food, peaceful garden, and a genuine Andean atmosphere. Highly recommended.",
+    avatar: "/images/avatar-4.jpg",
+  },
+  {
+    name: "María L.",
+    from: "from Cusco, Peru",
+    text: "A beautiful place in Colpapampa. Clean rooms, delicious home cooking, and a calm garden to rest. It is rare to find such care for travelers so close to the mountains.",
     avatar: "/images/lena-8364.jpg",
   },
   {
-    name: "Jack M.",
-    from: "from New York/USA",
-    text: "We booked the double room for a quiet stop on our trek and couldn’t have made a better choice. From the moment we arrived, the place felt magical. The mountain scenery and warm cabin created the perfect atmosphere for us to slow down and rest. The attention to detail and the warmth of the hosts made the experience even more special. It’s the kind of place you want to return to every year.",
-    avatar: "/images/lena-8109.jpg",
-  },
-  {
-    name: "Caroline S.",
-    from: "from London",
-    text: "A perfect base to rest and recharge. We took the triple room with friends — between the trails and nights under the stars, every detail made our stay unforgettable.",
+    name: "Pedro S.",
+    from: "from São Paulo, Brazil",
+    text: "We booked the Deluxe family room and felt so comfortable. Breakfast and dinner included saved us after a hard hiking day. Amazing views and very friendly staff — we will come back.",
     avatar: "/images/lena-8335.jpg",
   },
 ] as const;

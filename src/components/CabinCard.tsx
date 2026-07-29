@@ -8,7 +8,7 @@ export function CabinCard({ cabin, reverse = false }: { cabin: Cabin; reverse?: 
   const price = formatRoomPrice(cabin.pricePen);
 
   return (
-    <article className="overflow-hidden rounded-[var(--radius-lg)] bg-[rgba(255,255,255,0.45)] shadow-[0_10px_40px_rgba(20,24,20,0.06)]">
+    <article className="group overflow-hidden rounded-[var(--radius-lg)] border border-transparent bg-transparent transition-[border-color,box-shadow] duration-300 hover:border-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.9)]">
       <div
         className={`grid items-stretch lg:grid-cols-2 ${
           reverse ? "lg:[&>*:first-child]:order-2" : ""

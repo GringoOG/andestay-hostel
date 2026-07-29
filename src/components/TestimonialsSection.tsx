@@ -13,7 +13,7 @@ export function TestimonialsSection() {
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid gap-10 md:grid-cols-3">
+        <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={100 + i * 90}>
               <article className="flex flex-col">
