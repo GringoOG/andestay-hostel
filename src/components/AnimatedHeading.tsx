@@ -126,7 +126,7 @@ export function AnimatedHeading({
     as,
     {
       ref: rootRef,
-      className,
+      className: `animated-heading ${className}`.trim(),
       "aria-label": fullText,
     },
     nodes,

@@ -15,28 +15,28 @@ export const de: Messages = {
     refuge: "Refugium",
     inNature: "in der Natur.",
     support:
-      "Erhole dich nach der Salkantay-Wanderung. Frühstück und ein hausgemachtes Abendessen sind immer inbegriffen.",
+      "Erhole dich nach der Salkantay-Wanderung. Frühstück und hausgemachtes Abendessen sind immer inbegriffen.",
     socialProofBefore: "Eine der ",
     socialProofBold: "beliebtesten Unterkünfte",
     socialProofAfter: " bei unseren Gästen.",
   },
   intro: {
     badge: "Entfliehen. Durchatmen. Ankommen.",
-    before: "Eingebettet in Colpapampa ist das AndeStay Hostel ein Ort, an dem ",
+    before: "Eingebettet in Colpapampa ist AndeStay Hostel der Ort, an dem ",
     bold: "Komfort auf die Anden trifft.",
   },
   accommodations: {
-    badge: "Einzigartige Aufenthaltserlebnisse",
-    titleBefore: "Jede Hütte wurde gestaltet, um Wohlbefinden, Privatsphäre und eine ",
-    titleBold: "echte Verbindung zur Natur zu bieten.",
-    body: "Das AndeStay Hostel ist die Balance zwischen Komfort und Natur. Ein Ort, der gemütliches Design, Gastfreundschaft und eine Atmosphäre vereint, die perfekt zum Entspannen oder Feiern ist.",
+    badge: "Einzigartige Aufenthalte",
+    titleBefore: "Jede Hütte wurde gestaltet für Wohlbefinden, Privatsphäre und eine ",
+    titleBold: "echte Verbindung zur Natur.",
+    body: "AndeStay Hostel verbindet Komfort und Natur — gemütliches Design, Gastfreundschaft und eine Atmosphäre zum Entspannen oder Feiern.",
   },
   aboutPage: {
     welcomeBadge: "Willkommen im AndeStay Hostel",
     heroTitle:
       "Ein Hostel für Reisende, die Erholung, gutes Essen und Verbindung zu den Anden suchen.",
     heroSupport:
-      "Erhole dich nach der Salkantay-Wanderung in Colpapampa – mit amerikanischem Frühstück und hausgemachtem Abendessen, immer inbegriffen.",
+      "Erhole dich nach der Salkantay-Wanderung in Colpapampa — mit amerikanischem Frühstück und hausgemachtem Abendessen, immer inbegriffen.",
     featuresBadge: "Über AndeStay",
     featuresTitle: "Mehr als nur ein Ort zum Übernachten.",
   },
@@ -44,12 +44,12 @@ export const de: Messages = {
     badge: "Über AndeStay",
     title: "Erhole dich nach dem Trail. Iss gut. Tanke Kraft für das, was als Nächstes kommt.",
     paragraphs: [
-      "Erhole dich nach einem anstrengenden Tag auf der Salkantay-Wanderung in einem gemütlichen Hostel, umgeben von den majestätischen peruanischen Anden. Das AndeStay Hostel Colpapampa ist der Ort, an dem du dich nach einer langen Reise erholst, gut isst und Kraft für das nächste Abenteuer sammelst.",
+      "Erhole dich nach einem anstrengenden Tag auf der Salkantay-Wanderung in einem gemütlichen Hostel, umgeben von den majestätischen peruanischen Anden. AndeStay Hostel Colpapampa ist der Ort, an dem du dich nach einer langen Reise erholst, gut isst und Kraft für das nächste Abenteuer sammelst.",
       "Jeder Gast erhält kostenlos ein amerikanisches Frühstück und ein hausgemachtes Abendessen, sodass du bei der Ankunft nicht nach einem Restaurant suchen musst. Genieße einfach die ruhige Atmosphäre, die komfortablen Zimmer und die Natur um dich herum.",
       "Wir bieten komfortable Zimmer für Alleinreisende, Paare und Familien, kostenloses WLAN, einen Garten zum Entspannen und eine freundliche Umgebung, in der du dich wie zu Hause fühlst.",
     ],
     closing:
-      "Ob du auf dem Weg nach Machu Picchu bist oder eine Etappe der Salkantay-Wanderung beendest – das AndeStay Hostel Colpapampa ist der ideale Ort für erholsamen Schlaf, gutes Essen und eine angenehme Nacht im Herzen der peruanischen Anden.",
+      "Ob du auf dem Weg nach Machu Picchu bist oder eine Etappe der Salkantay-Wanderung beendest — AndeStay Hostel Colpapampa ist der ideale Ort für erholsamen Schlaf, gutes Essen und eine angenehme Nacht im Herzen der peruanischen Anden.",
     whyTitle: "Warum AndeStay wählen?",
     why: [
       "Kostenloses hausgemachtes Abendessen",
@@ -68,11 +68,11 @@ export const de: Messages = {
     { title: "Momente", description: "Ein Zuhause am Andenpfad." },
   ],
   aboutGallery: [
-    { title: "Innenraum", description: "Wach werden mit Blick auf den Berg." },
+    { title: "Innenraum", description: "Aufwachen mit Blick auf den Berg." },
     { title: "Zimmer", description: "Holz, Textilien und Licht." },
     { title: "Dorf", description: "Hütten im Tal." },
     { title: "Aufenthalt", description: "Arbeiten und entspannen mit Aussicht." },
-    { title: "Balkon", description: "Freie Luft über Colpapampa." },
+    { title: "Balkon", description: "Frische Luft über Colpapampa." },
     { title: "Tal", description: "Ein bleibender Bergblick." },
     { title: "Stelzen", description: "Hütten am Hang gelegen." },
     { title: "Terrassen", description: "Grüne Dächer, offener Himmel." },
@@ -80,7 +80,7 @@ export const de: Messages = {
     { title: "Zuhause", description: "AndeStay in Colpapampa." },
   ],
   lasting: {
-    title: "Eine bleibende Erfahrung",
+    title: "Ein bleibendes Erlebnis",
     quotes: [
       "Genau das, was wir brauchten.",
       "Die Stille war das Beste daran.",
@@ -90,7 +90,7 @@ export const de: Messages = {
   },
   testimonials: {
     badge: "Erfahrungsberichte",
-    title: "Eindrücke unserer Gäste",
+    title: "Was unsere Gäste sagen",
     items: [
       {
         name: "Jonas K.",
@@ -105,7 +105,7 @@ export const de: Messages = {
       {
         name: "Michael T.",
         from: "aus Colorado, USA",
-        text: "Perfekter Zwischenstopp zwischen den Etappen der Wanderung. Kostenloses WLAN, bequeme Betten und das inkludierte Abendessen machten unseren Abend so einfach. Die Gastgeber ließen uns von der ersten Minute an willkommen fühlen.",
+        text: "Perfekter Zwischenstopp zwischen den Etappen der Wanderung. Kostenloses WLAN, bequeme Betten und das inkludierte Abendessen machten unseren Abend so einfach. Die Gastgeber begrüßten uns von der ersten Minute an herzlich.",
       },
       {
         name: "Tomáš P.",
@@ -133,7 +133,7 @@ export const de: Messages = {
         a: "Check-in ist ab 15:00 Uhr, Check-out bis 11:00 Uhr. Ein früherer Check-in oder späterer Check-out kann auf Anfrage und je nach Verfügbarkeit möglich sein.",
       },
       {
-        q: "Wie lautet Ihre Stornierungsrichtlinie?",
+        q: "Wie lautet die Stornierungsrichtlinie?",
         a: "Kostenlose Stornierung bis 7 Tage vor Anreise. Stornierungen innerhalb von 7 Tagen vor dem Check-in sind nicht erstattungsfähig. Wir empfehlen eine Reiseversicherung für unerwartete Änderungen.",
       },
       {
@@ -151,7 +151,7 @@ export const de: Messages = {
     ],
   },
   contact: {
-    badge: "Kontaktiere uns",
+    badge: "Schreib uns",
     title: "Fragen oder möchtest du mehr erfahren? Wir sind für dich da.",
     email: "E-MAIL",
     telephone: "TELEFON",
@@ -161,7 +161,7 @@ export const de: Messages = {
     message: "NACHRICHT",
     send: "Nachricht senden",
     pageBadge: "Kontakt",
-    pageTitle: "Kontaktiere uns",
+    pageTitle: "Schreib uns",
     pageBody:
       "Fragen zu einem Aufenthalt, zur Verfügbarkeit oder zu einer privaten Feier — schick uns eine Nachricht, und wir melden uns in Kürze bei dir.",
   },

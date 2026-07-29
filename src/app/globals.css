@@ -137,6 +137,8 @@ img {
   line-height: 1.06;
   letter-spacing: -0.04em;
   text-wrap: balance;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 .btn-pill {
@@ -294,15 +296,34 @@ img {
   }
 }
 
-/* Framer letter reveal — keep words intact, allow line wraps */
+/* Framer letter reveal — keep whole words together (no mid-word hyphenation) */
+.animated-heading {
+  hyphens: none;
+  -webkit-hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
 .char-word {
-  display: inline-block;
+  display: inline-flex;
   white-space: nowrap;
+  hyphens: none;
+  -webkit-hyphens: none;
+  max-width: 100%;
 }
 
 .char-space {
   display: inline;
-  white-space: normal;
+  white-space: pre-wrap;
+}
+
+h1,
+h2,
+h3 {
+  hyphens: none;
+  -webkit-hyphens: none;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 @keyframes fadeUp {

@@ -3,40 +3,40 @@ import type { Messages } from "../types";
 export const es: Messages = {
   nav: { home: "Inicio", about: "Nosotros", rooms: "Habitaciones", contact: "Contacto" },
   common: {
-    bookStay: "Reservar una estancia",
+    bookStay: "Reservar estancia",
     perNight: "/ noche",
     closeMenu: "Cerrar menú",
     openMenu: "Abrir menú",
     language: "Idioma",
   },
   hero: {
-    badge: "Escapa. Respira. Pertenece.",
+    badge: "Escapa. Respira. Quédate.",
     unlockYour: "Descubre tu",
     refuge: "refugio",
     inNature: "en la naturaleza.",
     support:
-      "Descansa después de la caminata del Salkantay. El desayuno y la cena casera siempre están incluidos.",
+      "Descansa después del trekking Salkantay. El desayuno y la cena casera siempre están incluidos.",
     socialProofBefore: "Uno de los ",
     socialProofBold: "alojamientos más populares",
     socialProofAfter: " entre nuestros huéspedes.",
   },
   intro: {
-    badge: "Escapa. Respira. Pertenece.",
-    before: "En Colpapampa, AndeStay Hostel es un lugar donde ",
+    badge: "Escapa. Respira. Quédate.",
+    before: "En Colpapampa, AndeStay Hostel es el lugar donde ",
     bold: "el confort se encuentra con los Andes.",
   },
   accommodations: {
     badge: "Experiencias de alojamiento únicas",
     titleBefore: "Cada cabaña fue diseñada para ofrecer bienestar, privacidad y una ",
     titleBold: "verdadera conexión con la naturaleza.",
-    body: "AndeStay Hostel es el equilibrio entre confort y naturaleza. Un espacio que combina un diseño acogedor, hospitalidad y un ambiente perfecto para relajarse o celebrar.",
+    body: "AndeStay Hostel equilibra confort y naturaleza: diseño acogedor, hospitalidad y un ambiente ideal para relajarse o celebrar.",
   },
   aboutPage: {
-    welcomeBadge: "Bienvenido a AndeStay Hostel",
+    welcomeBadge: "Bienvenidos a AndeStay Hostel",
     heroTitle:
       "Un hostel para viajeros que buscan descanso, buena comida y conexión con los Andes.",
     heroSupport:
-      "Descansa después de la caminata del Salkantay en Colpapampa, con desayuno americano y cena casera siempre incluidos.",
+      "Descansa después del trekking Salkantay en Colpapampa, con desayuno americano y cena casera siempre incluidos.",
     featuresBadge: "Sobre AndeStay",
     featuresTitle: "Mucho más que un lugar donde alojarse.",
   },
@@ -44,12 +44,12 @@ export const es: Messages = {
     badge: "Sobre AndeStay",
     title: "Descansa después de la ruta. Come bien. Recupera fuerzas para lo que sigue.",
     paragraphs: [
-      "Descansa después de un exigente día en la caminata del Salkantay en un acogedor hostel rodeado por los majestuosos Andes peruanos. AndeStay Hostel Colpapampa es el lugar donde te recuperas tras un largo viaje, comes bien y reúnes fuerzas para la próxima aventura.",
+      "Descansa después de un día exigente en el trekking Salkantay en un acogedor hostel rodeado por los majestuosos Andes peruanos. AndeStay Hostel Colpapampa es el lugar donde te recuperas tras un largo viaje, comes bien y reúnes fuerzas para la próxima aventura.",
       "Cada huésped recibe un desayuno americano y una cena casera sin costo adicional, así que no necesitas buscar un restaurante al llegar. Simplemente disfruta del ambiente tranquilo, las habitaciones cómodas y la naturaleza que te rodea.",
       "Ofrecemos habitaciones cómodas para viajeros solos, parejas y familias, Wi-Fi gratis, un jardín para relajarte y un ambiente cercano donde te sentirás como en casa.",
     ],
     closing:
-      "Ya sea que te dirijas a Machu Picchu o estés terminando una etapa de la caminata del Salkantay, AndeStay Hostel Colpapampa es el lugar ideal para un descanso de calidad, buena comida y una noche agradable en el corazón de los Andes peruanos.",
+      "Ya sea que te dirijas a Machu Picchu o estés terminando una etapa del trekking Salkantay, AndeStay Hostel Colpapampa es el lugar ideal para un descanso de calidad, buena comida y una noche agradable en el corazón de los Andes peruanos.",
     whyTitle: "¿Por qué elegir AndeStay?",
     why: [
       "Cena casera gratis",
@@ -68,7 +68,7 @@ export const es: Messages = {
     { title: "Momentos", description: "Un hogar junto a la ruta de los Andes." },
   ],
   aboutGallery: [
-    { title: "Interior", description: "Despierta con la montaña." },
+    { title: "Interior", description: "Despierta frente a la montaña." },
     { title: "Habitación", description: "Madera, textiles y luz." },
     { title: "Poblado", description: "Cabañas en el valle." },
     { title: "Estancia", description: "Trabaja y descansa con una vista." },
@@ -90,68 +90,68 @@ export const es: Messages = {
   },
   testimonials: {
     badge: "Testimonios",
-    title: "Reflexiones de nuestros huéspedes",
+    title: "Lo que dicen nuestros huéspedes",
     items: [
       {
         name: "Jonas K.",
-        from: "desde Berlín, Alemania",
-        text: "Después de un largo día en la caminata del Salkantay, AndeStay se sintió como una verdadera recompensa. La cena casera y el desayuno americano fueron excelentes: no tuvimos que preocuparnos por la comida en absoluto. Hospitalidad cálida y aire tranquilo de montaña.",
+        from: "de Berlín, Alemania",
+        text: "Después de un largo día en el trekking Salkantay, AndeStay se sintió como una verdadera recompensa. La cena casera y el desayuno americano fueron excelentes: no tuvimos que preocuparnos por la comida. Hospitalidad cálida y aire tranquilo de montaña.",
       },
       {
         name: "Camille R.",
-        from: "desde Lyon, Francia",
+        from: "de Lyon, Francia",
         text: "Nos encantó la habitación Deluxe con baño privado. La vista desde la ventana al amanecer fue irreal. Todo se sintió limpio, acogedor y cuidadosamente pensado para excursionistas.",
       },
       {
         name: "Michael T.",
-        from: "desde Colorado, EE. UU.",
-        text: "Parada perfecta entre etapas de la caminata. Wi-Fi gratis, camas cómodas y la cena incluida hicieron que la noche fuera muy sencilla. Los anfitriones nos hicieron sentir bienvenidos desde el primer minuto.",
+        from: "de Colorado, EE. UU.",
+        text: "Parada perfecta entre etapas del trekking. Wi-Fi gratis, camas cómodas y la cena incluida hicieron que la noche fuera muy sencilla. Los anfitriones nos recibieron con calidez desde el primer minuto.",
       },
       {
         name: "Tomáš P.",
-        from: "desde Praga, Chequia",
+        from: "de Praga, Chequia",
         text: "Nos alojamos en la habitación triple con amigos y fue exactamente lo que necesitábamos después de la ruta. Buena comida, jardín tranquilo y un auténtico ambiente andino. Muy recomendable.",
       },
       {
         name: "María L.",
-        from: "desde Cusco, Perú",
+        from: "de Cusco, Perú",
         text: "Un lugar hermoso en Colpapampa. Habitaciones limpias, deliciosa comida casera y un jardín tranquilo para descansar. Es raro encontrar tanto cuidado por los viajeros tan cerca de las montañas.",
       },
       {
         name: "Pedro S.",
-        from: "desde São Paulo, Brasil",
+        from: "de São Paulo, Brasil",
         text: "Reservamos la habitación familiar Deluxe y nos sentimos muy cómodos. El desayuno y la cena incluidos nos salvaron después de un día duro de caminata. Vistas increíbles y personal muy amable: volveremos.",
       },
     ],
   },
   faq: {
-    badge: "FAQ",
+    badge: "Preguntas",
     title: "Preguntas frecuentes",
     items: [
       {
-        q: "¿A qué hora son la entrada y la salida?",
-        a: "El check-in es a partir de las 3:00 p. m. y el check-out hasta las 11:00 a. m. Es posible solicitar entrada anticipada o salida tardía, según disponibilidad.",
+        q: "¿A qué hora son el check-in y el check-out?",
+        a: "El check-in es a partir de las 15:00 y el check-out hasta las 11:00. Es posible solicitar entrada anticipada o salida tardía, según disponibilidad.",
       },
       {
-        q: "¿Cuál es su política de cancelación?",
-        a: "Cancelación gratuita hasta 7 días antes de la llegada. Las cancelaciones realizadas dentro de los 7 días previos al check-in no son reembolsables. Recomendamos contratar un seguro de viaje para cambios imprevistos.",
+        q: "¿Cuál es la política de cancelación?",
+        a: "Cancelación gratuita hasta 7 días antes de la llegada. Las cancelaciones realizadas dentro de los 7 días previos al check-in no son reembolsables. Recomendamos un seguro de viaje para cambios imprevistos.",
       },
       {
         q: "¿Se admiten mascotas en AndeStay Hostel?",
-        a: "Por favor contáctanos antes de reservar si planeas viajar con una mascota. La disponibilidad depende del tipo de habitación y de los huéspedes actuales.",
+        a: "Contáctanos antes de reservar si planeas viajar con una mascota. La disponibilidad depende del tipo de habitación y de los huéspedes actuales.",
       },
       {
         q: "¿Podemos llevar niños o bebés?",
         a: "Sí, los niños y bebés son bienvenidos. Avísanos con anticipación para preparar la habitación adecuada.",
       },
       {
-        q: "¿Dónde está ubicado AndeStay Hostel y cómo llego hasta allí?",
+        q: "¿Dónde está AndeStay Hostel y cómo llego?",
         a: "Estamos en Colpapampa, Perú. Las instrucciones detalladas de llegada se envían después de confirmar tu reserva.",
       },
     ],
   },
   contact: {
-    badge: "Ponte en contacto con nosotros",
+    badge: "Contáctanos",
     title: "¿Tienes preguntas o quieres saber más? Estamos aquí para ti.",
     email: "CORREO",
     telephone: "TELÉFONO",
@@ -161,15 +161,15 @@ export const es: Messages = {
     message: "MENSAJE",
     send: "Enviar mensaje",
     pageBadge: "Contacto",
-    pageTitle: "Ponte en contacto",
+    pageTitle: "Contáctanos",
     pageBody:
       "Preguntas sobre una estancia, disponibilidad o una celebración privada: envíanos un mensaje y te responderemos en breve.",
   },
   bookPage: {
     badge: "Reservas",
-    title: "Reserva una estancia",
-    body: "Continuarás hacia nuestro socio de reservas (QloApps) para consultar fechas y pagar de forma segura. El sitio web en sí no procesa reservas.",
-    preferMessage: "Prefieres escribirnos",
+    title: "Reservar estancia",
+    body: "Continuarás hacia nuestro socio de reservas (QloApps) para consultar fechas y pagar de forma segura. Este sitio web no procesa reservas.",
+    preferMessage: "Prefiero escribirles",
   },
   footer: {
     taglineBefore: "Tu base ",
@@ -190,7 +190,7 @@ export const es: Messages = {
     },
     "family-room": {
       name: "Habitación familiar",
-      blurb: "Una cama doble grande para parejas o una pequeña parada familiar.",
+      blurb: "Una cama doble grande para parejas o una breve parada familiar.",
       features: [
         "Capacidad: 2 adultos",
         "1 cama doble grande",

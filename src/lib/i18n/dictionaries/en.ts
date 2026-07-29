@@ -18,24 +18,23 @@ export const en: Messages = {
       "Rest after the Salkantay trek. Breakfast and homemade dinner are always included.",
     socialProofBefore: "One of the ",
     socialProofBold: "most popular",
-    socialProofAfter: " accommodations among guests.",
+    socialProofAfter: " places to stay among our guests.",
   },
   intro: {
     badge: "Escape. Breathe. Belong.",
-    before: "Nestled in Colpapampa, AndeStay Hostel is a place where ",
+    before: "Nestled in Colpapampa, AndeStay Hostel is where ",
     bold: "comfort meets the Andes.",
   },
   accommodations: {
     badge: "Unique stay experiences",
-    titleBefore: "Each cabin was designed to provide well-being, privacy, and a ",
+    titleBefore: "Each cabin was designed for well-being, privacy, and a ",
     titleBold: "true connection with nature.",
-    body:
-      "AndeStay Hostel is the balance between comfort and nature. A space that combines cozy design, hospitality, and an atmosphere perfect for relaxing or celebrating.",
+    body: "AndeStay Hostel balances comfort and nature — cozy design, warm hospitality, and an atmosphere made for resting or celebrating.",
   },
   aboutPage: {
     welcomeBadge: "Welcome to AndeStay Hostel",
     heroTitle:
-      "A hostel for travelers who seek rest, good food, and connection with the Andes.",
+      "A hostel for travelers seeking rest, good food, and a connection with the Andes.",
     heroSupport:
       "Rest after the Salkantay trek in Colpapampa — with American breakfast and homemade dinner always included.",
     featuresBadge: "About AndeStay",
@@ -69,7 +68,7 @@ export const en: Messages = {
     { title: "Moments", description: "A home along the Andes trail." },
   ],
   aboutGallery: [
-    { title: "Interior", description: "Wake up to the mountain." },
+    { title: "Interior", description: "Wake up to the mountains." },
     { title: "Room", description: "Wood, textiles, and light." },
     { title: "Village", description: "Cabins in the valley." },
     { title: "Stay", description: "Work and rest with a view." },
@@ -91,7 +90,7 @@ export const en: Messages = {
   },
   testimonials: {
     badge: "Testimonials",
-    title: "Reflections from our guests",
+    title: "What our guests say",
     items: [
       {
         name: "Jonas K.",
@@ -152,7 +151,7 @@ export const en: Messages = {
     ],
   },
   contact: {
-    badge: "Get in touch with us",
+    badge: "Get in touch",
     title: "Have questions or want to know more? We’re here for you.",
     email: "E-MAIL",
     telephone: "TELEPHONE",
@@ -169,7 +168,7 @@ export const en: Messages = {
   bookPage: {
     badge: "Reservations",
     title: "Book a stay",
-    body: "You will continue to our booking partner (QloApps) to check dates and pay securely. The website itself does not process reservations.",
+    body: "You’ll continue to our booking partner (QloApps) to check dates and pay securely. This website does not process reservations itself.",
     preferMessage: "Prefer to message us",
   },
   footer: {
@@ -191,7 +190,7 @@ export const en: Messages = {
     },
     "family-room": {
       name: "Family room",
-      blurb: "One large double bed for couples or a small family stop.",
+      blurb: "One large double bed for couples or a short family stop.",
       features: [
         "Capacity: 2 adults",
         "1 large double bed",

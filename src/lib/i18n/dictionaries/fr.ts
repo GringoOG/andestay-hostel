@@ -10,46 +10,46 @@ export const fr: Messages = {
     language: "Langue",
   },
   hero: {
-    badge: "Évadez-vous. Respirez. Appartenez.",
+    badge: "Évadez-vous. Respirez. Restez.",
     unlockYour: "Trouvez votre",
     refuge: "refuge",
     inNature: "en pleine nature.",
     support:
       "Reposez-vous après le trek du Salkantay. Le petit-déjeuner et le dîner fait maison sont toujours inclus.",
-    socialProofBefore: "L'un des ",
+    socialProofBefore: "L’un des ",
     socialProofBold: "hébergements les plus appréciés",
     socialProofAfter: " par nos hôtes.",
   },
   intro: {
-    badge: "Évadez-vous. Respirez. Appartenez.",
-    before: "Niché à Colpapampa, AndeStay Hostel est un lieu où ",
+    badge: "Évadez-vous. Respirez. Restez.",
+    before: "Niché à Colpapampa, AndeStay Hostel est le lieu où ",
     bold: "le confort rencontre les Andes.",
   },
   accommodations: {
     badge: "Des séjours uniques",
     titleBefore: "Chaque cabane a été conçue pour offrir bien-être, intimité et une ",
     titleBold: "véritable connexion avec la nature.",
-    body: "AndeStay Hostel incarne l'équilibre entre confort et nature. Un espace qui allie design chaleureux, hospitalité et une atmosphère parfaite pour se détendre ou célébrer.",
+    body: "AndeStay Hostel incarne l’équilibre entre confort et nature — design chaleureux, hospitalité et une atmosphère idéale pour se détendre ou célébrer.",
   },
   aboutPage: {
     welcomeBadge: "Bienvenue à AndeStay Hostel",
     heroTitle:
-      "Une auberge pour les voyageurs en quête de repos, de bonne cuisine et de connexion avec les Andes.",
+      "Une auberge pour les voyageurs en quête de repos, de bonne cuisine et de lien avec les Andes.",
     heroSupport:
-      "Reposez-vous après le trek du Salkantay à Colpapampa, petit-déjeuner américain et dîner fait maison toujours inclus.",
-    featuresBadge: "À propos d'AndeStay",
-    featuresTitle: "Bien plus qu'un simple endroit où loger.",
+      "Reposez-vous après le trek du Salkantay à Colpapampa — petit-déjeuner américain et dîner fait maison toujours inclus.",
+    featuresBadge: "À propos d’AndeStay",
+    featuresTitle: "Bien plus qu’un simple endroit où loger.",
   },
   aboutStory: {
-    badge: "À propos d'AndeStay",
+    badge: "À propos d’AndeStay",
     title: "Reposez-vous après la piste. Mangez bien. Reprenez des forces pour la suite.",
     paragraphs: [
-      "Reposez-vous après une journée exigeante sur le trek du Salkantay dans une auberge chaleureuse entourée des majestueuses Andes péruviennes. AndeStay Hostel Colpapampa est l'endroit où vous récupérez après un long voyage, mangez bien et reprenez des forces pour la prochaine aventure.",
-      "Chaque hôte reçoit gratuitement un petit-déjeuner américain et un dîner fait maison, vous n'avez donc pas besoin de chercher un restaurant à votre arrivée. Profitez simplement de l'atmosphère paisible, des chambres confortables et de la nature environnante.",
+      "Reposez-vous après une journée exigeante sur le trek du Salkantay dans une auberge chaleureuse entourée des majestueuses Andes péruviennes. AndeStay Hostel Colpapampa est l’endroit où vous récupérez après un long voyage, mangez bien et reprenez des forces pour la prochaine aventure.",
+      "Chaque hôte reçoit gratuitement un petit-déjeuner américain et un dîner fait maison, vous n’avez donc pas besoin de chercher un restaurant à votre arrivée. Profitez simplement de l’atmosphère paisible, des chambres confortables et de la nature environnante.",
       "Nous proposons des chambres confortables pour voyageurs seuls, couples et familles, le Wi-Fi gratuit, un jardin pour se détendre et une ambiance chaleureuse où vous vous sentirez comme chez vous.",
     ],
     closing:
-      "Que vous vous rendiez au Machu Picchu ou que vous terminiez une étape du trek du Salkantay, AndeStay Hostel Colpapampa est l'endroit idéal pour un repos de qualité, une bonne cuisine et une nuit agréable au cœur des Andes péruviennes.",
+      "Que vous vous rendiez au Machu Picchu ou que vous terminiez une étape du trek du Salkantay, AndeStay Hostel Colpapampa est l’endroit idéal pour un repos de qualité, une bonne cuisine et une nuit agréable au cœur des Andes péruviennes.",
     whyTitle: "Pourquoi choisir AndeStay ?",
     why: [
       "Dîner fait maison gratuit",
@@ -72,8 +72,8 @@ export const fr: Messages = {
     { title: "Chambre", description: "Bois, textiles et lumière." },
     { title: "Village", description: "Des cabanes dans la vallée." },
     { title: "Séjour", description: "Travailler et se reposer avec vue." },
-    { title: "Balcon", description: "Air libre au-dessus de Colpapampa." },
-    { title: "Vallée", description: "Un horizon montagneux qui perdure." },
+    { title: "Balcon", description: "Grand air au-dessus de Colpapampa." },
+    { title: "Vallée", description: "Un horizon montagneux qui reste en mémoire." },
     { title: "Pilotis", description: "Des cabanes perchées sur la pente." },
     { title: "Terrasses", description: "Toits verts, ciel ouvert." },
     { title: "Belvédère", description: "Terrasse au-dessus de la vallée." },
@@ -83,19 +83,19 @@ export const fr: Messages = {
     title: "Une expérience inoubliable",
     quotes: [
       "Exactement ce dont nous avions besoin.",
-      "Le silence était le meilleur moment.",
+      "Le silence était ce qu’il y avait de meilleur.",
       "Se réveiller face à cette vue semblait irréel.",
-      "On aurait dit que le temps s'écoulait différemment ici.",
+      "On aurait dit que le temps s’écoulait différemment ici.",
     ],
   },
   testimonials: {
     badge: "Témoignages",
-    title: "Impressions de nos hôtes",
+    title: "Ce que disent nos hôtes",
     items: [
       {
         name: "Jonas K.",
         from: "de Berlin, Allemagne",
-        text: "Après une longue journée sur le trek du Salkantay, AndeStay a été une vraie récompense. Le dîner fait maison et le petit-déjeuner américain étaient excellents — nous n'avions pas à nous soucier de la nourriture. Hospitalité chaleureuse et air paisible de montagne.",
+        text: "Après une longue journée sur le trek du Salkantay, AndeStay a été une vraie récompense. Le dîner fait maison et le petit-déjeuner américain étaient excellents — nous n’avions pas à nous soucier de la nourriture. Hospitalité chaleureuse et air paisible de montagne.",
       },
       {
         name: "Camille R.",
@@ -104,13 +104,13 @@ export const fr: Messages = {
       },
       {
         name: "Michael T.",
-        from: "de Colorado, États-Unis",
-        text: "Étape parfaite entre deux jours de trek. Wi-Fi gratuit, lits confortables et le dîner inclus ont rendu notre soirée si simple. Les hôtes nous ont fait sentir bienvenus dès la première minute.",
+        from: "du Colorado, États-Unis",
+        text: "Étape parfaite entre deux jours de trek. Wi-Fi gratuit, lits confortables et le dîner inclus ont rendu notre soirée si simple. Les hôtes nous ont accueillis chaleureusement dès la première minute.",
       },
       {
         name: "Tomáš P.",
         from: "de Prague, Tchéquie",
-        text: "Nous avons séjourné dans la chambre triple entre amis et c'était exactement ce dont nous avions besoin après la piste. Bonne nourriture, jardin paisible et une véritable ambiance andine. Fortement recommandé.",
+        text: "Nous avons séjourné dans la chambre triple entre amis et c’était exactement ce dont nous avions besoin après la piste. Bonne nourriture, jardin paisible et une véritable ambiance andine. Fortement recommandé.",
       },
       {
         name: "María L.",
@@ -120,7 +120,7 @@ export const fr: Messages = {
       {
         name: "Pedro S.",
         from: "de São Paulo, Brésil",
-        text: "Nous avons réservé la chambre familiale Deluxe et nous nous sommes sentis très à l'aise. Le petit-déjeuner et le dîner inclus nous ont sauvés après une dure journée de randonnée. Vues magnifiques et personnel très accueillant — nous reviendrons.",
+        text: "Nous avons réservé la chambre familiale Deluxe et nous nous sommes sentis très à l’aise. Le petit-déjeuner et le dîner inclus nous ont sauvés après une dure journée de randonnée. Vues magnifiques et personnel très accueillant — nous reviendrons.",
       },
     ],
   },
@@ -129,12 +129,12 @@ export const fr: Messages = {
     title: "Foire aux questions",
     items: [
       {
-        q: "À quelle heure sont l'arrivée et le départ ?",
-        a: "L'arrivée se fait à partir de 15h00 et le départ jusqu'à 11h00. Une arrivée anticipée ou un départ tardif peuvent être possibles sur demande, selon disponibilité.",
+        q: "À quelle heure sont l’arrivée et le départ ?",
+        a: "L’arrivée se fait à partir de 15 h et le départ jusqu’à 11 h. Une arrivée anticipée ou un départ tardif peuvent être possibles sur demande, selon disponibilité.",
       },
       {
-        q: "Quelle est votre politique d'annulation ?",
-        a: "Annulation gratuite jusqu'à 7 jours avant l'arrivée. Les annulations effectuées dans les 7 jours précédant l'arrivée ne sont pas remboursables. Nous recommandons une assurance voyage en cas d'imprévu.",
+        q: "Quelle est votre politique d’annulation ?",
+        a: "Annulation gratuite jusqu’à 7 jours avant l’arrivée. Les annulations effectuées dans les 7 jours précédant l’arrivée ne sont pas remboursables. Nous recommandons une assurance voyage en cas d’imprévu.",
       },
       {
         q: "Les animaux sont-ils acceptés à AndeStay Hostel ?",
@@ -142,17 +142,17 @@ export const fr: Messages = {
       },
       {
         q: "Pouvons-nous venir avec des enfants ou des bébés ?",
-        a: "Oui — les enfants et les bébés sont les bienvenus. Prévenez-nous à l'avance afin que nous puissions préparer la chambre adaptée.",
+        a: "Oui — les enfants et les bébés sont les bienvenus. Prévenez-nous à l’avance afin que nous puissions préparer la chambre adaptée.",
       },
       {
-        q: "Où se trouve AndeStay Hostel et comment s'y rendre ?",
-        a: "Nous sommes à Colpapampa, au Pérou. Les instructions détaillées pour l'arrivée sont envoyées après la confirmation de votre réservation.",
+        q: "Où se trouve AndeStay Hostel et comment s’y rendre ?",
+        a: "Nous sommes à Colpapampa, au Pérou. Les instructions détaillées pour l’arrivée sont envoyées après la confirmation de votre réservation.",
       },
     ],
   },
   contact: {
     badge: "Contactez-nous",
-    title: "Des questions ou envie d'en savoir plus ? Nous sommes là pour vous.",
+    title: "Des questions ou envie d’en savoir plus ? Nous sommes là pour vous.",
     email: "E-MAIL",
     telephone: "TÉLÉPHONE",
     address: "ADRESSE",
@@ -172,7 +172,7 @@ export const fr: Messages = {
     preferMessage: "Vous préférez nous écrire",
   },
   footer: {
-    taglineBefore: "Votre point d'ancrage ",
+    taglineBefore: "Votre point d’ancrage ",
     taglineEm: "à Colpapampa.",
   },
   cabins: {

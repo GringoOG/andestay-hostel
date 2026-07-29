@@ -11,7 +11,7 @@ export const cs: Messages = {
   },
   hero: {
     badge: "Unikni. Vydechni. Zůstaň.",
-    unlockYour: "Odemkni svůj",
+    unlockYour: "Odemkni své",
     refuge: "útočiště",
     inNature: "v přírodě.",
     support:
@@ -22,21 +22,21 @@ export const cs: Messages = {
   },
   intro: {
     badge: "Unikni. Vydechni. Zůstaň.",
-    before: "AndeStay Hostel v srdci Colpapampy je místo, kde ",
-    bold: "pohodlí potkává Andy.",
+    before: "AndeStay Hostel v Colpapampě je místo, kde se ",
+    bold: "pohodlí setkává s Andami.",
   },
   accommodations: {
     badge: "Jedinečné zážitky z ubytování",
     titleBefore: "Každá chata byla navržena tak, aby nabídla pohodu, soukromí a ",
     titleBold: "opravdové spojení s přírodou.",
-    body: "AndeStay Hostel je rovnováhou mezi pohodlím a přírodou. Místo, které spojuje útulný design, pohostinnost a atmosféru ideální k odpočinku i oslavám.",
+    body: "AndeStay Hostel spojuje pohodlí a přírodu. Útulný design, pohostinnost a atmosféra ideální k odpočinku i oslavám.",
   },
   aboutPage: {
     welcomeBadge: "Vítejte v AndeStay Hostel",
     heroTitle:
       "Hostel pro cestovatele, kteří hledají odpočinek, dobré jídlo a spojení s Andami.",
     heroSupport:
-      "Odpočiňte si po treku na Salkantay v Colpapampě – s americkou snídaní a domácí večeří vždy v ceně.",
+      "Odpočiňte si po treku na Salkantay v Colpapampě — s americkou snídaní a domácí večeří vždy v ceně.",
     featuresBadge: "O AndeStay",
     featuresTitle: "Mnohem víc než jen místo k přespání.",
   },
@@ -49,7 +49,7 @@ export const cs: Messages = {
       "Nabízíme pohodlné pokoje pro jednotlivce, páry i rodiny, bezplatné Wi-Fi, zahradu k odpočinku a přátelské prostředí, ve kterém se budete cítit jako doma.",
     ],
     closing:
-      "Ať už míříte na Machu Picchu, nebo dokončujete jednu etapu treku Salkantay, AndeStay Hostel Colpapampa je ideálním místem pro kvalitní odpočinek, dobré jídlo a příjemnou noc v srdci peruánských And.",
+      "Ať už míříte na Machu Picchu, nebo dokončujete etapu treku Salkantay, AndeStay Hostel Colpapampa je ideální místo pro kvalitní odpočinek, dobré jídlo a příjemnou noc v srdci peruánských And.",
     whyTitle: "Proč zvolit AndeStay?",
     why: [
       "Domácí večeře zdarma",
@@ -68,11 +68,11 @@ export const cs: Messages = {
     { title: "Okamžiky", description: "Domov na cestě Andami." },
   ],
   aboutGallery: [
-    { title: "Interiér", description: "Probuďte se s výhledem na horu." },
+    { title: "Interiér", description: "Probuďte se s výhledem na hory." },
     { title: "Pokoj", description: "Dřevo, textilie a světlo." },
     { title: "Osada", description: "Chaty v údolí." },
     { title: "Pobyt", description: "Pracujte i odpočívejte s výhledem." },
-    { title: "Balkon", description: "Volný vzduch nad Colpapampou." },
+    { title: "Balkon", description: "Čerstvý vzduch nad Colpapampou." },
     { title: "Údolí", description: "Horský horizont, který zůstane v paměti." },
     { title: "Kůly", description: "Chaty usazené na svahu." },
     { title: "Terasy", description: "Zelené střechy, otevřené nebe." },
@@ -90,7 +90,7 @@ export const cs: Messages = {
   },
   testimonials: {
     badge: "Reference",
-    title: "Postřehy od našich hostů",
+    title: "Co říkají naši hosté",
     items: [
       {
         name: "Jonas K.",
@@ -105,7 +105,7 @@ export const cs: Messages = {
       {
         name: "Michael T.",
         from: "z Colorada, USA",
-        text: "Perfektní zastávka mezi etapami treku. Bezplatné Wi-Fi, pohodlné postele a večeře v ceně nám večer moc usnadnily. Hostitelé nás nechali cítit vítáni od první minuty.",
+        text: "Perfektní zastávka mezi etapami treku. Bezplatné Wi-Fi, pohodlné postele a večeře v ceně nám večer moc usnadnily. Hostitelé nás od první minuty opravdu vřele přivítali.",
       },
       {
         name: "Tomáš P.",
@@ -114,8 +114,8 @@ export const cs: Messages = {
       },
       {
         name: "María L.",
-        from: "z Cuzca, Peru",
-        text: "Krásné místo v Colpapampě. Čisté pokoje, výborná domácí kuchyně a klidná zahrada k odpočinku. Je vzácné najít tak velkou péči o cestovatele tak blízko horám.",
+        from: "z Cusca, Peru",
+        text: "Krásné místo v Colpapampě. Čisté pokoje, výborná domácí kuchyně a klidná zahrada k odpočinku. Je vzácné najít takovou péči o cestovatele tak blízko hor.",
       },
       {
         name: "Pedro S.",
@@ -125,16 +125,16 @@ export const cs: Messages = {
     ],
   },
   faq: {
-    badge: "FAQ",
+    badge: "Časté otázky",
     title: "Často kladené otázky",
     items: [
       {
         q: "V kolik hodin je check-in a check-out?",
-        a: "Check-in probíhá od 15:00 a check-out do 11:00. Dřívější check-in nebo pozdější check-out lze na požádání domluvit v závislosti na dostupnosti.",
+        a: "Check-in probíhá od 15:00 a check-out do 11:00. Dřívější příjezd nebo pozdější odjezd lze na požádání domluvit podle dostupnosti.",
       },
       {
-        q: "Jaké jsou vaše storno podmínky?",
-        a: "Bezplatné storno až do 7 dnů před příjezdem. Storna provedená do 7 dnů před check-inem jsou nevratná. Doporučujeme cestovní pojištění pro případ neočekávaných změn.",
+        q: "Jaké jsou storno podmínky?",
+        a: "Bezplatné storno až do 7 dnů před příjezdem. Storna provedená méně než 7 dnů před check-inem jsou nevratná. Doporučujeme cestovní pojištění pro případ neočekávaných změn.",
       },
       {
         q: "Jsou v AndeStay Hostel vítáni domácí mazlíčci?",
@@ -163,7 +163,7 @@ export const cs: Messages = {
     pageBadge: "Kontakt",
     pageTitle: "Ozvěte se nám",
     pageBody:
-      "Otázky ohledně pobytu, dostupnosti nebo soukromé oslavy — napište nám zprávu a my se vám brzy ozveme.",
+      "Otázky ohledně pobytu, dostupnosti nebo soukromé oslavy — napište nám a my se vám brzy ozveme.",
   },
   bookPage: {
     badge: "Rezervace",
