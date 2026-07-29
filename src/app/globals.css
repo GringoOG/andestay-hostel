@@ -224,8 +224,13 @@ img {
 
 .photo-frame {
   overflow: hidden;
+  width: 100%;
   border-radius: var(--radius-md);
   background: #1a2820;
+}
+
+.photo-frame.rounded-none {
+  border-radius: 0;
 }
 
 /* Soft forest veil for hero text contrast (no heavy photo filter) */

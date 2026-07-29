@@ -15,7 +15,7 @@ export function CabinCard({ cabin, reverse = false }: { cabin: CabinMeta; revers
       className={`group overflow-hidden rounded-[1.25rem] border border-white/90 bg-white/85 shadow-[0_8px_28px_rgba(20,24,20,0.05)] transition-[background-color,box-shadow,border-color] duration-300 sm:rounded-[var(--radius-lg)] md:border-transparent md:bg-transparent md:shadow-none md:hover:border-white md:hover:bg-white md:hover:shadow-[0_10px_40px_rgba(20,24,20,0.06)]`}
     >
       <div
-        className={`grid items-stretch lg:grid-cols-2 ${
+        className={`grid grid-cols-1 items-stretch lg:grid-cols-2 ${
           reverse ? "lg:[&>*:first-child]:order-2" : ""
         }`}
       >
@@ -62,13 +62,17 @@ export function CabinCard({ cabin, reverse = false }: { cabin: CabinMeta; revers
           </div>
         </div>
 
-        <PhotoPlaceholder
-          label={cabin.photoLabel}
-          src={cabin.image}
-          sizes="(max-width: 1023px) 100vw, 50vw"
-          quality={85}
-          className="order-1 aspect-[5/4] min-h-[200px] rounded-none sm:aspect-[4/5] sm:min-h-[300px] lg:order-none lg:aspect-auto lg:min-h-[480px]"
-        />
+        {/* Mobile: edge-to-edge across the card; desktop: half of the 2-col row */}
+        <div className="relative order-1 aspect-[5/4] w-full min-w-0 overflow-hidden sm:aspect-[4/5] lg:order-none lg:aspect-auto lg:min-h-[480px]">
+          <PhotoPlaceholder
+            label={cabin.photoLabel}
+            src={cabin.image}
+            fillParent
+            sizes="(max-width: 1023px) 100vw, 50vw"
+            quality={85}
+            className="rounded-none"
+          />
+        </div>
       </div>
     </article>
   );
