@@ -1,7 +1,7 @@
 import type { Messages } from "../types";
 
 export const es: Messages = {
-  nav: { home: "Inicio", about: "Nosotros", rooms: "Habitaciones", contact: "Contacto" },
+  nav: { home: "Inicio", about: "Nosotros", rooms: "Cabañas", contact: "Contacto" },
   common: {
     bookStay: "Reservar estancia",
     perNight: "/ noche",
@@ -55,8 +55,8 @@ export const es: Messages = {
       "Cena casera gratis",
       "Desayuno americano incluido",
       "Wi-Fi gratis",
-      "Habitaciones familiares",
-      "Habitaciones para no fumadores",
+      "Cabañas familiares",
+      "Cabañas para no fumadores",
       "Jardín tranquilo para relajarte",
       "Ropa de cama y toallas incluidas",
     ],
@@ -177,7 +177,7 @@ export const es: Messages = {
   },
   cabins: {
     "double-room": {
-      name: "Habitación doble",
+      name: "Cabaña doble",
       blurb:
         "Dos camas individuales o 1 cama doble grande para una noche cómoda después de la ruta.",
       features: [
@@ -189,7 +189,7 @@ export const es: Messages = {
       ],
     },
     "family-room": {
-      name: "Habitación familiar",
+      name: "Cabaña familiar",
       blurb: "Una cama doble grande para parejas o una breve parada familiar.",
       features: [
         "Capacidad: 2 adultos",
@@ -200,7 +200,7 @@ export const es: Messages = {
       ],
     },
     "triple-room": {
-      name: "Habitación triple",
+      name: "Cabaña triple",
       blurb: "Tres camas individuales para amigos y pequeños grupos de excursionistas.",
       features: [
         "Capacidad: 3 adultos",
@@ -211,7 +211,7 @@ export const es: Messages = {
       ],
     },
     "deluxe-room": {
-      name: "Deluxe",
+      name: "Cabaña deluxe",
       blurb: "Cabaña deluxe para dos: cama doble y baño privado.",
       features: [
         "Capacidad: 2 adultos",
@@ -222,7 +222,7 @@ export const es: Messages = {
       ],
     },
     "deluxe-family-room": {
-      name: "Deluxe familiar",
+      name: "Cabaña familiar deluxe",
       blurb:
         "Cabaña familiar deluxe: cama doble más una cama individual, con baño privado.",
       features: [

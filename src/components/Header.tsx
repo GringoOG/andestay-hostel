@@ -60,7 +60,7 @@ export function Header({ tone = "light" }: HeaderProps) {
       >
         <Link
           href="/"
-          className={`min-w-0 shrink text-[1.05rem] font-medium leading-none tracking-tight transition-colors duration-300 min-[380px]:text-[1.15rem] sm:text-[1.4rem] md:text-[1.55rem] ${
+          className={`inline-block origin-left min-w-0 shrink text-[1.05rem] font-medium leading-none tracking-tight transition-[color,transform] duration-300 ease-out hover:scale-[1.06] min-[380px]:text-[1.15rem] sm:text-[1.4rem] md:text-[1.55rem] ${
             overHero ? "drop-shadow-[0_1px_8px_rgba(0,0,0,0.45)]" : ""
           }`}
           style={{ color: navColor }}

@@ -19,9 +19,9 @@ function getStickySnapshot() {
 }
 
 /**
- * Desktop: sticky scroll — photos + quotes exit upward.
- * Mobile: compact static section (no tall track).
- * Track is short so testimonials follow without a huge blank gap.
+ * Desktop: sticky scroll — photos & quotes glide upward over the full track.
+ * Progress maps 1:1 to exit (no early finish → no blank linger, no instant jump).
+ * Mobile: compact static section.
  */
 export function LastingExperience() {
   const { t } = useI18n();
@@ -46,20 +46,32 @@ export function LastingExperience() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [stickyMode]);
 
-  /** Finish the exit early so the sticky frame doesn't linger empty */
-  const exit = Math.min(1, p * 1.85);
-  const fade = Math.max(0, 1 - exit * 1.2);
+  // Smoothstep: slow start, even mid, soft finish — feels gradual, not jumpy
+  const exit = p * p * (3 - 2 * p);
+  const fade = Math.max(0, 1 - exit * 0.92);
 
   const photos = (
-    <div className="mx-auto mt-8 grid max-w-2xl gap-3 sm:mt-10 sm:gap-5 sm:grid-cols-2 lg:mt-12 lg:max-w-3xl">
-      <div style={stickyMode ? { transform: `translateY(${exit * -115}vh)` } : undefined}>
+    <div className="mx-auto mt-8 grid max-w-2xl gap-3 sm:mt-10 sm:gap-5 sm:grid-cols-2 lg:mt-14 lg:max-w-3xl">
+      <div
+        style={
+          stickyMode
+            ? { transform: `translate3d(0, ${exit * -120}vh, 0)`, willChange: "transform" }
+            : undefined
+        }
+      >
         <PhotoPlaceholder
           label="Misty mountains"
           src={images.lastingA}
           className="aspect-[16/10] shadow-lg"
         />
       </div>
-      <div style={stickyMode ? { transform: `translateY(${exit * -100}vh)` } : undefined}>
+      <div
+        style={
+          stickyMode
+            ? { transform: `translate3d(0, ${exit * -105}vh, 0)`, willChange: "transform" }
+            : undefined
+        }
+      >
         <PhotoPlaceholder
           label="Cabins at night"
           src={images.lastingB}
@@ -89,40 +101,41 @@ export function LastingExperience() {
   }
 
   return (
-    <section ref={sectionRef} className="relative h-[118vh] bg-[var(--bg)]">
+    <section ref={sectionRef} className="relative h-[165vh] bg-[var(--bg)]">
       <div className="sticky top-0 flex h-[100svh] items-center overflow-hidden">
         <div
           className="site-wrap relative w-full"
-          style={{ opacity: fade, pointerEvents: fade < 0.05 ? "none" : undefined }}
+          style={{ opacity: fade, pointerEvents: fade < 0.04 ? "none" : undefined }}
         >
           <p
             className="pointer-events-none absolute left-0 top-[8%] hidden max-w-[9.5rem] text-sm leading-snug text-[var(--ink-muted)] lg:block"
-            style={{ transform: `translateY(${exit * -75}vh)` }}
+            style={{ transform: `translate3d(0, ${exit * -70}vh, 0)` }}
           >
             “{t.lasting.quotes[0]}”
           </p>
           <p
             className="pointer-events-none absolute right-0 top-[12%] hidden max-w-[9.5rem] text-right text-sm leading-snug text-[var(--ink-muted)] lg:block"
-            style={{ transform: `translateY(${exit * -85}vh)` }}
+            style={{ transform: `translate3d(0, ${exit * -80}vh, 0)` }}
           >
             “{t.lasting.quotes[1]}”
           </p>
           <p
             className="pointer-events-none absolute bottom-[8%] left-0 hidden max-w-[9.5rem] text-sm leading-snug text-[var(--ink-muted)] lg:block"
-            style={{ transform: `translateY(${exit * -70}vh)` }}
+            style={{ transform: `translate3d(0, ${exit * -65}vh, 0)` }}
           >
             “{t.lasting.quotes[2]}”
           </p>
           <p
             className="pointer-events-none absolute bottom-[10%] right-0 hidden max-w-[9.5rem] text-right text-sm leading-snug text-[var(--ink-muted)] lg:block"
-            style={{ transform: `translateY(${exit * -75}vh)` }}
+            style={{ transform: `translate3d(0, ${exit * -70}vh, 0)` }}
           >
             “{t.lasting.quotes[3]}”
           </p>
 
           <div
             style={{
-              transform: `translateY(${exit * -58}vh) scale(${1 + exit * 0.05})`,
+              transform: `translate3d(0, ${exit * -55}vh, 0) scale(${1 + exit * 0.06})`,
+              willChange: "transform",
             }}
           >
             {title}

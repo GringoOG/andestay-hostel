@@ -1,7 +1,7 @@
 import type { Messages } from "../types";
 
 export const de: Messages = {
-  nav: { home: "Startseite", about: "Über uns", rooms: "Zimmer", contact: "Kontakt" },
+  nav: { home: "Startseite", about: "Über uns", rooms: "Hütten", contact: "Kontakt" },
   common: {
     bookStay: "Aufenthalt buchen",
     perNight: "/ Nacht",
@@ -55,8 +55,8 @@ export const de: Messages = {
       "Kostenloses hausgemachtes Abendessen",
       "Amerikanisches Frühstück inbegriffen",
       "Kostenloses WLAN",
-      "Familienzimmer",
-      "Nichtraucherzimmer",
+      "Familienhütten",
+      "Nichtraucherhütten",
       "Ruhiger Garten zum Entspannen",
       "Bettwäsche und Handtücher inbegriffen",
     ],
@@ -177,7 +177,7 @@ export const de: Messages = {
   },
   cabins: {
     "double-room": {
-      name: "Doppelzimmer",
+      name: "Doppelhütte",
       blurb: "Zwei Einzelbetten oder 1 großes Doppelbett für eine komfortable Nacht nach dem Trail.",
       features: [
         "Kapazität: 2 Erwachsene",
@@ -188,7 +188,7 @@ export const de: Messages = {
       ],
     },
     "family-room": {
-      name: "Familienzimmer",
+      name: "Familienhütte",
       blurb: "Ein großes Doppelbett für Paare oder einen kurzen Familienaufenthalt.",
       features: [
         "Kapazität: 2 Erwachsene",
@@ -199,7 +199,7 @@ export const de: Messages = {
       ],
     },
     "triple-room": {
-      name: "Dreibettzimmer",
+      name: "Dreibetthütte",
       blurb: "Drei Einzelbetten für Freunde und kleine Wandergruppen.",
       features: [
         "Kapazität: 3 Erwachsene",
@@ -210,7 +210,7 @@ export const de: Messages = {
       ],
     },
     "deluxe-room": {
-      name: "Deluxe",
+      name: "Deluxe-Hütte",
       blurb: "Deluxe-Hütte für zwei — Doppelbett und privates Bad.",
       features: [
         "Kapazität: 2 Erwachsene",
@@ -221,7 +221,7 @@ export const de: Messages = {
       ],
     },
     "deluxe-family-room": {
-      name: "Deluxe Familie",
+      name: "Deluxe-Familienhütte",
       blurb: "Deluxe-Familienhütte — Doppelbett plus ein Einzelbett, mit privatem Bad.",
       features: [
         "Kapazität: 3 Erwachsene",

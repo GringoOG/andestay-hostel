@@ -1,7 +1,7 @@
 import type { Messages } from "../types";
 
 export const en: Messages = {
-  nav: { home: "Home", about: "About", rooms: "Rooms", contact: "Contact" },
+  nav: { home: "Home", about: "About", rooms: "Cabanas", contact: "Contact" },
   common: {
     bookStay: "Book a stay",
     perNight: "/ night",
@@ -55,8 +55,8 @@ export const en: Messages = {
       "Free homemade dinner",
       "American breakfast included",
       "Free Wi-Fi",
-      "Family rooms",
-      "Non-smoking rooms",
+      "Family cabanas",
+      "Non-smoking cabanas",
       "Quiet garden to relax",
       "Bedding and towels included",
     ],
@@ -177,7 +177,7 @@ export const en: Messages = {
   },
   cabins: {
     "double-room": {
-      name: "Double room",
+      name: "Double cabana",
       blurb:
         "Two single beds or 1 large double bed for a comfortable night after the trail.",
       features: [
@@ -189,7 +189,7 @@ export const en: Messages = {
       ],
     },
     "family-room": {
-      name: "Family room",
+      name: "Family cabana",
       blurb: "One large double bed for couples or a short family stop.",
       features: [
         "Capacity: 2 adults",
@@ -200,7 +200,7 @@ export const en: Messages = {
       ],
     },
     "triple-room": {
-      name: "Triple room",
+      name: "Triple cabana",
       blurb: "Three single beds for friends and small hiking groups.",
       features: [
         "Capacity: 3 adults",
@@ -211,8 +211,8 @@ export const en: Messages = {
       ],
     },
     "deluxe-room": {
-      name: "Deluxe",
-      blurb: "Deluxe cabin for two — double bed and a private bathroom.",
+      name: "Deluxe cabana",
+      blurb: "Deluxe cabana for two — double bed and a private bathroom.",
       features: [
         "Capacity: 2 adults",
         "1 double bed",
@@ -222,9 +222,9 @@ export const en: Messages = {
       ],
     },
     "deluxe-family-room": {
-      name: "Deluxe family",
+      name: "Deluxe family cabana",
       blurb:
-        "Deluxe family cabin — double bed plus one single bed, with a private bathroom.",
+        "Deluxe family cabana — double bed plus one single bed, with a private bathroom.",
       features: [
         "Capacity: 3 adults",
         "1 double bed + 1 single bed",

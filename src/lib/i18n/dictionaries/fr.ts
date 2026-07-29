@@ -1,7 +1,7 @@
 import type { Messages } from "../types";
 
 export const fr: Messages = {
-  nav: { home: "Accueil", about: "À propos", rooms: "Chambres", contact: "Contact" },
+  nav: { home: "Accueil", about: "À propos", rooms: "Cabanes", contact: "Contact" },
   common: {
     bookStay: "Réserver un séjour",
     perNight: "/ nuit",
@@ -55,8 +55,8 @@ export const fr: Messages = {
       "Dîner fait maison gratuit",
       "Petit-déjeuner américain inclus",
       "Wi-Fi gratuit",
-      "Chambres familiales",
-      "Chambres non-fumeurs",
+      "Cabanes familiales",
+      "Cabanes non-fumeurs",
       "Jardin tranquille pour se détendre",
       "Linge de lit et serviettes inclus",
     ],
@@ -177,7 +177,7 @@ export const fr: Messages = {
   },
   cabins: {
     "double-room": {
-      name: "Chambre double",
+      name: "Cabane double",
       blurb: "Deux lits simples ou 1 grand lit double pour une nuit confortable après la piste.",
       features: [
         "Capacité : 2 adultes",
@@ -188,7 +188,7 @@ export const fr: Messages = {
       ],
     },
     "family-room": {
-      name: "Chambre familiale",
+      name: "Cabane familiale",
       blurb: "Un grand lit double pour les couples ou une petite halte en famille.",
       features: [
         "Capacité : 2 adultes",
@@ -199,7 +199,7 @@ export const fr: Messages = {
       ],
     },
     "triple-room": {
-      name: "Chambre triple",
+      name: "Cabane triple",
       blurb: "Trois lits simples pour des amis et de petits groupes de randonneurs.",
       features: [
         "Capacité : 3 adultes",
@@ -210,7 +210,7 @@ export const fr: Messages = {
       ],
     },
     "deluxe-room": {
-      name: "Deluxe",
+      name: "Cabane Deluxe",
       blurb: "Cabane Deluxe pour deux — lit double et salle de bain privée.",
       features: [
         "Capacité : 2 adultes",
@@ -221,7 +221,7 @@ export const fr: Messages = {
       ],
     },
     "deluxe-family-room": {
-      name: "Deluxe familiale",
+      name: "Cabane familiale Deluxe",
       blurb:
         "Cabane familiale Deluxe — lit double plus un lit simple, avec salle de bain privée.",
       features: [

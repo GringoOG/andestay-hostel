@@ -1,7 +1,7 @@
 import type { Messages } from "../types";
 
 export const cs: Messages = {
-  nav: { home: "Domů", about: "O nás", rooms: "Pokoje", contact: "Kontakt" },
+  nav: { home: "Domů", about: "O nás", rooms: "Chaty", contact: "Kontakt" },
   common: {
     bookStay: "Rezervovat pobyt",
     perNight: "/ noc",
@@ -55,8 +55,8 @@ export const cs: Messages = {
       "Domácí večeře zdarma",
       "Americká snídaně v ceně",
       "Bezplatné Wi-Fi",
-      "Rodinné pokoje",
-      "Pokoje pro nekuřáky",
+      "Rodinné chaty",
+      "Chaty pro nekuřáky",
       "Klidná zahrada k odpočinku",
       "Povlečení a ručníky v ceně",
     ],
@@ -177,7 +177,7 @@ export const cs: Messages = {
   },
   cabins: {
     "double-room": {
-      name: "Dvoulůžkový pokoj",
+      name: "Dvoulůžková chata",
       blurb: "Dvě jednolůžkové postele nebo 1 velká manželská postel pro pohodlnou noc po treku.",
       features: [
         "Kapacita: 2 dospělí",
@@ -188,7 +188,7 @@ export const cs: Messages = {
       ],
     },
     "family-room": {
-      name: "Rodinný pokoj",
+      name: "Rodinná chata",
       blurb: "Jedna velká manželská postel pro páry nebo krátkou rodinnou zastávku.",
       features: [
         "Kapacita: 2 dospělí",
@@ -199,7 +199,7 @@ export const cs: Messages = {
       ],
     },
     "triple-room": {
-      name: "Třílůžkový pokoj",
+      name: "Třílůžková chata",
       blurb: "Tři jednolůžkové postele pro přátele a malé turistické skupiny.",
       features: [
         "Kapacita: 3 dospělí",
@@ -210,7 +210,7 @@ export const cs: Messages = {
       ],
     },
     "deluxe-room": {
-      name: "Deluxe",
+      name: "Deluxe chata",
       blurb: "Deluxe chata pro dva — manželská postel a vlastní koupelna.",
       features: [
         "Kapacita: 2 dospělí",
@@ -221,7 +221,7 @@ export const cs: Messages = {
       ],
     },
     "deluxe-family-room": {
-      name: "Deluxe rodinný",
+      name: "Deluxe rodinná chata",
       blurb:
         "Deluxe rodinná chata — manželská postel a jedna jednolůžková postel, s vlastní koupelnou.",
       features: [
