@@ -73,8 +73,8 @@ export const cabins: CabinMeta[] = [
   {
     id: "deluxe-family-room",
     pricePen: 150,
-    photoLabel: "Deluxe family cabin",
-    image: "/images/lena-8363.jpg",
+    photoLabel: "Deluxe family cabins on stilts",
+    image: "/images/room-deluxe-family.jpg",
   },
 ];
 
