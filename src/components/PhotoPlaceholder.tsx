@@ -4,6 +4,8 @@ type PhotoPlaceholderProps = {
   label: string;
   src?: string;
   className?: string;
+  /** Extra classes for the <Image> (e.g. object-contain on mobile heroes) */
+  imageClassName?: string;
   priority?: boolean;
   objectPosition?: string;
   /** Fill a positioned parent (e.g. absolute inset-0 hero) */
@@ -14,6 +16,7 @@ export function PhotoPlaceholder({
   label,
   src,
   className = "",
+  imageClassName = "",
   priority = false,
   objectPosition = "center",
   fillParent = false,
@@ -39,7 +42,7 @@ export function PhotoPlaceholder({
         fill
         priority={priority}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 900px"
-        className="object-cover"
+        className={imageClassName || "object-cover"}
         style={{ objectPosition }}
       />
     </div>

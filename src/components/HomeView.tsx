@@ -23,18 +23,28 @@ export function HomeView() {
       <Header tone="over-hero" />
 
       <section className="relative min-h-[100svh] overflow-hidden bg-[var(--forest-deep)] text-white">
-        <div className="absolute inset-0 overflow-hidden">
+        {/*
+          Mobile: photo sits in a 4:3 frame (matches the landscape file) so the whole image is visible.
+          Desktop: full-bleed cover + soft zoom, as before.
+        */}
+        <div className="absolute inset-x-0 top-0 aspect-[4/3] overflow-hidden md:inset-0 md:aspect-auto">
           <PhotoPlaceholder
             label="AndeStay Hostel hero"
             src={images.hero}
             priority
             fillParent
             objectPosition="50% 42%"
-            className="rounded-none scale-[1.03] origin-center animate-[heroZoom_18s_ease-out_forwards] sm:scale-105"
+            imageClassName="object-cover"
+            className="rounded-none md:origin-center md:scale-105 md:animate-[heroZoom_18s_ease-out_forwards]"
           />
         </div>
-        <div className="pointer-events-none absolute inset-0 photo-green-veil" />
-        <div className="pointer-events-none absolute inset-0 photo-green-shade" />
+
+        {/* Desktop soft forest veil */}
+        <div className="pointer-events-none absolute inset-0 hidden photo-green-veil md:block" />
+        <div className="pointer-events-none absolute inset-0 hidden photo-green-shade md:block" />
+
+        {/* Mobile: fade from photo into deep forest so copy stays readable below */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent from-0% via-transparent via-[28%] to-[var(--forest-deep)] to-[48%] md:hidden" />
 
         <div className="site-wrap relative flex min-h-[100svh] flex-col items-center justify-end pb-[max(2.25rem,calc(1rem+var(--safe-bottom)))] pt-[calc(var(--nav-h)+1.25rem)] text-center sm:pb-16 sm:pt-[calc(var(--nav-h)+2rem)] md:pb-24 md:pt-[calc(var(--nav-h)+3rem)]">
           <div className="flex w-full max-w-3xl flex-col items-center px-0.5">
