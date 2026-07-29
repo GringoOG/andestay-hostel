@@ -20,17 +20,13 @@ export default function AboutPage() {
       <section className="bg-[var(--bg)] pt-[calc(var(--nav-h)+1.25rem)] sm:pt-[calc(var(--nav-h)+2rem)]">
         <div className="site-wrap pb-8 sm:pb-10">
           <div className="relative overflow-hidden rounded-[1.25rem] sm:rounded-[var(--radius-lg)]">
-            <div className="photo-green-grade">
-              <PhotoPlaceholder
-                label="About AndeStay Hostel"
-                src={images.aboutHero}
-                priority
-                objectPosition="50% 78%"
-                className="aspect-[4/5] min-h-[280px] rounded-[1.25rem] sm:aspect-[2.35/1] sm:min-h-[240px] sm:rounded-[var(--radius-lg)] md:aspect-[2.6/1] md:min-h-0"
-              />
-            </div>
-            <div className="pointer-events-none absolute inset-0 photo-green-veil" />
-            <div className="pointer-events-none absolute inset-0 photo-green-shade" />
+            <PhotoPlaceholder
+              label="About AndeStay Hostel"
+              src={images.aboutHero}
+              priority
+              objectPosition="50% 78%"
+              className="aspect-[4/5] min-h-[280px] rounded-[1.25rem] sm:aspect-[2.35/1] sm:min-h-[240px] sm:rounded-[var(--radius-lg)] md:aspect-[2.6/1] md:min-h-0"
+            />
 
             <div className="absolute inset-0 flex flex-col justify-end p-5 text-white sm:p-8 md:p-10 lg:p-12">
               <span className="badge badge-light w-fit text-[0.62rem]">
