@@ -29,10 +29,10 @@ type AnimatedHeadingProps = {
   delayMs?: number;
 };
 
-function splitChars(text: string): string[] {
-  return Array.from(text);
-}
-
+/**
+ * Letter reveal that still wraps on small screens.
+ * Words stay together; regular spaces between words allow soft wraps.
+ */
 export function AnimatedHeading({
   as = "h2",
   className = "",
@@ -60,34 +60,63 @@ export function AnimatedHeading({
           io.disconnect();
         }
       },
-      { threshold: 0.35, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0.28, rootMargin: "0px 0px -6% 0px" },
     );
     io.observe(el);
     return () => io.disconnect();
   }, [trigger, delayMs]);
 
   const segments: AnimatedHeadingPart[] = parts ?? [{ text: text ?? "" }];
-  const fullText = segments.map((s) => s.text).join("");
+  const fullText = segments
+    .map((s, i) => {
+      const next = segments[i + 1];
+      if (s.br && next && !s.text.endsWith(" ") && !next.text.startsWith(" ")) {
+        return `${s.text} `;
+      }
+      return s.text;
+    })
+    .join("");
 
   let charIndex = 0;
   const nodes: ReactNode[] = [];
 
   segments.forEach((segment, sIdx) => {
-    const chars = splitChars(segment.text);
-    chars.forEach((ch, cIdx) => {
-      const i = charIndex++;
-      const isSpace = ch === " ";
+    const tokens = segment.text.split(/(\s+)/);
+
+    tokens.forEach((token, tIdx) => {
+      if (!token) return;
+
+      if (/^\s+$/.test(token)) {
+        // Real whitespace — allows the heading to wrap on narrow viewports
+        nodes.push(
+          <span key={`${sIdx}-sp-${tIdx}`} className="char-space">
+            {" "}
+          </span>,
+        );
+        return;
+      }
+
+      const wordChars = Array.from(token).map((ch, cIdx) => {
+        const i = charIndex++;
+        return (
+          <span
+            key={`${sIdx}-${tIdx}-${cIdx}`}
+            className={`char-reveal ${segment.className ?? ""} ${active ? "is-in" : ""}`}
+            style={{ transitionDelay: `${delayMs + i * staggerMs}ms` }}
+            aria-hidden
+          >
+            {ch}
+          </span>
+        );
+      });
+
       nodes.push(
-        <span
-          key={`${sIdx}-${cIdx}`}
-          className={`char-reveal ${segment.className ?? ""} ${active ? "is-in" : ""}`}
-          style={{ transitionDelay: `${delayMs + i * staggerMs}ms` }}
-          aria-hidden
-        >
-          {isSpace ? "\u00A0" : ch}
+        <span key={`${sIdx}-w-${tIdx}`} className="char-word">
+          {wordChars}
         </span>,
       );
     });
+
     if (segment.br) {
       nodes.push(<br key={`br-${sIdx}`} />);
     }

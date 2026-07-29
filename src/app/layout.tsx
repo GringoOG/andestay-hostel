@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Instrument_Serif, Poppins } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { LocaleProvider } from "@/lib/i18n";
@@ -29,6 +29,13 @@ export const metadata: Metadata = {
   },
   description:
     "AndeStay Hostel in Colpapampa — a welcoming base in the Andes for travelers and hikers.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#1c2a22",
 };
 
 export default function RootLayout({

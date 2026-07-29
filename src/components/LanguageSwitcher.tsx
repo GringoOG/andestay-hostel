@@ -5,9 +5,11 @@ import { localeLabels, locales, useI18n, type Locale } from "@/lib/i18n";
 
 type LanguageSwitcherProps = {
   tone?: "over-hero" | "light";
+  /** Smaller control for cramped mobile header */
+  compact?: boolean;
 };
 
-export function LanguageSwitcher({ tone = "light" }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ tone = "light", compact = false }: LanguageSwitcherProps) {
   const { locale, setLocale, t } = useI18n();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -37,7 +39,9 @@ export function LanguageSwitcher({ tone = "light" }: LanguageSwitcherProps) {
         aria-expanded={open}
         aria-label={t.common.language}
         onClick={() => setOpen((v) => !v)}
-        className={`inline-flex h-10 items-center gap-1.5 rounded-full border px-3.5 text-sm font-medium transition ${
+        className={`inline-flex h-10 items-center rounded-full border font-medium transition ${
+          compact ? "gap-1 px-2.5 text-xs sm:px-3 sm:text-sm" : "gap-1.5 px-3.5 text-sm"
+        } ${
           overHero
             ? "border-white/35 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
             : "border-[rgba(20,24,20,0.12)] bg-white text-[var(--ink)] shadow-sm hover:bg-[var(--bg-soft)]"

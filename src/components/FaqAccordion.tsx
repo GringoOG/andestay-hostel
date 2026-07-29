@@ -15,11 +15,13 @@ export function FaqAccordion() {
           <div key={item.q}>
             <button
               type="button"
-              className="flex w-full items-center justify-between gap-4 py-5 text-left"
+              className="flex min-h-[3.25rem] w-full items-center justify-between gap-4 py-4 text-left sm:py-5"
               aria-expanded={isOpen}
               onClick={() => setOpen(isOpen ? null : index)}
             >
-              <span className="text-[0.98rem] text-[var(--ink)] sm:text-base">{item.q}</span>
+              <span className="text-[0.92rem] text-[var(--ink)] sm:text-[0.98rem] md:text-base">
+                {item.q}
+              </span>
               <span
                 className={`text-xl leading-none text-[var(--ink-muted)] transition ${
                   isOpen ? "rotate-45" : ""

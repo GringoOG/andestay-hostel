@@ -39,13 +39,13 @@ export function ContactForm() {
         <textarea name="message" required rows={4} className="field-line min-h-[6rem] resize-y" />
       </label>
 
-      <div className="flex flex-wrap items-center justify-between gap-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
         {status === "sent" ? (
           <p className="text-sm text-[var(--serif-green)]">{t.contact.send}</p>
         ) : (
-          <span className="text-sm text-[var(--ink-muted)]">{site.email}</span>
+          <span className="break-all text-sm text-[var(--ink-muted)]">{site.email}</span>
         )}
-        <button type="submit" className="btn-pill shrink-0">
+        <button type="submit" className="btn-pill w-full shrink-0 justify-between sm:w-auto">
           <span>{t.contact.send}</span>
           <span className="btn-arrow" aria-hidden>
             <span className="btn-arrow-icon">→</span>

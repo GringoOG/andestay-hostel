@@ -10,22 +10,25 @@ export function ContactSection() {
   const { t } = useI18n();
 
   return (
-    <section className="bg-[var(--bg-contact)] py-20 md:py-28">
-      <div className="site-wrap grid gap-14 lg:grid-cols-2 lg:gap-20">
+    <section className="bg-[var(--bg-contact)] py-14 sm:py-20 md:py-28">
+      <div className="site-wrap grid gap-10 lg:grid-cols-2 lg:gap-20">
         <Reveal>
           <span className="badge badge-dark">{t.contact.badge}</span>
           <AnimatedHeading
             as="h2"
-            className="mt-6 max-w-md text-3xl font-medium leading-tight tracking-tight text-[var(--ink)] sm:text-4xl"
+            className="mt-5 max-w-md text-[1.65rem] font-medium leading-tight tracking-tight text-[var(--ink)] sm:mt-6 sm:text-3xl md:text-4xl"
             text={t.contact.title}
           />
 
-          <ul className="mt-12 space-y-8">
+          <ul className="mt-8 space-y-6 sm:mt-12 sm:space-y-8">
             <li>
               <p className="font-ui text-[0.7rem] tracking-[0.14em] text-[var(--ink-muted)]">
                 {t.contact.email}
               </p>
-              <a href={`mailto:${site.email}`} className="mt-1 block text-lg hover:opacity-70">
+              <a
+                href={`mailto:${site.email}`}
+                className="mt-1 block break-all text-base hover:opacity-70 sm:text-lg"
+              >
                 {site.email}
               </a>
             </li>
@@ -33,7 +36,7 @@ export function ContactSection() {
               <p className="font-ui text-[0.7rem] tracking-[0.14em] text-[var(--ink-muted)]">
                 {t.contact.telephone}
               </p>
-              <a href={site.phoneHref} className="mt-1 block text-lg hover:opacity-70">
+              <a href={site.phoneHref} className="mt-1 block text-base hover:opacity-70 sm:text-lg">
                 {site.phone}
               </a>
             </li>
@@ -45,7 +48,7 @@ export function ContactSection() {
                 href={site.mapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-1 block text-lg hover:opacity-70"
+                className="mt-1 block text-base hover:opacity-70 sm:text-lg"
               >
                 {site.address}
               </a>
