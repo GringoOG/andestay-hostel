@@ -39,7 +39,7 @@ export function LanguageSwitcher({ tone = "light", compact = false }: LanguageSw
         aria-expanded={open}
         aria-label={t.common.language}
         onClick={() => setOpen((v) => !v)}
-        className={`inline-flex h-10 items-center rounded-full border font-medium transition ${
+        className={`inline-flex h-11 items-center rounded-full border font-medium transition ${
           compact ? "gap-1 px-2.5 text-xs sm:px-3 sm:text-sm" : "gap-1.5 px-3.5 text-sm"
         } ${
           overHero

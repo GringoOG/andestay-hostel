@@ -18,9 +18,9 @@
   --radius-md: 20px;
   --radius-lg: 28px;
   --radius-pill: 999px;
-  --nav-h: 64px;
+  --nav-h: 60px;
   --max: 1180px;
-  --page-pad: 1.1rem;
+  --page-pad: 1rem;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   /* Soft green grade for hero readability — keep light so the photo still reads */
@@ -132,13 +132,26 @@ img {
 
 .hero-title {
   font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: clamp(2.15rem, 9.2vw, 5rem);
+  font-size: clamp(2rem, 8.5vw, 5rem);
   font-weight: 200;
-  line-height: 1.06;
+  line-height: 1.08;
   letter-spacing: -0.04em;
   text-wrap: balance;
   hyphens: none;
   -webkit-hyphens: none;
+}
+
+.field-line {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.65rem 0;
+  border: none;
+  border-bottom: 1px solid rgba(20, 24, 20, 0.25);
+  background: transparent;
+  outline: none;
+  color: var(--ink);
+  font-size: 1rem; /* prevent iOS zoom on focus */
 }
 
 .btn-pill {
@@ -165,21 +178,27 @@ img {
   -webkit-tap-highlight-color: transparent;
 }
 
-.btn-pill:hover {
-  background: #c5d1c3;
-  color: var(--serif-green);
-  transform: none;
-  box-shadow: none;
+@media (hover: hover) {
+  .btn-pill:hover {
+    background: #c5d1c3;
+    color: var(--serif-green);
+    transform: none;
+    box-shadow: none;
+  }
+
+  .btn-pill-outline:hover {
+    background: #c5d1c3;
+    border-color: transparent;
+  }
+
+  .btn-pill:hover .btn-arrow-icon {
+    transform: rotate(0deg);
+  }
 }
 
 .btn-pill-outline {
   background: transparent;
   border-color: rgba(20, 24, 20, 0.2);
-}
-
-.btn-pill-outline:hover {
-  background: #c5d1c3;
-  border-color: transparent;
 }
 
 .btn-arrow {
@@ -202,9 +221,6 @@ img {
   transition: transform 0.3s ease;
 }
 
-.btn-pill:hover .btn-arrow-icon {
-  transform: rotate(0deg);
-}
 
 .photo-frame {
   overflow: hidden;
@@ -246,18 +262,6 @@ img {
   font-size: 0.65rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.field-line {
-  display: block;
-  width: 100%;
-  margin-top: 0.5rem;
-  padding: 0.55rem 0;
-  border: none;
-  border-bottom: 1px solid rgba(20, 24, 20, 0.25);
-  background: transparent;
-  outline: none;
-  color: var(--ink);
 }
 
 .field-line:focus {
@@ -341,6 +345,27 @@ h3 {
   }
   to {
     transform: scale(1);
+  }
+}
+
+@media (max-width: 479px) {
+  @keyframes heroZoom {
+    from {
+      transform: scale(1.04);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  .hero-title {
+    font-size: clamp(1.85rem, 9vw, 2.35rem);
+  }
+}
+
+@media (max-height: 700px) and (max-width: 767px) {
+  .hero-title {
+    margin-top: 0.85rem;
   }
 }
 

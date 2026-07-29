@@ -64,8 +64,8 @@ export function AboutStickyGallery() {
         src={aboutGalleryImages[i] ?? aboutGalleryImages[0]}
         className="aspect-[4/5] max-h-[min(48vh,380px)] w-full transition-transform duration-500 hover:scale-[1.02]"
       />
-      <div className="mt-3 grid grid-cols-[0.9fr_1.1fr] items-start gap-2 sm:mt-3.5">
-        <h3 className="font-display text-lg italic leading-snug text-[var(--serif-green)] sm:text-xl">
+      <div className="mt-3 grid grid-cols-1 items-start gap-1.5 min-[380px]:grid-cols-[0.9fr_1.1fr] min-[380px]:gap-2 sm:mt-3.5">
+        <h3 className="font-display text-[1.05rem] italic leading-snug text-[var(--serif-green)] sm:text-xl">
           {card.title}
         </h3>
         <p className="text-[0.82rem] leading-snug text-[var(--ink-soft)] sm:text-sm">

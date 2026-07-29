@@ -15,12 +15,12 @@ export function Footer() {
     <footer className="bg-[var(--forest-deep)] pb-[max(0px,var(--safe-bottom))] text-[rgba(255,255,255,0.88)]">
       <div className="site-wrap border-b border-white/10 py-5 sm:py-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm sm:gap-x-6">
+          <nav className="flex flex-wrap gap-x-4 gap-y-1 text-sm sm:gap-x-6">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="mr-1 inline-block py-1 hover:text-white"
+                className="inline-flex min-h-11 items-center py-2 hover:text-white"
               >
                 {link.label}
               </Link>

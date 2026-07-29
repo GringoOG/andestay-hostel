@@ -30,23 +30,23 @@ export function HomeView() {
             priority
             fillParent
             objectPosition="50% 42%"
-            className="rounded-none scale-[1.06] origin-center animate-[heroZoom_18s_ease-out_forwards] sm:scale-105"
+            className="rounded-none scale-[1.03] origin-center animate-[heroZoom_18s_ease-out_forwards] sm:scale-105"
           />
         </div>
         <div className="pointer-events-none absolute inset-0 photo-green-veil" />
         <div className="pointer-events-none absolute inset-0 photo-green-shade" />
 
-        <div className="site-wrap relative flex min-h-[100svh] flex-col items-center justify-end pb-12 pt-[calc(var(--nav-h)+2.25rem)] text-center sm:pb-16 md:pb-24 md:pt-[calc(var(--nav-h)+3rem)]">
+        <div className="site-wrap relative flex min-h-[100svh] flex-col items-center justify-end pb-[max(2.25rem,calc(1rem+var(--safe-bottom)))] pt-[calc(var(--nav-h)+1.25rem)] text-center sm:pb-16 sm:pt-[calc(var(--nav-h)+2rem)] md:pb-24 md:pt-[calc(var(--nav-h)+3rem)]">
           <div className="flex w-full max-w-3xl flex-col items-center px-0.5">
             <span className="badge badge-light animate-[fadeUp_0.8s_ease_both]">
               {t.hero.badge}
             </span>
             <HeroTitle />
-            <p className="mt-5 max-w-[22rem] text-[0.95rem] leading-relaxed text-white/85 sm:mt-6 sm:max-w-md sm:text-base md:text-lg animate-[fadeUp_1s_ease_0.35s_both]">
+            <p className="mt-4 max-w-[20.5rem] text-[0.92rem] leading-relaxed text-white/90 sm:mt-6 sm:max-w-md sm:text-base md:text-lg animate-[fadeUp_1s_ease_0.35s_both]">
               {t.hero.support}
             </p>
 
-            <div className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 animate-[fadeUp_1s_ease_0.55s_both]">
+            <div className="mt-7 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 animate-[fadeUp_1s_ease_0.55s_both]">
               <div className="flex items-center">
                 {images.avatars.map((src) => (
                   <div
@@ -60,7 +60,7 @@ export function HomeView() {
                   +56
                 </div>
               </div>
-              <p className="max-w-[17rem] text-center text-[0.82rem] leading-snug text-white/85 sm:max-w-[16rem] sm:text-left sm:text-sm">
+              <p className="max-w-[17.5rem] text-center text-[0.8rem] leading-snug text-white/88 sm:max-w-[16rem] sm:text-left sm:text-sm">
                 {t.hero.socialProofBefore}
                 <strong className="font-semibold text-white">{t.hero.socialProofBold}</strong>
                 {t.hero.socialProofAfter}

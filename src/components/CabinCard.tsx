@@ -11,21 +11,24 @@ export function CabinCard({ cabin, reverse = false }: { cabin: CabinMeta; revers
   const price = formatRoomPrice(cabin.pricePen);
 
   return (
-    <article className="group overflow-hidden rounded-[1.35rem] border border-transparent bg-transparent transition-[background-color,box-shadow,border-color] duration-300 hover:border-white hover:bg-white hover:shadow-[0_10px_40px_rgba(20,24,20,0.06)] sm:rounded-[var(--radius-lg)]">
+    <article
+      className={`group overflow-hidden rounded-[1.25rem] border border-white/90 bg-white/85 shadow-[0_8px_28px_rgba(20,24,20,0.05)] transition-[background-color,box-shadow,border-color] duration-300 sm:rounded-[var(--radius-lg)] md:border-transparent md:bg-transparent md:shadow-none md:hover:border-white md:hover:bg-white md:hover:shadow-[0_10px_40px_rgba(20,24,20,0.06)]`}
+    >
       <div
         className={`grid items-stretch lg:grid-cols-2 ${
           reverse ? "lg:[&>*:first-child]:order-2" : ""
         }`}
       >
-        <div className="flex flex-col justify-between p-5 sm:p-8 md:p-10">
+        {/* Text — below photo on mobile, side-by-side on desktop */}
+        <div className="order-2 flex flex-col justify-between p-5 sm:p-8 md:p-10 lg:order-none">
           <div>
-            <h3 className="font-display text-[1.7rem] italic leading-tight text-[var(--serif-green)] sm:text-3xl md:text-4xl">
+            <h3 className="font-display text-[1.55rem] italic leading-tight text-[var(--serif-green)] sm:text-3xl md:text-4xl">
               {copy.name}
             </h3>
-            <p className="mt-2.5 max-w-md text-[0.95rem] leading-relaxed text-[var(--ink-soft)] sm:mt-3 sm:text-base">
+            <p className="mt-2.5 max-w-md text-[0.92rem] leading-relaxed text-[var(--ink-soft)] sm:mt-3 sm:text-base">
               {copy.blurb}
             </p>
-            <ul className="mt-6 space-y-2.5 sm:mt-8 sm:space-y-3">
+            <ul className="mt-5 space-y-2.5 sm:mt-8 sm:space-y-3">
               {copy.features.map((feature) => (
                 <li
                   key={feature}
@@ -43,22 +46,26 @@ export function CabinCard({ cabin, reverse = false }: { cabin: CabinMeta; revers
             </ul>
           </div>
 
-          <div className="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
-            <p className="text-lg font-semibold tracking-tight sm:text-xl">
+          <div className="mt-7 flex flex-col gap-3.5 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
+            <p className="text-[1.05rem] font-semibold tracking-tight sm:text-xl">
               ${price.usd}{" "}
               <span className="text-[var(--ink-muted)]">·</span> PEN {price.pen}{" "}
               <span className="text-sm font-normal text-[var(--ink-muted)]">
                 {t.common.perNight}
               </span>
             </p>
-            <BookButton roomSlug={cabin.id} source="room-card" className="w-full justify-between sm:w-auto" />
+            <BookButton
+              roomSlug={cabin.id}
+              source="room-card"
+              className="w-full justify-between sm:w-auto"
+            />
           </div>
         </div>
 
         <PhotoPlaceholder
           label={cabin.photoLabel}
           src={cabin.image}
-          className="aspect-[5/4] min-h-[220px] rounded-none sm:aspect-[4/5] sm:min-h-[320px] lg:aspect-auto lg:min-h-[480px]"
+          className="order-1 aspect-[5/4] min-h-[200px] rounded-none sm:aspect-[4/5] sm:min-h-[300px] lg:order-none lg:aspect-auto lg:min-h-[480px]"
         />
       </div>
     </article>
