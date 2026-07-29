@@ -20,6 +20,9 @@
   --radius-pill: 999px;
   --nav-h: 72px;
   --max: 1180px;
+  /* Cabana-style green photo grade — tweak opacity to change intensity */
+  --photo-green: rgba(34, 52, 40, 0.46);
+  --photo-green-deep: rgba(12, 20, 14, 0.58);
 }
 
 * {
@@ -174,6 +177,25 @@ img {
   background: #1a2820;
 }
 
+/* Cabana Mountain–style forest green grade on hero photos */
+.photo-green-grade img {
+  filter: saturate(0.72) brightness(0.86) contrast(1.04) hue-rotate(12deg);
+}
+
+.photo-green-veil {
+  background: var(--photo-green);
+  mix-blend-mode: multiply;
+}
+
+.photo-green-shade {
+  background: linear-gradient(
+    to top,
+    var(--photo-green-deep) 0%,
+    rgba(18, 30, 22, 0.28) 42%,
+    rgba(24, 38, 30, 0.34) 100%
+  );
+}
+
 .photo-ph {
   position: relative;
   overflow: hidden;
@@ -264,5 +286,33 @@ img {
   }
   to {
     transform: scale(1);
+  }
+}
+
+/* Framer-style letter reveal for section / hero headings */
+.char-reveal {
+  display: inline-block;
+  opacity: 0;
+  transform: translate3d(0, 0.55em, 0);
+  filter: blur(7px);
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
+}
+
+.char-reveal.is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .char-reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
   }
 }

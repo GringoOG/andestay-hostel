@@ -1,49 +1,41 @@
 "use client";
 
 import { BookingService } from "@/lib/booking";
+import { useI18n } from "@/lib/i18n";
 
 type BookButtonProps = {
-  /** Website room slug (e.g. double-room) — never a provider product id. */
   roomSlug?: string;
-  /** @deprecated use roomSlug */
   roomId?: string;
   className?: string;
   variant?: "solid" | "outline";
   children?: React.ReactNode;
-  /** Analytics source label */
   source?: string;
 };
 
-/**
- * Sole “Book a stay” CTA — BookingService only.
- * No URLs, no provider knowledge, no product ids.
- */
 export function BookButton({
   roomSlug,
   roomId,
   className = "",
   variant = "solid",
-  children = "Book a stay",
+  children,
   source,
 }: BookButtonProps) {
+  const { t } = useI18n();
   const slug = roomSlug ?? roomId;
+  const label = children ?? t.common.bookStay;
 
   if (!BookingService.isEnabled()) {
     return null;
   }
 
-  const href = slug
-    ? BookingService.getRoomUrl(slug)
-    : BookingService.getUrl();
+  const href = slug ? BookingService.getRoomUrl(slug) : BookingService.getUrl();
   const external = BookingService.isExternal();
 
   return (
     <a
       href={href}
       className={`btn-pill ${variant === "outline" ? "btn-pill-outline" : ""} ${className}`}
-      {...(external
-        ? { target: "_blank", rel: "noopener noreferrer" }
-        : {})}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       onClick={(e) => {
         e.preventDefault();
         if (slug) {
@@ -53,7 +45,7 @@ export function BookButton({
         }
       }}
     >
-      <span>{children}</span>
+      <span>{label}</span>
       <span className="btn-arrow" aria-hidden>
         <span className="btn-arrow-icon">→</span>
       </span>

@@ -1,29 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { AnimatedHeading } from "@/components/AnimatedHeading";
+import { useI18n } from "@/lib/i18n";
 
-/**
- * Cabana Mountain hero title — exact line break:
- * Unlock your
- * refuge in nature.
- */
 export function HeroTitle() {
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    const t = window.setTimeout(() => setReady(true), 80);
-    return () => window.clearTimeout(t);
-  }, []);
+  const { t } = useI18n();
 
   return (
-    <h1
-      className={`hero-title mt-6 text-white transition-[opacity,filter,transform] duration-900 ease-out ${
-        ready ? "translate-y-0 opacity-100 blur-0" : "translate-y-3 opacity-0 blur-md"
-      }`}
-    >
-      Unlock your
-      <br />
-      refuge <em className="font-display italic">in nature.</em>
-    </h1>
+    <AnimatedHeading
+      as="h1"
+      className="hero-title mt-6 text-white"
+      trigger="immediate"
+      delayMs={220}
+      staggerMs={28}
+      parts={[
+        { text: t.hero.unlockYour, br: true },
+        { text: `${t.hero.refuge} ` },
+        { text: t.hero.inNature, className: "font-display italic" },
+      ]}
+    />
   );
 }

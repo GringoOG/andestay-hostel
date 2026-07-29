@@ -1,14 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { faqs } from "@/lib/content";
+import { useI18n } from "@/lib/i18n";
 
 export function FaqAccordion() {
-  const [open, setOpen] = useState<number | null>(null);
+  const { t } = useI18n();
+  const [open, setOpen] = useState<number | null>(0);
 
   return (
     <div className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
-      {faqs.map((item, index) => {
+      {t.faq.items.map((item, index) => {
         const isOpen = open === index;
         return (
           <div key={item.q}>
@@ -28,17 +29,13 @@ export function FaqAccordion() {
                 +
               </span>
             </button>
-            <div
-              className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-                isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-              }`}
-            >
+            {isOpen ? (
               <div className="overflow-hidden">
                 <p className="pb-5 pr-8 text-sm leading-relaxed text-[var(--ink-soft)]">
                   {item.a}
                 </p>
               </div>
-            </div>
+            ) : null}
           </div>
         );
       })}

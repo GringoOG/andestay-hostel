@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Poppins } from "next/font/google";
 import { Footer } from "@/components/Footer";
+import { LocaleProvider } from "@/lib/i18n";
 import "./globals.css";
 
 /**
@@ -38,8 +39,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${instrument.variable} h-full`}>
       <body className="flex min-h-full flex-col font-sans antialiased">
-        {children}
-        <Footer />
+        <LocaleProvider>
+          {children}
+          <Footer />
+        </LocaleProvider>
       </body>
     </html>
   );

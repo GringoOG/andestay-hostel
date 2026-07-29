@@ -1,14 +1,17 @@
+"use client";
+
 import { BookButton } from "@/components/BookButton";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
-import { cabins, formatRoomPrice } from "@/lib/content";
+import { formatRoomPrice, type CabinMeta } from "@/lib/content";
+import { useI18n } from "@/lib/i18n";
 
-type Cabin = (typeof cabins)[number];
-
-export function CabinCard({ cabin, reverse = false }: { cabin: Cabin; reverse?: boolean }) {
+export function CabinCard({ cabin, reverse = false }: { cabin: CabinMeta; reverse?: boolean }) {
+  const { t } = useI18n();
+  const copy = t.cabins[cabin.id];
   const price = formatRoomPrice(cabin.pricePen);
 
   return (
-    <article className="group overflow-hidden rounded-[var(--radius-lg)] border border-transparent bg-transparent transition-[border-color,box-shadow] duration-300 hover:border-white hover:shadow-[0_0_0_1px_rgba(255,255,255,0.9)]">
+    <article className="overflow-hidden rounded-[var(--radius-lg)] border border-white bg-white shadow-[0_10px_40px_rgba(20,24,20,0.06)]">
       <div
         className={`grid items-stretch lg:grid-cols-2 ${
           reverse ? "lg:[&>*:first-child]:order-2" : ""
@@ -17,11 +20,11 @@ export function CabinCard({ cabin, reverse = false }: { cabin: Cabin; reverse?: 
         <div className="flex flex-col justify-between p-7 sm:p-10">
           <div>
             <h3 className="font-display text-3xl italic text-[var(--serif-green)] sm:text-4xl">
-              {cabin.name}
+              {copy.name}
             </h3>
-            <p className="mt-3 max-w-md text-[var(--ink-soft)]">{cabin.blurb}</p>
+            <p className="mt-3 max-w-md text-[var(--ink-soft)]">{copy.blurb}</p>
             <ul className="mt-8 space-y-3">
-              {cabin.features.map((feature) => (
+              {copy.features.map((feature) => (
                 <li
                   key={feature}
                   className="flex gap-3 text-sm text-[var(--ink-soft)] sm:text-[0.95rem]"
@@ -42,7 +45,9 @@ export function CabinCard({ cabin, reverse = false }: { cabin: Cabin; reverse?: 
             <p className="text-xl font-semibold tracking-tight">
               ${price.usd}{" "}
               <span className="text-[var(--ink-muted)]">·</span> PEN {price.pen}{" "}
-              <span className="text-sm font-normal text-[var(--ink-muted)]">/ night</span>
+              <span className="text-sm font-normal text-[var(--ink-muted)]">
+                {t.common.perNight}
+              </span>
             </p>
             <BookButton roomSlug={cabin.id} source="room-card" />
           </div>

@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
+"use client";
+
+import { AnimatedHeading } from "@/components/AnimatedHeading";
 import { CabinCard } from "@/components/CabinCard";
 import { ContactSection } from "@/components/ContactSection";
 import { Header } from "@/components/Header";
 import { Reveal } from "@/components/Reveal";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { cabins } from "@/lib/content";
-
-export const metadata: Metadata = {
-  title: "Rooms",
-};
+import { useI18n } from "@/lib/i18n";
 
 export default function AccommodationPage() {
+  const { t } = useI18n();
+
   return (
     <>
       <Header tone="light" />
@@ -18,14 +19,17 @@ export default function AccommodationPage() {
       <section className="bg-[var(--bg-soft)] pt-[calc(var(--nav-h)+3.5rem)] pb-16 md:pb-20">
         <div className="site-wrap">
           <Reveal>
-            <span className="badge badge-dark">Unique stay experiences</span>
-            <h1 className="mt-6 max-w-3xl text-[1.85rem] font-light leading-[1.15] tracking-[-0.04em] text-[var(--ink)] sm:text-[2.35rem] md:text-[2.75rem] lg:text-[3rem]">
-              Each cabin was designed to provide well-being, privacy, and a{" "}
-              <strong className="font-bold">true connection with nature.</strong>
-            </h1>
+            <span className="badge badge-dark">{t.accommodations.badge}</span>
+            <AnimatedHeading
+              as="h1"
+              className="mt-6 max-w-3xl text-[1.85rem] font-light leading-[1.15] tracking-[-0.04em] text-[var(--ink)] sm:text-[2.35rem] md:text-[2.75rem] lg:text-[3rem]"
+              parts={[
+                { text: t.accommodations.titleBefore },
+                { text: t.accommodations.titleBold, className: "font-bold" },
+              ]}
+            />
             <p className="mt-7 max-w-xl text-[0.98rem] font-light leading-[1.6] text-[var(--ink-soft)]">
-              AndeStay Hostel is the balance between comfort and nature. A space that combines cozy
-              design, hospitality, and an atmosphere perfect for relaxing or celebrating.
+              {t.accommodations.body}
             </p>
           </Reveal>
         </div>
