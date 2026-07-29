@@ -48,31 +48,31 @@ export type CabinMeta = {
 export const cabins: CabinMeta[] = [
   {
     id: "double-room",
-    pricePen: 98,
+    pricePen: 120,
     photoLabel: "Double room interior",
     image: "/images/room-interior.jpg",
   },
   {
     id: "family-room",
-    pricePen: 98,
+    pricePen: 120,
     photoLabel: "Family cabin with valley view",
     image: "/images/lena-8364.jpg",
   },
   {
     id: "triple-room",
-    pricePen: 158,
+    pricePen: 180,
     photoLabel: "Triple room with three beds",
     image: "/images/room-triple.jpg",
   },
   {
     id: "deluxe-room",
-    pricePen: 130,
+    pricePen: 120,
     photoLabel: "Deluxe cabin",
     image: "/images/lena-8109.jpg",
   },
   {
     id: "deluxe-family-room",
-    pricePen: 150,
+    pricePen: 180,
     photoLabel: "Deluxe family cabins on stilts",
     image: "/images/room-deluxe-family.jpg",
   },
