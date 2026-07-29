@@ -61,8 +61,8 @@ export const cabins: CabinMeta[] = [
   {
     id: "triple-room",
     pricePen: 158,
-    photoLabel: "Triple room morning view",
-    image: "/images/lena-8107.jpg",
+    photoLabel: "Triple room with three beds",
+    image: "/images/room-triple.jpg",
   },
   {
     id: "deluxe-room",
