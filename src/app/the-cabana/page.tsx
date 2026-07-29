@@ -5,7 +5,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { Header } from "@/components/Header";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { Reveal } from "@/components/Reveal";
-import { images } from "@/lib/content";
+import { aboutStory, images } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -29,11 +29,11 @@ export default function AboutPage() {
             <div className="absolute inset-0 flex flex-col justify-end p-8 text-white sm:p-12 md:p-14">
               <span className="badge badge-light w-fit">Welcome to AndeStay Hostel</span>
               <h1 className="mt-5 max-w-2xl text-3xl font-light leading-snug tracking-tight sm:text-4xl md:text-5xl">
-                A hostel created for travelers who seek balance, beauty, and connection with the Andes.
+                A hostel for travelers who seek rest, good food, and connection with the Andes.
               </h1>
-              <p className="mt-5 max-w-md text-sm leading-relaxed text-white/80 sm:text-base">
-                AndeStay Hostel in Colpapampa balances comfort and adventure — cozy design,
-                hospitality, and an atmosphere perfect for resting or celebrating.
+              <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/80 sm:text-base">
+                Rest after the Salkantay trek in Colpapampa — with American breakfast and homemade
+                dinner always included.
               </p>
             </div>
           </div>
@@ -41,16 +41,42 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-[var(--bg)] py-16 md:py-24">
-        <div className="site-wrap max-w-3xl text-center">
+        <div className="site-wrap">
           <Reveal>
-            <h2 className="text-2xl font-light leading-snug tracking-tight text-[var(--ink)] sm:text-3xl md:text-4xl">
-              Each space combines natural materials, warm textures, and thoughtful design to create
-              an atmosphere where simplicity meets sophistication.
-            </h2>
-            <p className="mx-auto mt-8 max-w-xl text-[var(--ink-soft)]">
-              Whether you’re staying for a quiet night or a longer trek stop, AndeStay Hostel
-              invites you to slow down, breathe deeply, and reconnect with what truly matters.
-            </p>
+            <span className="badge badge-dark">{aboutStory.badge}</span>
+            <div className="mt-7 flex flex-col gap-10 lg:mt-8 lg:flex-row lg:items-start lg:justify-between lg:gap-20">
+              <div className="max-w-2xl">
+                <h2 className="text-[1.85rem] font-medium leading-[1.2] tracking-[-0.02em] text-[var(--ink)] sm:text-[2.35rem] md:text-[2.75rem]">
+                  {aboutStory.title}
+                </h2>
+                <div className="mt-8 space-y-5 text-[0.98rem] leading-relaxed text-[var(--ink-soft)]">
+                  {aboutStory.paragraphs.map((p) => (
+                    <p key={p.slice(0, 32)}>{p}</p>
+                  ))}
+                  <p className="text-[var(--ink)]">{aboutStory.closing}</p>
+                </div>
+              </div>
+
+              <aside className="shrink-0 lg:w-[18rem] lg:pt-2">
+                <h3 className="font-ui text-[0.72rem] font-medium tracking-[0.14em] text-[var(--ink-muted)] uppercase">
+                  {aboutStory.whyTitle}
+                </h3>
+                <ul className="mt-5 space-y-3.5 border-t border-[var(--line)] pt-5">
+                  {aboutStory.why.map((item) => (
+                    <li
+                      key={item}
+                      className="flex gap-3 text-[0.95rem] leading-snug text-[var(--ink)]"
+                    >
+                      <span
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--serif-green)]"
+                        aria-hidden
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            </div>
           </Reveal>
         </div>
       </section>

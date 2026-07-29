@@ -8,7 +8,7 @@ import { LastingExperience } from "@/components/LastingExperience";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { Reveal } from "@/components/Reveal";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { cabins, images } from "@/lib/content";
+import { aboutStory, cabins, heroCopy, images } from "@/lib/content";
 import Image from "next/image";
 
 export default function HomePage() {
@@ -34,11 +34,11 @@ export default function HomePage() {
         <div className="site-wrap relative flex min-h-[100svh] flex-col justify-end pb-16 pt-[calc(var(--nav-h)+3rem)] md:pb-24">
           <div className="max-w-3xl">
             <span className="badge badge-light animate-[fadeUp_0.8s_ease_both]">
-              Escape. Breathe. Belong.
+              {heroCopy.badge}
             </span>
             <HeroTitle />
             <p className="mt-6 max-w-md text-base leading-relaxed text-white/85 sm:text-lg animate-[fadeUp_1s_ease_0.35s_both]">
-              Stay in exclusive cabins or celebrate unforgettable moments in a unique setting.
+              {heroCopy.support}
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4 animate-[fadeUp_1s_ease_0.55s_both]">
@@ -74,8 +74,7 @@ export default function HomePage() {
               <strong className="font-semibold">comfort meets the Andes.</strong>
             </h2>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70">
-              AndeStay Hostel balances comfort and adventure — a friendly base with warm hospitality
-              for resting, connecting, and exploring the mountains.
+              {aboutStory.paragraphs[0]}
             </p>
           </Reveal>
         </div>

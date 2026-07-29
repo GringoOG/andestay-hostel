@@ -213,6 +213,34 @@ export const aboutGallery = [
   },
 ] as const;
 
+export const aboutStory = {
+  badge: "About AndeStay",
+  title: "Rest after the trail. Eat well. Recharge for what comes next.",
+  paragraphs: [
+    "Rest after a demanding day on the Salkantay trek in a cozy hostel surrounded by the majestic Peruvian Andes. AndeStay Hostel Colpapampa is where you recover after a long journey, eat well, and gather strength for the next adventure.",
+    "Every guest receives an American breakfast and a homemade dinner free of charge, so you don’t need to look for a restaurant on arrival. Simply enjoy the calm atmosphere, comfortable rooms, and the nature around you.",
+    "We offer comfortable rooms for individuals, couples, and families, free Wi-Fi, a garden to unwind in, and a friendly environment where you’ll feel at home.",
+  ],
+  closing:
+    "Whether you’re heading to Machu Picchu or finishing a stage of the Salkantay trek, AndeStay Hostel Colpapampa is the ideal place for quality rest, good food, and a pleasant night in the heart of the Peruvian Andes.",
+  whyTitle: "Why choose AndeStay?",
+  why: [
+    "Free homemade dinner",
+    "American breakfast included",
+    "Free Wi-Fi",
+    "Family rooms",
+    "Non-smoking rooms",
+    "Quiet garden to relax",
+    "Bedding and towels included",
+  ],
+} as const;
+
+export const heroCopy = {
+  badge: "Escape. Breathe. Belong.",
+  support:
+    "Rest after the Salkantay trek. Breakfast and homemade dinner are always included.",
+} as const;
+
 export const floatingQuotes = [
   { quote: "Exactly what we needed.", side: "left" as const },
   { quote: "The silence was the best part.", side: "right" as const },

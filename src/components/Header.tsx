@@ -51,7 +51,7 @@ export function Header({ tone = "light" }: HeaderProps) {
         </Link>
 
         <nav
-          className="hidden flex-1 items-center justify-center gap-6 text-[0.9rem] transition-colors duration-300 lg:flex xl:gap-8"
+          className="hidden flex-1 items-center justify-center gap-7 text-[1.08rem] transition-colors duration-300 lg:flex xl:gap-9"
           style={{ color: navColor }}
         >
           {navLinks.map((link) => (
