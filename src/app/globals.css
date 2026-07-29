@@ -23,9 +23,9 @@
   --page-pad: 1.1rem;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
-  /* Cabana-style green photo grade — tweak opacity to change intensity */
-  --photo-green: rgba(34, 52, 40, 0.46);
-  --photo-green-deep: rgba(12, 20, 14, 0.58);
+  /* Soft green grade for hero readability — keep light so the photo still reads */
+  --photo-green: rgba(28, 42, 32, 0.28);
+  --photo-green-deep: rgba(12, 20, 14, 0.42);
 }
 
 @media (min-width: 480px) {
@@ -212,11 +212,7 @@ img {
   background: #1a2820;
 }
 
-/* Cabana Mountain–style forest green grade on hero photos */
-.photo-green-grade img {
-  filter: saturate(0.72) brightness(0.86) contrast(1.04) hue-rotate(12deg);
-}
-
+/* Soft forest veil for hero text contrast (no heavy photo filter) */
 .photo-green-veil {
   background: var(--photo-green);
   mix-blend-mode: multiply;
@@ -226,8 +222,8 @@ img {
   background: linear-gradient(
     to top,
     var(--photo-green-deep) 0%,
-    rgba(18, 30, 22, 0.28) 42%,
-    rgba(24, 38, 30, 0.34) 100%
+    rgba(18, 30, 22, 0.18) 48%,
+    rgba(24, 38, 30, 0.2) 100%
   );
 }
 

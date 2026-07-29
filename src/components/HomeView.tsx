@@ -33,6 +33,8 @@ export function HomeView() {
             className="rounded-none scale-[1.06] origin-center animate-[heroZoom_18s_ease-out_forwards] sm:scale-105"
           />
         </div>
+        <div className="pointer-events-none absolute inset-0 photo-green-veil" />
+        <div className="pointer-events-none absolute inset-0 photo-green-shade" />
 
         <div className="site-wrap relative flex min-h-[100svh] flex-col items-center justify-end pb-12 pt-[calc(var(--nav-h)+2.25rem)] text-center sm:pb-16 md:pb-24 md:pt-[calc(var(--nav-h)+3rem)]">
           <div className="flex w-full max-w-3xl flex-col items-center px-0.5">

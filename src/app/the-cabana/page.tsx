@@ -27,6 +27,8 @@ export default function AboutPage() {
               objectPosition="50% 78%"
               className="aspect-[4/5] min-h-[280px] rounded-[1.25rem] sm:aspect-[2.35/1] sm:min-h-[240px] sm:rounded-[var(--radius-lg)] md:aspect-[2.6/1] md:min-h-0"
             />
+            <div className="pointer-events-none absolute inset-0 photo-green-veil" />
+            <div className="pointer-events-none absolute inset-0 photo-green-shade" />
 
             <div className="absolute inset-0 flex flex-col justify-end p-5 text-white sm:p-8 md:p-10 lg:p-12">
               <span className="badge badge-light w-fit text-[0.62rem]">
