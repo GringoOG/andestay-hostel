@@ -33,9 +33,9 @@ export function HomeView() {
             src={images.hero}
             priority
             fillParent
-            objectPosition="50% 42%"
+            objectPosition="48% 45%"
             sizes="100vw"
-            quality={88}
+            quality={85}
             imageClassName="object-cover"
             className="rounded-none md:origin-center md:scale-105 md:animate-[heroZoom_18s_ease-out_forwards]"
           />
