@@ -1,8 +1,10 @@
 export type {
+  AvailabilityMode,
   BookingCapabilities,
   BookingConfig,
   BookingProvider,
   OpenBookingOptions,
+  PaymentMode,
   ProviderRoomRef,
   RoomSlug,
 } from "./provider";

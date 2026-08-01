@@ -7,5 +7,7 @@ export function createBookingComProvider() {
     ...EMPTY_CAPABILITIES,
     supportsCalendar: true,
     supportsAvailability: true,
+    paymentMode: "none",
+    availabilityMode: "cached",
   });
 }

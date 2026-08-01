@@ -2,12 +2,14 @@
  * BookingService — sole public API for UI.
  *
  * UI never knows the provider. Swap via NEXT_PUBLIC_BOOKING_PROVIDER only.
+ *
+ * Flow: UI → BookingService → BookingEngine → BookingProvider
  */
 
 import { trackBookingClick, trackBookingEvent } from "./analytics";
 import { bookingConfig } from "./config";
+import { bookingEngine } from "./engine";
 import { BookingError, BookingErrorCode } from "./errors";
-import { BookingProviderFactory } from "./factory";
 import { BookingLogger } from "./logger";
 import type {
   BookingCapabilities,
@@ -15,10 +17,6 @@ import type {
   OpenBookingOptions,
   RoomSlug,
 } from "./types";
-
-function active() {
-  return BookingProviderFactory.createActive();
-}
 
 function guardEnabled(): boolean {
   if (!bookingConfig.enabled) {
@@ -57,32 +55,32 @@ export const BookingService = {
   },
 
   capabilities(): BookingCapabilities {
-    return active().capabilities;
+    return bookingEngine.capabilities();
   },
 
   getUrl(): string {
-    return active().getUrl();
+    return bookingEngine.getUrl();
   },
 
   getRoomUrl(roomSlug: RoomSlug, options: OpenBookingOptions = {}): string {
     try {
-      return active().getRoomUrl(roomSlug, options);
+      return bookingEngine.getRoomUrl(roomSlug, options);
     } catch (err) {
       reportError(err, roomSlug);
-      return active().getUrl();
+      return bookingEngine.getUrl();
     }
   },
 
   open(options: OpenBookingOptions = {}): void {
     if (!guardEnabled()) return;
     try {
-      const url = active().getUrl();
+      const url = bookingEngine.getUrl();
       trackBookingClick({
         provider: bookingConfig.provider,
         source: options.source,
         url,
       });
-      active().open(options);
+      bookingEngine.open(options);
     } catch (err) {
       reportError(err, undefined, options.source);
     }
@@ -91,14 +89,14 @@ export const BookingService = {
   openRoom(roomSlug: RoomSlug, options: OpenBookingOptions = {}): void {
     if (!guardEnabled()) return;
     try {
-      const url = active().getRoomUrl(roomSlug, options);
+      const url = bookingEngine.getRoomUrl(roomSlug, options);
       trackBookingClick({
         provider: bookingConfig.provider,
         roomSlug,
         source: options.source,
         url,
       });
-      active().openRoom(roomSlug, options);
+      bookingEngine.openRoom(roomSlug, options);
     } catch (err) {
       reportError(err, roomSlug, options.source);
     }

@@ -10,6 +10,11 @@ export function createQloAppsProvider() {
       supportsCoupons: true,
       supportsAvailability: true,
       supportsGuests: true,
+      paymentMode: "online",
+      availabilityMode: "live",
+      supportsOnlinePayment: true,
+      supportsPromoCodes: true,
+      supportsRealtimeAvailability: true,
     },
   });
 }

@@ -30,6 +30,8 @@ export function createCustomProvider(): BookingProvider {
       supportsCoupons: false,
       supportsAvailability: false,
       supportsGuests: false,
+      paymentMode: "none",
+      availabilityMode: "none",
     },
 
     getUrl() {

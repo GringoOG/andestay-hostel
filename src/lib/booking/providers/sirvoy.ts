@@ -7,5 +7,7 @@ export function createSirvoyProvider() {
     supportsPayments: true,
     supportsCalendar: true,
     supportsAvailability: true,
+    paymentMode: "online",
+    availabilityMode: "live",
   });
 }

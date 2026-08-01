@@ -6,12 +6,35 @@ export enum BookingProviderId {
   BOOKING = "booking",
 }
 
+/** How the guest settles payment with this provider / hotel. */
+export type PaymentMode = "none" | "offline" | "deposit" | "online";
+
+/** How availability is sourced for this provider. */
+export type AvailabilityMode = "none" | "cached" | "live";
+
+/**
+ * Provider capability surface.
+ * Booleans kept for backward compatibility; prefer *Mode fields for new logic.
+ */
 export type BookingCapabilities = {
   supportsPayments: boolean;
   supportsCalendar: boolean;
   supportsCoupons: boolean;
   supportsAvailability: boolean;
   supportsGuests: boolean;
+
+  paymentMode: PaymentMode;
+  availabilityMode: AvailabilityMode;
+
+  /** Optional richer flags — default false / omit until needed. */
+  supportsRealtimeAvailability?: boolean;
+  supportsOnlinePayment?: boolean;
+  supportsPromoCodes?: boolean;
+  supportsPartialPayment?: boolean;
+  supportsMultiHotel?: boolean;
+  supportsDynamicPricing?: boolean;
+  supportsCalendarSync?: boolean;
+  supportsInvoices?: boolean;
 };
 
 export type OpenBookingOptions = {
@@ -23,7 +46,7 @@ export type OpenBookingOptions = {
 };
 
 /**
- * Website room identity is always a stable slug (e.g. "lake-cabana").
+ * Website room identity is always a stable slug (e.g. "double-room").
  * Providers map slug → their internal product / room id.
  */
 export type RoomSlug = string;
@@ -48,7 +71,7 @@ export type BookingConfig = {
 
 /**
  * Interchangeable booking provider (adapter).
- * All providers implement the same surface.
+ * Providers communicate with QloApps / custom API / OTAs only — no business rules.
  */
 export interface BookingProvider {
   readonly id: BookingProviderId;

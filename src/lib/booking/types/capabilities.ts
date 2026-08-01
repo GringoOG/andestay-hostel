@@ -1,4 +1,8 @@
-export type { BookingCapabilities } from "./provider";
+export type {
+  AvailabilityMode,
+  BookingCapabilities,
+  PaymentMode,
+} from "./provider";
 
 export const EMPTY_CAPABILITIES = {
   supportsPayments: false,
@@ -6,4 +10,6 @@ export const EMPTY_CAPABILITIES = {
   supportsCoupons: false,
   supportsAvailability: false,
   supportsGuests: false,
+  paymentMode: "none" as const,
+  availabilityMode: "none" as const,
 } as const;

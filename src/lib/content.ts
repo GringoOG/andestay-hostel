@@ -1,4 +1,11 @@
 import type { CabinId } from "@/lib/i18n";
+import {
+  getHotelRoom,
+  getRoomNightlyPen,
+  hotelRooms,
+  PEN_PER_USD,
+  type HotelRoomId,
+} from "@/lib/hotel";
 
 export const site = {
   name: "AndeStay Hostel",
@@ -38,64 +45,70 @@ export const images = {
   ],
 } as const;
 
-export type CabinMeta = {
+/** Marketing presentation for a cabin card (joined with hotel domain data). */
+export type CabinMarketing = {
   id: CabinId;
-  /** Inventory count for this room type (how many physical cabins). */
-  units: number;
-  /** Capacity (adults) — used for price context. */
-  capacity: number;
-  pricePen: number;
-  /**
-   * Gallery for the cabin card carousel.
-   * First image = cover / opening photo.
-   */
   images: string[];
   photoLabel: string;
 };
 
+export type CabinMeta = CabinMarketing & {
+  units: number;
+  capacity: number;
+  pricePen: number;
+};
+
 /**
- * Client inventory (display order):
- * 1 simple · 4 dobles · 1 triple · 3 matrimonial
- *
- * Add more paths to `images` as photos arrive; index 0 stays the cover.
+ * Marketing-only fields. Inventory / capacity / price come from `@/lib/hotel`.
  */
-export const cabins: CabinMeta[] = [
+const cabinMarketing: CabinMarketing[] = [
   {
     id: "simple-room",
-    units: 1,
-    capacity: 1,
-    pricePen: 80,
     photoLabel: "Simple cabin for one guest",
     images: ["/images/lena-8109.jpg"],
   },
   {
     id: "double-room",
-    units: 4,
-    capacity: 2,
-    pricePen: 120,
     photoLabel: "Double cabin with two beds",
     images: ["/images/room-double-01.jpg", "/images/room-double-02.jpg"],
   },
   {
     id: "triple-room",
-    units: 1,
-    capacity: 3,
-    pricePen: 180,
     photoLabel: "Triple cabin with three beds",
     images: ["/images/room-triple-01.jpg", "/images/room-triple-02.jpg"],
   },
   {
     id: "matrimonial-room",
-    units: 3,
-    capacity: 2,
-    pricePen: 120,
     photoLabel: "Matrimonial cabin with double bed",
     images: ["/images/lena-8364.jpg"],
   },
 ];
 
-/** Approx. soles per USD for display (rates change; PEN is the source of truth). */
-export const PEN_PER_USD = 3.4;
+function toCabinMeta(m: CabinMarketing): CabinMeta {
+  const roomId = m.id as HotelRoomId;
+  const room = getHotelRoom(roomId);
+  return {
+    ...m,
+    units: room?.inventory ?? 1,
+    capacity: room?.capacity ?? 1,
+    pricePen: getRoomNightlyPen(roomId),
+  };
+}
+
+/**
+ * Cabin cards for the website — marketing + hotel operational join.
+ * Order follows `hotelRooms`.
+ */
+export const cabins: CabinMeta[] = hotelRooms.map((room) => {
+  const marketing = cabinMarketing.find((c) => c.id === room.id);
+  if (!marketing) {
+    throw new Error(`Missing marketing presentation for room "${room.id}"`);
+  }
+  return toCabinMeta(marketing);
+});
+
+/** Re-export for existing imports — source of truth is `@/lib/hotel/rates`. */
+export { PEN_PER_USD };
 
 export function priceUsdFromPen(pricePen: number): number {
   return Math.round(pricePen / PEN_PER_USD);

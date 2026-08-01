@@ -7,5 +7,7 @@ export function createCloudbedsProvider() {
     supportsPayments: true,
     supportsAvailability: true,
     supportsGuests: true,
+    paymentMode: "online",
+    availabilityMode: "live",
   });
 }

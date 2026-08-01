@@ -14,8 +14,9 @@ import { env } from "./env";
 type RoomProviderMap = Partial<Record<BookingProviderId, ProviderRoomRef>>;
 
 /**
- * Keys = stable website room slugs (match content `cabins[].id`).
+ * Keys = stable website room slugs (match hotel `HotelRoomId` / content cabin id).
  * Change QloApps product ids here / in env — not in React.
+ * Inventory & prices live in `@/lib/hotel` — this map is provider IDs only.
  */
 const ROOM_MAP: Record<RoomSlug, RoomProviderMap> = {
   "double-room": {
