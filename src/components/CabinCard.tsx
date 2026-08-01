@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { BookButton } from "@/components/BookButton";
-import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
+import { CabinPhotoCarousel } from "@/components/CabinPhotoCarousel";
 import { formatRoomPrice, type CabinMeta } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
 
@@ -99,14 +99,7 @@ export function CabinCard({ cabin, reverse = false }: { cabin: CabinMeta; revers
         </div>
 
         <div className="relative order-1 aspect-[5/4] w-full min-w-0 overflow-hidden sm:aspect-[4/5] lg:order-none lg:aspect-auto lg:min-h-[480px]">
-          <PhotoPlaceholder
-            label={cabin.photoLabel}
-            src={cabin.image}
-            fillParent
-            sizes="(max-width: 1023px) 100vw, 50vw"
-            quality={85}
-            className="rounded-none"
-          />
+          <CabinPhotoCarousel images={cabin.images} label={cabin.photoLabel} />
         </div>
       </div>
     </article>

@@ -233,6 +233,57 @@ img {
   border-radius: 0;
 }
 
+/* Cabin card photo carousel — site arrow language, lightly transparent */
+.cabin-carousel-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--forest) 42%, transparent);
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition:
+    background 0.25s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cabin-carousel-nav--prev {
+  left: 0.75rem;
+}
+
+.cabin-carousel-nav--next {
+  right: 0.75rem;
+}
+
+.cabin-carousel-nav:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+@media (hover: hover) {
+  .cabin-carousel-nav:not(:disabled):hover {
+    background: color-mix(in srgb, var(--forest) 72%, transparent);
+  }
+}
+
+.cabin-carousel-nav:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--white) 80%, transparent);
+  outline-offset: 2px;
+}
+
 /* Soft forest veil for hero text contrast (no heavy photo filter) */
 .photo-green-veil {
   background: var(--photo-green);

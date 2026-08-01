@@ -45,13 +45,19 @@ export type CabinMeta = {
   /** Capacity (adults) — used for price context. */
   capacity: number;
   pricePen: number;
-  image: string;
+  /**
+   * Gallery for the cabin card carousel.
+   * First image = cover / opening photo.
+   */
+  images: string[];
   photoLabel: string;
 };
 
 /**
  * Client inventory:
  * 4 dobles · 3 matrimonial · 1 triple · 1 simple
+ *
+ * Add more paths to `images` as photos arrive; index 0 stays the cover.
  */
 export const cabins: CabinMeta[] = [
   {
@@ -60,7 +66,7 @@ export const cabins: CabinMeta[] = [
     capacity: 2,
     pricePen: 120,
     photoLabel: "Double cabin with two beds",
-    image: "/images/room-interior.jpg",
+    images: ["/images/room-double-01.jpg", "/images/room-double-02.jpg"],
   },
   {
     id: "matrimonial-room",
@@ -68,7 +74,7 @@ export const cabins: CabinMeta[] = [
     capacity: 2,
     pricePen: 120,
     photoLabel: "Matrimonial cabin with double bed",
-    image: "/images/lena-8364.jpg",
+    images: ["/images/lena-8364.jpg"],
   },
   {
     id: "triple-room",
@@ -76,7 +82,7 @@ export const cabins: CabinMeta[] = [
     capacity: 3,
     pricePen: 180,
     photoLabel: "Triple cabin with three beds",
-    image: "/images/room-triple.jpg",
+    images: ["/images/room-triple-01.jpg", "/images/room-triple-02.jpg"],
   },
   {
     id: "simple-room",
@@ -84,7 +90,7 @@ export const cabins: CabinMeta[] = [
     capacity: 1,
     pricePen: 80,
     photoLabel: "Simple cabin for one guest",
-    image: "/images/lena-8109.jpg",
+    images: ["/images/lena-8109.jpg"],
   },
 ];
 
