@@ -8,6 +8,7 @@ export const de: Messages = {
     perCabin: "pro Hütte",
     cabinsToBook: "Hütten buchen",
     cabinsAvailable: "{count} Hütten dieses Typs",
+    dinnerBreakfastIncluded: "Abendessen und Frühstück inklusive",
     closeMenu: "Menü schließen",
     openMenu: "Menü öffnen",
     language: "Sprache",
@@ -185,7 +186,7 @@ export const de: Messages = {
       features: [
         "Kapazität: 2 Erwachsene",
         "2 Einzelbetten",
-        "Mahlzeiten inklusive",
+        "Abendessen und Frühstück inklusive",
         "Warme Dusche",
         "Kostenloses WLAN",
       ],
@@ -196,7 +197,7 @@ export const de: Messages = {
       features: [
         "Kapazität: 2 Erwachsene",
         "1 großes Doppelbett",
-        "Mahlzeiten inklusive",
+        "Abendessen und Frühstück inklusive",
         "Warme Dusche",
         "Kostenloses WLAN",
       ],
@@ -207,7 +208,7 @@ export const de: Messages = {
       features: [
         "Kapazität: 3 Erwachsene",
         "3 Einzelbetten",
-        "Mahlzeiten inklusive",
+        "Abendessen und Frühstück inklusive",
         "Warme Dusche",
         "Kostenloses WLAN",
       ],
@@ -218,7 +219,7 @@ export const de: Messages = {
       features: [
         "Kapazität: 1 Erwachsener",
         "1 Einzelbett",
-        "Mahlzeiten inklusive",
+        "Abendessen und Frühstück inklusive",
         "Warme Dusche",
         "Kostenloses WLAN",
       ],

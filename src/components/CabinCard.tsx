@@ -38,20 +38,31 @@ export function CabinCard({ cabin, reverse = false }: { cabin: CabinMeta; revers
               {copy.blurb}
             </p>
             <ul className="mt-5 space-y-2.5 sm:mt-8 sm:space-y-3">
-              {copy.features.map((feature) => (
-                <li
-                  key={feature}
-                  className="flex gap-3 text-[0.88rem] text-[var(--ink-soft)] sm:text-[0.95rem]"
-                >
-                  <span
-                    className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--bg-muted)] text-[0.65rem] text-[var(--accent-green)]"
-                    aria-hidden
+              {copy.features.map((feature) => {
+                const highlight = feature === t.common.dinnerBreakfastIncluded;
+                return (
+                  <li
+                    key={feature}
+                    className={`flex gap-3 text-[0.88rem] sm:text-[0.95rem] ${
+                      highlight
+                        ? "-mx-2 rounded-lg bg-[var(--bg-muted)] px-2 py-1.5 font-semibold text-[var(--serif-green)]"
+                        : "text-[var(--ink-soft)]"
+                    }`}
                   >
-                    ✓
-                  </span>
-                  <span>{feature}</span>
-                </li>
-              ))}
+                    <span
+                      className={`mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[0.65rem] ${
+                        highlight
+                          ? "bg-[var(--accent-green)] text-white"
+                          : "bg-[var(--bg-muted)] text-[var(--accent-green)]"
+                      }`}
+                      aria-hidden
+                    >
+                      ✓
+                    </span>
+                    <span>{feature}</span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

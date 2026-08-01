@@ -54,12 +54,20 @@ export type CabinMeta = {
 };
 
 /**
- * Client inventory:
- * 4 dobles · 3 matrimonial · 1 triple · 1 simple
+ * Client inventory (display order):
+ * 1 simple · 4 dobles · 1 triple · 3 matrimonial
  *
  * Add more paths to `images` as photos arrive; index 0 stays the cover.
  */
 export const cabins: CabinMeta[] = [
+  {
+    id: "simple-room",
+    units: 1,
+    capacity: 1,
+    pricePen: 80,
+    photoLabel: "Simple cabin for one guest",
+    images: ["/images/lena-8109.jpg"],
+  },
   {
     id: "double-room",
     units: 4,
@@ -67,14 +75,6 @@ export const cabins: CabinMeta[] = [
     pricePen: 120,
     photoLabel: "Double cabin with two beds",
     images: ["/images/room-double-01.jpg", "/images/room-double-02.jpg"],
-  },
-  {
-    id: "matrimonial-room",
-    units: 3,
-    capacity: 2,
-    pricePen: 120,
-    photoLabel: "Matrimonial cabin with double bed",
-    images: ["/images/lena-8364.jpg"],
   },
   {
     id: "triple-room",
@@ -85,12 +85,12 @@ export const cabins: CabinMeta[] = [
     images: ["/images/room-triple-01.jpg", "/images/room-triple-02.jpg"],
   },
   {
-    id: "simple-room",
-    units: 1,
-    capacity: 1,
-    pricePen: 80,
-    photoLabel: "Simple cabin for one guest",
-    images: ["/images/lena-8109.jpg"],
+    id: "matrimonial-room",
+    units: 3,
+    capacity: 2,
+    pricePen: 120,
+    photoLabel: "Matrimonial cabin with double bed",
+    images: ["/images/lena-8364.jpg"],
   },
 ];
 

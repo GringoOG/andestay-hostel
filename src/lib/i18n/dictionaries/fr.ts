@@ -8,6 +8,7 @@ export const fr: Messages = {
     perCabin: "par cabane",
     cabinsToBook: "Cabanes à réserver",
     cabinsAvailable: "{count} cabanes de ce type",
+    dinnerBreakfastIncluded: "Dîner et petit-déjeuner inclus",
     closeMenu: "Fermer le menu",
     openMenu: "Ouvrir le menu",
     language: "Langue",
@@ -185,7 +186,7 @@ export const fr: Messages = {
       features: [
         "Capacité : 2 adultes",
         "2 lits simples",
-        "Repas inclus",
+        "Dîner et petit-déjeuner inclus",
         "Douche chaude",
         "Wi-Fi gratuit",
       ],
@@ -196,7 +197,7 @@ export const fr: Messages = {
       features: [
         "Capacité : 2 adultes",
         "1 grand lit double",
-        "Repas inclus",
+        "Dîner et petit-déjeuner inclus",
         "Douche chaude",
         "Wi-Fi gratuit",
       ],
@@ -207,7 +208,7 @@ export const fr: Messages = {
       features: [
         "Capacité : 3 adultes",
         "3 lits simples",
-        "Repas inclus",
+        "Dîner et petit-déjeuner inclus",
         "Douche chaude",
         "Wi-Fi gratuit",
       ],
@@ -218,7 +219,7 @@ export const fr: Messages = {
       features: [
         "Capacité : 1 adulte",
         "1 lit simple",
-        "Repas inclus",
+        "Dîner et petit-déjeuner inclus",
         "Douche chaude",
         "Wi-Fi gratuit",
       ],

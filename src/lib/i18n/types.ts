@@ -12,6 +12,7 @@ export type Messages = {
     perCabin: string;
     cabinsToBook: string;
     cabinsAvailable: string;
+    dinnerBreakfastIncluded: string;
     closeMenu: string;
     openMenu: string;
     language: string;

@@ -8,6 +8,7 @@ export const cs: Messages = {
     perCabin: "za chatu",
     cabinsToBook: "Počet chat",
     cabinsAvailable: "{count} chat tohoto typu",
+    dinnerBreakfastIncluded: "Večeře a snídaně v ceně",
     closeMenu: "Zavřít menu",
     openMenu: "Otevřít menu",
     language: "Jazyk",
@@ -185,7 +186,7 @@ export const cs: Messages = {
       features: [
         "Kapacita: 2 dospělí",
         "2 jednolůžkové postele",
-        "Jídlo v ceně",
+        "Večeře a snídaně v ceně",
         "Teplá sprcha",
         "Bezplatné Wi-Fi",
       ],
@@ -196,7 +197,7 @@ export const cs: Messages = {
       features: [
         "Kapacita: 2 dospělí",
         "1 velká manželská postel",
-        "Jídlo v ceně",
+        "Večeře a snídaně v ceně",
         "Teplá sprcha",
         "Bezplatné Wi-Fi",
       ],
@@ -207,7 +208,7 @@ export const cs: Messages = {
       features: [
         "Kapacita: 3 dospělí",
         "3 jednolůžkové postele",
-        "Jídlo v ceně",
+        "Večeře a snídaně v ceně",
         "Teplá sprcha",
         "Bezplatné Wi-Fi",
       ],
@@ -218,7 +219,7 @@ export const cs: Messages = {
       features: [
         "Kapacita: 1 dospělý",
         "1 jednolůžková postel",
-        "Jídlo v ceně",
+        "Večeře a snídaně v ceně",
         "Teplá sprcha",
         "Bezplatné Wi-Fi",
       ],
