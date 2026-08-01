@@ -9,7 +9,7 @@ import type {
   RoomSlug,
 } from "../types";
 import { getMappedRoom } from "../config/rooms";
-import { buildRoomUrl, joinUrl, navigateTo } from "../utils";
+import { buildRoomUrl, joinUrl, navigateTo, withQuery } from "../utils";
 
 type ExternalProviderOptions = {
   id: BookingProviderId;
@@ -17,6 +17,11 @@ type ExternalProviderOptions = {
   /** When true, missing room mapping throws; otherwise falls back to getUrl(). */
   strictRoomMapping?: boolean;
 };
+
+function applyQuantity(url: string, quantity?: number): string {
+  if (!quantity || quantity < 2) return url;
+  return withQuery(url, { quantity: String(quantity) });
+}
 
 /**
  * Shared external-URL provider base (QloApps / future OTAs).
@@ -35,20 +40,23 @@ export function createExternalUrlProvider(
       return joinUrl(bookingConfig.baseUrl, bookingConfig.defaultPath);
     },
 
-    getRoomUrl(roomSlug: RoomSlug) {
+    getRoomUrl(roomSlug: RoomSlug, opts: OpenBookingOptions = {}) {
       const mapped = getMappedRoom(roomSlug, id);
       if (!mapped) {
         if (strictRoomMapping) {
           throw BookingError.roomNotFound(roomSlug);
         }
         BookingLogger.warn("room_mapping_missing_fallback", { roomSlug, provider: id });
-        return provider.getUrl();
+        return applyQuantity(provider.getUrl(), opts.quantity);
       }
-      return buildRoomUrl(
-        bookingConfig.baseUrl,
-        bookingConfig.defaultPath,
-        mapped,
-        provider.getUrl(),
+      return applyQuantity(
+        buildRoomUrl(
+          bookingConfig.baseUrl,
+          bookingConfig.defaultPath,
+          mapped,
+          provider.getUrl(),
+        ),
+        opts.quantity,
       );
     },
 
@@ -61,10 +69,15 @@ export function createExternalUrlProvider(
     },
 
     openRoom(roomSlug: RoomSlug, opts: OpenBookingOptions = {}) {
-      const url = provider.getRoomUrl(roomSlug);
+      const url = provider.getRoomUrl(roomSlug, opts);
       const newTab =
         opts.newTab ?? (bookingConfig.external && bookingConfig.openInNewTab);
-      BookingLogger.info("provider_open_room", { provider: id, roomSlug, url });
+      BookingLogger.info("provider_open_room", {
+        provider: id,
+        roomSlug,
+        url,
+        quantity: opts.quantity,
+      });
       navigateTo(url, newTab);
     },
   };

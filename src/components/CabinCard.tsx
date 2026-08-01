@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { BookButton } from "@/components/BookButton";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { formatRoomPrice, type CabinMeta } from "@/lib/content";
@@ -8,7 +9,15 @@ import { useI18n } from "@/lib/i18n";
 export function CabinCard({ cabin, reverse = false }: { cabin: CabinMeta; reverse?: boolean }) {
   const { t } = useI18n();
   const copy = t.cabins[cabin.id];
-  const price = formatRoomPrice(cabin.pricePen);
+  const [quantity, setQuantity] = useState(1);
+  const showQty = cabin.units > 1;
+  const unitPrice = formatRoomPrice(cabin.pricePen);
+  const totalPen = cabin.pricePen * quantity;
+  const totalPrice = formatRoomPrice(totalPen);
+  const availableLabel = t.common.cabinsAvailable.replace(
+    "{count}",
+    String(cabin.units),
+  );
 
   return (
     <article
@@ -19,12 +28,12 @@ export function CabinCard({ cabin, reverse = false }: { cabin: CabinMeta; revers
           reverse ? "lg:[&>*:first-child]:order-2" : ""
         }`}
       >
-        {/* Text — below photo on mobile, side-by-side on desktop */}
         <div className="order-2 flex flex-col justify-between p-5 sm:p-8 md:p-10 lg:order-none">
           <div>
             <h3 className="font-display text-[1.55rem] italic leading-tight text-[var(--serif-green)] sm:text-3xl md:text-4xl">
               {copy.name}
             </h3>
+            <p className="mt-1 text-sm text-[var(--ink-muted)]">{availableLabel}</p>
             <p className="mt-2.5 max-w-md text-[0.92rem] leading-relaxed text-[var(--ink-soft)] sm:mt-3 sm:text-base">
               {copy.blurb}
             </p>
@@ -46,23 +55,49 @@ export function CabinCard({ cabin, reverse = false }: { cabin: CabinMeta; revers
             </ul>
           </div>
 
-          <div className="mt-7 flex flex-col gap-3.5 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
-            <p className="text-[1.05rem] font-semibold tracking-tight sm:text-xl">
-              ${price.usd}{" "}
-              <span className="text-[var(--ink-muted)]">·</span> PEN {price.pen}{" "}
-              <span className="text-sm font-normal text-[var(--ink-muted)]">
-                {t.common.perNight}
-              </span>
-            </p>
-            <BookButton
-              roomSlug={cabin.id}
-              source="room-card"
-              className="w-full justify-between sm:w-auto"
-            />
+          <div className="mt-7 flex flex-col gap-3.5 sm:mt-10">
+            {showQty ? (
+              <label className="flex flex-wrap items-center gap-3 text-sm text-[var(--ink-soft)]">
+                <span>{t.common.cabinsToBook}</span>
+                <select
+                  value={quantity}
+                  onChange={(e) => setQuantity(Number(e.target.value))}
+                  className="min-h-11 min-w-[4.5rem] rounded-lg border border-[var(--border)] bg-white px-3 py-2 text-base text-[var(--ink)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-green)]/40"
+                >
+                  {Array.from({ length: cabin.units }, (_, i) => i + 1).map((n) => (
+                    <option key={n} value={n}>
+                      {n}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            ) : null}
+
+            <div className="flex flex-col gap-3.5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
+              <div>
+                <p className="text-[1.05rem] font-semibold tracking-tight sm:text-xl">
+                  ${totalPrice.usd}{" "}
+                  <span className="text-[var(--ink-muted)]">·</span> PEN {totalPrice.pen}{" "}
+                  <span className="text-sm font-normal text-[var(--ink-muted)]">
+                    {t.common.perNight}
+                  </span>
+                </p>
+                {showQty && quantity > 1 ? (
+                  <p className="mt-0.5 text-sm text-[var(--ink-muted)]">
+                    ${unitPrice.usd} · PEN {unitPrice.pen} {t.common.perCabin}
+                  </p>
+                ) : null}
+              </div>
+              <BookButton
+                roomSlug={cabin.id}
+                quantity={quantity}
+                source="room-card"
+                className="w-full justify-between sm:w-auto"
+              />
+            </div>
           </div>
         </div>
 
-        {/* Mobile: edge-to-edge across the card; desktop: half of the 2-col row */}
         <div className="relative order-1 aspect-[5/4] w-full min-w-0 overflow-hidden sm:aspect-[4/5] lg:order-none lg:aspect-auto lg:min-h-[480px]">
           <PhotoPlaceholder
             label={cabin.photoLabel}

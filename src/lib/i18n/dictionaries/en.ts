@@ -5,6 +5,9 @@ export const en: Messages = {
   common: {
     bookStay: "Book a stay",
     perNight: "/ night",
+    perCabin: "per cabin",
+    cabinsToBook: "Cabins to book",
+    cabinsAvailable: "{count} cabins of this type",
     closeMenu: "Close menu",
     openMenu: "Open menu",
     language: "Language",
@@ -55,7 +58,7 @@ export const en: Messages = {
       "Free homemade dinner",
       "American breakfast included",
       "Free Wi-Fi",
-      "Family cabanas",
+      "Matrimonial cabanas",
       "Non-smoking cabanas",
       "Quiet garden to relax",
       "Bedding and towels included",
@@ -178,19 +181,18 @@ export const en: Messages = {
   cabins: {
     "double-room": {
       name: "Double cabana",
-      blurb:
-        "Two single beds or 1 large double bed for a comfortable night after the trail.",
+      blurb: "Two single beds for a comfortable night after the trail.",
       features: [
         "Capacity: 2 adults",
-        "2 single beds or 1 large double bed",
+        "2 single beds",
         "Meals included",
         "Hot shower",
         "Free Wi-Fi",
       ],
     },
-    "family-room": {
-      name: "Family cabana",
-      blurb: "One large double bed for couples or a short family stop.",
+    "matrimonial-room": {
+      name: "Matrimonial cabana",
+      blurb: "One large double bed for couples after the trek.",
       features: [
         "Capacity: 2 adults",
         "1 large double bed",
@@ -210,24 +212,12 @@ export const en: Messages = {
         "Free Wi-Fi",
       ],
     },
-    "deluxe-room": {
-      name: "Deluxe cabana",
-      blurb: "Deluxe cabana for two — double bed and a private bathroom.",
+    "simple-room": {
+      name: "Simple cabana",
+      blurb: "A private cabin for solo travelers resting after the trail.",
       features: [
-        "Capacity: 2 adults",
-        "1 double bed",
-        "Meals included",
-        "Hot shower",
-        "Free Wi-Fi",
-      ],
-    },
-    "deluxe-family-room": {
-      name: "Deluxe family cabana",
-      blurb:
-        "Deluxe family cabana — double bed plus one single bed, with a private bathroom.",
-      features: [
-        "Capacity: 3 adults",
-        "1 double bed + 1 single bed",
+        "Capacity: 1 adult",
+        "1 single bed",
         "Meals included",
         "Hot shower",
         "Free Wi-Fi",

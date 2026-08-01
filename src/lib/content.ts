@@ -40,41 +40,51 @@ export const images = {
 
 export type CabinMeta = {
   id: CabinId;
+  /** Inventory count for this room type (how many physical cabins). */
+  units: number;
+  /** Capacity (adults) — used for price context. */
+  capacity: number;
   pricePen: number;
   image: string;
   photoLabel: string;
 };
 
+/**
+ * Client inventory:
+ * 4 dobles · 3 matrimonial · 1 triple · 1 simple
+ */
 export const cabins: CabinMeta[] = [
   {
     id: "double-room",
+    units: 4,
+    capacity: 2,
     pricePen: 120,
-    photoLabel: "Double room interior",
+    photoLabel: "Double cabin with two beds",
     image: "/images/room-interior.jpg",
   },
   {
-    id: "family-room",
+    id: "matrimonial-room",
+    units: 3,
+    capacity: 2,
     pricePen: 120,
-    photoLabel: "Family cabin with valley view",
+    photoLabel: "Matrimonial cabin with double bed",
     image: "/images/lena-8364.jpg",
   },
   {
     id: "triple-room",
+    units: 1,
+    capacity: 3,
     pricePen: 180,
-    photoLabel: "Triple room with three beds",
+    photoLabel: "Triple cabin with three beds",
     image: "/images/room-triple.jpg",
   },
   {
-    id: "deluxe-room",
-    pricePen: 120,
-    photoLabel: "Deluxe cabin",
+    id: "simple-room",
+    units: 1,
+    capacity: 1,
+    pricePen: 80,
+    photoLabel: "Simple cabin for one guest",
     image: "/images/lena-8109.jpg",
-  },
-  {
-    id: "deluxe-family-room",
-    pricePen: 180,
-    photoLabel: "Deluxe family cabins on stilts",
-    image: "/images/room-deluxe-family.jpg",
   },
 ];
 

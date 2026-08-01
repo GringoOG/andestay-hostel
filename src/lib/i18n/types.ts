@@ -1,15 +1,17 @@
 export type CabinId =
   | "double-room"
-  | "family-room"
+  | "matrimonial-room"
   | "triple-room"
-  | "deluxe-room"
-  | "deluxe-family-room";
+  | "simple-room";
 
 export type Messages = {
   nav: { home: string; about: string; rooms: string; contact: string };
   common: {
     bookStay: string;
     perNight: string;
+    perCabin: string;
+    cabinsToBook: string;
+    cabinsAvailable: string;
     closeMenu: string;
     openMenu: string;
     language: string;

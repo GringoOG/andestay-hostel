@@ -6,6 +6,7 @@ import { useI18n } from "@/lib/i18n";
 type BookButtonProps = {
   roomSlug?: string;
   roomId?: string;
+  quantity?: number;
   className?: string;
   variant?: "solid" | "outline";
   children?: React.ReactNode;
@@ -15,6 +16,7 @@ type BookButtonProps = {
 export function BookButton({
   roomSlug,
   roomId,
+  quantity = 1,
   className = "",
   variant = "solid",
   children,
@@ -23,12 +25,15 @@ export function BookButton({
   const { t } = useI18n();
   const slug = roomSlug ?? roomId;
   const label = children ?? t.common.bookStay;
+  const options = { source, quantity: quantity > 1 ? quantity : undefined };
 
   if (!BookingService.isEnabled()) {
     return null;
   }
 
-  const href = slug ? BookingService.getRoomUrl(slug) : BookingService.getUrl();
+  const href = slug
+    ? BookingService.getRoomUrl(slug, options)
+    : BookingService.getUrl();
   const external = BookingService.isExternal();
 
   return (
@@ -39,7 +44,7 @@ export function BookButton({
       onClick={(e) => {
         e.preventDefault();
         if (slug) {
-          BookingService.openRoom(slug, { source });
+          BookingService.openRoom(slug, options);
         } else {
           BookingService.open({ source });
         }

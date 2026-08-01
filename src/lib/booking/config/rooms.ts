@@ -3,6 +3,8 @@
  *
  * UI / content uses slugs only (e.g. "double-room").
  * Providers never hardcode marketing names — they resolve via this map.
+ *
+ * Inventory: 4 doble · 3 matrimonial · 1 triple · 1 simple
  */
 
 import type { BookingProviderId, ProviderRoomRef, RoomSlug } from "../types";
@@ -30,18 +32,18 @@ const ROOM_MAP: Record<RoomSlug, RoomProviderMap> = {
       query: { room: "double-room" },
     },
   },
-  "family-room": {
+  "matrimonial-room": {
     [Provider.QLOAPPS]: {
-      externalId: env("NEXT_PUBLIC_BOOKING_ROOM_FAMILY_PRODUCT_ID", "2"),
-      url: env("NEXT_PUBLIC_BOOKING_ROOM_FAMILY_URL") || undefined,
+      externalId: env("NEXT_PUBLIC_BOOKING_ROOM_MATRIMONIAL_PRODUCT_ID", "2"),
+      url: env("NEXT_PUBLIC_BOOKING_ROOM_MATRIMONIAL_URL") || undefined,
       query: {
-        id_product: env("NEXT_PUBLIC_BOOKING_ROOM_FAMILY_PRODUCT_ID", "2"),
+        id_product: env("NEXT_PUBLIC_BOOKING_ROOM_MATRIMONIAL_PRODUCT_ID", "2"),
       },
     },
     [Provider.CUSTOM]: {
-      externalId: "family-room",
+      externalId: "matrimonial-room",
       path: "/reservations",
-      query: { room: "family-room" },
+      query: { room: "matrimonial-room" },
     },
   },
   "triple-room": {
@@ -58,32 +60,18 @@ const ROOM_MAP: Record<RoomSlug, RoomProviderMap> = {
       query: { room: "triple-room" },
     },
   },
-  "deluxe-room": {
+  "simple-room": {
     [Provider.QLOAPPS]: {
-      externalId: env("NEXT_PUBLIC_BOOKING_ROOM_DELUXE_PRODUCT_ID", "4"),
-      url: env("NEXT_PUBLIC_BOOKING_ROOM_DELUXE_URL") || undefined,
+      externalId: env("NEXT_PUBLIC_BOOKING_ROOM_SIMPLE_PRODUCT_ID", "4"),
+      url: env("NEXT_PUBLIC_BOOKING_ROOM_SIMPLE_URL") || undefined,
       query: {
-        id_product: env("NEXT_PUBLIC_BOOKING_ROOM_DELUXE_PRODUCT_ID", "4"),
+        id_product: env("NEXT_PUBLIC_BOOKING_ROOM_SIMPLE_PRODUCT_ID", "4"),
       },
     },
     [Provider.CUSTOM]: {
-      externalId: "deluxe-room",
+      externalId: "simple-room",
       path: "/reservations",
-      query: { room: "deluxe-room" },
-    },
-  },
-  "deluxe-family-room": {
-    [Provider.QLOAPPS]: {
-      externalId: env("NEXT_PUBLIC_BOOKING_ROOM_DELUXE_FAMILY_PRODUCT_ID", "5"),
-      url: env("NEXT_PUBLIC_BOOKING_ROOM_DELUXE_FAMILY_URL") || undefined,
-      query: {
-        id_product: env("NEXT_PUBLIC_BOOKING_ROOM_DELUXE_FAMILY_PRODUCT_ID", "5"),
-      },
-    },
-    [Provider.CUSTOM]: {
-      externalId: "deluxe-family-room",
-      path: "/reservations",
-      query: { room: "deluxe-family-room" },
+      query: { room: "simple-room" },
     },
   },
 };

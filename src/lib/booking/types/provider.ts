@@ -18,6 +18,8 @@ export type OpenBookingOptions = {
   newTab?: boolean;
   /** Optional UI source for analytics (e.g. "navbar", "room-card"). */
   source?: string;
+  /** How many units of this room type to book (default 1). */
+  quantity?: number;
 };
 
 /**
@@ -55,5 +57,5 @@ export interface BookingProvider {
   open(options?: OpenBookingOptions): void;
   openRoom(roomSlug: RoomSlug, options?: OpenBookingOptions): void;
   getUrl(): string;
-  getRoomUrl(roomSlug: RoomSlug): string;
+  getRoomUrl(roomSlug: RoomSlug, options?: OpenBookingOptions): string;
 }

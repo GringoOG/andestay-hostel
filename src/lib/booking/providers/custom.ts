@@ -1,8 +1,13 @@
 import { bookingConfig } from "../config";
 import { getMappedRoom } from "../config/rooms";
 import { BookingLogger } from "../logger";
-import { BookingProviderId, type BookingProvider, type RoomSlug } from "../types";
-import { buildRoomUrl, joinUrl, navigateTo } from "../utils";
+import {
+  BookingProviderId,
+  type BookingProvider,
+  type OpenBookingOptions,
+  type RoomSlug,
+} from "../types";
+import { buildRoomUrl, joinUrl, navigateTo, withQuery } from "../utils";
 
 /**
  * Custom engine stub — activate with NEXT_PUBLIC_BOOKING_PROVIDER=custom.
@@ -11,6 +16,11 @@ import { buildRoomUrl, joinUrl, navigateTo } from "../utils";
 export function createCustomProvider(): BookingProvider {
   const base = bookingConfig.baseUrl;
   const path = bookingConfig.defaultPath || "/reservations";
+
+  const applyQuantity = (url: string, quantity?: number) => {
+    if (!quantity || quantity < 2) return url;
+    return withQuery(url, { quantity: String(quantity) });
+  };
 
   const provider: BookingProvider = {
     id: BookingProviderId.CUSTOM,
@@ -26,10 +36,10 @@ export function createCustomProvider(): BookingProvider {
       return base ? joinUrl(base, path) : path.startsWith("/") ? path : `/${path}`;
     },
 
-    getRoomUrl(roomSlug: RoomSlug) {
+    getRoomUrl(roomSlug: RoomSlug, opts: OpenBookingOptions = {}) {
       const mapped = getMappedRoom(roomSlug, BookingProviderId.CUSTOM);
       const fallback = `${provider.getUrl()}${provider.getUrl().includes("?") ? "&" : "?"}room=${encodeURIComponent(roomSlug)}`;
-      return buildRoomUrl(base, path, mapped, fallback);
+      return applyQuantity(buildRoomUrl(base, path, mapped, fallback), opts.quantity);
     },
 
     open(opts = {}) {
@@ -40,9 +50,13 @@ export function createCustomProvider(): BookingProvider {
     },
 
     openRoom(roomSlug, opts = {}) {
-      const url = provider.getRoomUrl(roomSlug);
+      const url = provider.getRoomUrl(roomSlug, opts);
       const newTab = opts.newTab ?? false;
-      BookingLogger.info("custom_open_room", { roomSlug, url });
+      BookingLogger.info("custom_open_room", {
+        roomSlug,
+        url,
+        quantity: opts.quantity,
+      });
       navigateTo(url, newTab);
     },
   };

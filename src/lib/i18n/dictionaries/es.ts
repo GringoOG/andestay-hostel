@@ -5,6 +5,9 @@ export const es: Messages = {
   common: {
     bookStay: "Reservar estancia",
     perNight: "/ noche",
+    perCabin: "por cabaña",
+    cabinsToBook: "Cabañas a reservar",
+    cabinsAvailable: "{count} cabañas de este tipo",
     closeMenu: "Cerrar menú",
     openMenu: "Abrir menú",
     language: "Idioma",
@@ -55,7 +58,7 @@ export const es: Messages = {
       "Cena casera gratis",
       "Desayuno americano incluido",
       "Wi-Fi gratis",
-      "Cabañas familiares",
+      "Cabañas matrimoniales",
       "Cabañas para no fumadores",
       "Jardín tranquilo para relajarte",
       "Ropa de cama y toallas incluidas",
@@ -178,19 +181,18 @@ export const es: Messages = {
   cabins: {
     "double-room": {
       name: "Cabaña doble",
-      blurb:
-        "Dos camas individuales o 1 cama doble grande para una noche cómoda después de la ruta.",
+      blurb: "Dos camas individuales para una noche cómoda después de la ruta.",
       features: [
         "Capacidad: 2 adultos",
-        "2 camas individuales o 1 cama doble grande",
+        "2 camas individuales",
         "Comidas incluidas",
         "Ducha caliente",
         "Wi-Fi gratis",
       ],
     },
-    "family-room": {
-      name: "Cabaña familiar",
-      blurb: "Una cama doble grande para parejas o una breve parada familiar.",
+    "matrimonial-room": {
+      name: "Cabaña matrimonial",
+      blurb: "Una cama doble grande para parejas después del trek.",
       features: [
         "Capacidad: 2 adultos",
         "1 cama doble grande",
@@ -210,24 +212,12 @@ export const es: Messages = {
         "Wi-Fi gratis",
       ],
     },
-    "deluxe-room": {
-      name: "Cabaña deluxe",
-      blurb: "Cabaña deluxe para dos: cama doble y baño privado.",
+    "simple-room": {
+      name: "Cabaña simple",
+      blurb: "Cabaña privada para viajeros solos después de la ruta.",
       features: [
-        "Capacidad: 2 adultos",
-        "1 cama doble",
-        "Comidas incluidas",
-        "Ducha caliente",
-        "Wi-Fi gratis",
-      ],
-    },
-    "deluxe-family-room": {
-      name: "Cabaña familiar deluxe",
-      blurb:
-        "Cabaña familiar deluxe: cama doble más una cama individual, con baño privado.",
-      features: [
-        "Capacidad: 3 adultos",
-        "1 cama doble + 1 cama individual",
+        "Capacidad: 1 adulto",
+        "1 cama individual",
         "Comidas incluidas",
         "Ducha caliente",
         "Wi-Fi gratis",

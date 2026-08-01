@@ -64,9 +64,9 @@ export const BookingService = {
     return active().getUrl();
   },
 
-  getRoomUrl(roomSlug: RoomSlug): string {
+  getRoomUrl(roomSlug: RoomSlug, options: OpenBookingOptions = {}): string {
     try {
-      return active().getRoomUrl(roomSlug);
+      return active().getRoomUrl(roomSlug, options);
     } catch (err) {
       reportError(err, roomSlug);
       return active().getUrl();
@@ -91,7 +91,7 @@ export const BookingService = {
   openRoom(roomSlug: RoomSlug, options: OpenBookingOptions = {}): void {
     if (!guardEnabled()) return;
     try {
-      const url = active().getRoomUrl(roomSlug);
+      const url = active().getRoomUrl(roomSlug, options);
       trackBookingClick({
         provider: bookingConfig.provider,
         roomSlug,

@@ -5,6 +5,9 @@ export const fr: Messages = {
   common: {
     bookStay: "Réserver un séjour",
     perNight: "/ nuit",
+    perCabin: "par cabane",
+    cabinsToBook: "Cabanes à réserver",
+    cabinsAvailable: "{count} cabanes de ce type",
     closeMenu: "Fermer le menu",
     openMenu: "Ouvrir le menu",
     language: "Langue",
@@ -55,7 +58,7 @@ export const fr: Messages = {
       "Dîner fait maison gratuit",
       "Petit-déjeuner américain inclus",
       "Wi-Fi gratuit",
-      "Cabanes familiales",
+      "Cabanes matrimoniales",
       "Cabanes non-fumeurs",
       "Jardin tranquille pour se détendre",
       "Linge de lit et serviettes inclus",
@@ -178,18 +181,18 @@ export const fr: Messages = {
   cabins: {
     "double-room": {
       name: "Cabane double",
-      blurb: "Deux lits simples ou 1 grand lit double pour une nuit confortable après la piste.",
+      blurb: "Deux lits simples pour une nuit confortable après la piste.",
       features: [
         "Capacité : 2 adultes",
-        "2 lits simples ou 1 grand lit double",
+        "2 lits simples",
         "Repas inclus",
         "Douche chaude",
         "Wi-Fi gratuit",
       ],
     },
-    "family-room": {
-      name: "Cabane familiale",
-      blurb: "Un grand lit double pour les couples ou une petite halte en famille.",
+    "matrimonial-room": {
+      name: "Cabane matrimoniale",
+      blurb: "Un grand lit double pour les couples après le trek.",
       features: [
         "Capacité : 2 adultes",
         "1 grand lit double",
@@ -209,24 +212,12 @@ export const fr: Messages = {
         "Wi-Fi gratuit",
       ],
     },
-    "deluxe-room": {
-      name: "Cabane Deluxe",
-      blurb: "Cabane Deluxe pour deux — lit double et salle de bain privée.",
+    "simple-room": {
+      name: "Cabane simple",
+      blurb: "Cabane privée pour les voyageurs seuls après la piste.",
       features: [
-        "Capacité : 2 adultes",
-        "1 lit double",
-        "Repas inclus",
-        "Douche chaude",
-        "Wi-Fi gratuit",
-      ],
-    },
-    "deluxe-family-room": {
-      name: "Cabane familiale Deluxe",
-      blurb:
-        "Cabane familiale Deluxe — lit double plus un lit simple, avec salle de bain privée.",
-      features: [
-        "Capacité : 3 adultes",
-        "1 lit double + 1 lit simple",
+        "Capacité : 1 adulte",
+        "1 lit simple",
         "Repas inclus",
         "Douche chaude",
         "Wi-Fi gratuit",

@@ -5,6 +5,9 @@ export const cs: Messages = {
   common: {
     bookStay: "Rezervovat pobyt",
     perNight: "/ noc",
+    perCabin: "za chatu",
+    cabinsToBook: "Počet chat",
+    cabinsAvailable: "{count} chat tohoto typu",
     closeMenu: "Zavřít menu",
     openMenu: "Otevřít menu",
     language: "Jazyk",
@@ -55,7 +58,7 @@ export const cs: Messages = {
       "Domácí večeře zdarma",
       "Americká snídaně v ceně",
       "Bezplatné Wi-Fi",
-      "Rodinné chaty",
+      "Manželské chaty",
       "Chaty pro nekuřáky",
       "Klidná zahrada k odpočinku",
       "Povlečení a ručníky v ceně",
@@ -178,18 +181,18 @@ export const cs: Messages = {
   cabins: {
     "double-room": {
       name: "Dvoulůžková chata",
-      blurb: "Dvě jednolůžkové postele nebo 1 velká manželská postel pro pohodlnou noc po treku.",
+      blurb: "Dvě jednolůžkové postele pro pohodlnou noc po treku.",
       features: [
         "Kapacita: 2 dospělí",
-        "2 jednolůžkové postele nebo 1 velká manželská postel",
+        "2 jednolůžkové postele",
         "Jídlo v ceně",
         "Teplá sprcha",
         "Bezplatné Wi-Fi",
       ],
     },
-    "family-room": {
-      name: "Rodinná chata",
-      blurb: "Jedna velká manželská postel pro páry nebo krátkou rodinnou zastávku.",
+    "matrimonial-room": {
+      name: "Manželská chata",
+      blurb: "Jedna velká manželská postel pro páry po treku.",
       features: [
         "Kapacita: 2 dospělí",
         "1 velká manželská postel",
@@ -209,24 +212,12 @@ export const cs: Messages = {
         "Bezplatné Wi-Fi",
       ],
     },
-    "deluxe-room": {
-      name: "Deluxe chata",
-      blurb: "Deluxe chata pro dva — manželská postel a vlastní koupelna.",
+    "simple-room": {
+      name: "Jednolůžková chata",
+      blurb: "Soukromá chata pro sólo cestovatele po treku.",
       features: [
-        "Kapacita: 2 dospělí",
-        "1 manželská postel",
-        "Jídlo v ceně",
-        "Teplá sprcha",
-        "Bezplatné Wi-Fi",
-      ],
-    },
-    "deluxe-family-room": {
-      name: "Deluxe rodinná chata",
-      blurb:
-        "Deluxe rodinná chata — manželská postel a jedna jednolůžková postel, s vlastní koupelnou.",
-      features: [
-        "Kapacita: 3 dospělí",
-        "1 manželská postel + 1 jednolůžková postel",
+        "Kapacita: 1 dospělý",
+        "1 jednolůžková postel",
         "Jídlo v ceně",
         "Teplá sprcha",
         "Bezplatné Wi-Fi",

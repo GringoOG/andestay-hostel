@@ -5,6 +5,9 @@ export const de: Messages = {
   common: {
     bookStay: "Aufenthalt buchen",
     perNight: "/ Nacht",
+    perCabin: "pro Hütte",
+    cabinsToBook: "Hütten buchen",
+    cabinsAvailable: "{count} Hütten dieses Typs",
     closeMenu: "Menü schließen",
     openMenu: "Menü öffnen",
     language: "Sprache",
@@ -55,7 +58,7 @@ export const de: Messages = {
       "Kostenloses hausgemachtes Abendessen",
       "Amerikanisches Frühstück inbegriffen",
       "Kostenloses WLAN",
-      "Familienhütten",
+      "Doppelbett-Hütten",
       "Nichtraucherhütten",
       "Ruhiger Garten zum Entspannen",
       "Bettwäsche und Handtücher inbegriffen",
@@ -178,18 +181,18 @@ export const de: Messages = {
   cabins: {
     "double-room": {
       name: "Doppelhütte",
-      blurb: "Zwei Einzelbetten oder 1 großes Doppelbett für eine komfortable Nacht nach dem Trail.",
+      blurb: "Zwei Einzelbetten für eine komfortable Nacht nach dem Trail.",
       features: [
         "Kapazität: 2 Erwachsene",
-        "2 Einzelbetten oder 1 großes Doppelbett",
+        "2 Einzelbetten",
         "Mahlzeiten inklusive",
         "Warme Dusche",
         "Kostenloses WLAN",
       ],
     },
-    "family-room": {
-      name: "Familienhütte",
-      blurb: "Ein großes Doppelbett für Paare oder einen kurzen Familienaufenthalt.",
+    "matrimonial-room": {
+      name: "Doppelbett-Hütte",
+      blurb: "Ein großes Doppelbett für Paare nach dem Trek.",
       features: [
         "Kapazität: 2 Erwachsene",
         "1 großes Doppelbett",
@@ -209,23 +212,12 @@ export const de: Messages = {
         "Kostenloses WLAN",
       ],
     },
-    "deluxe-room": {
-      name: "Deluxe-Hütte",
-      blurb: "Deluxe-Hütte für zwei — Doppelbett und privates Bad.",
+    "simple-room": {
+      name: "Einzelhütte",
+      blurb: "Private Hütte für Alleinreisende nach dem Trail.",
       features: [
-        "Kapazität: 2 Erwachsene",
-        "1 Doppelbett",
-        "Mahlzeiten inklusive",
-        "Warme Dusche",
-        "Kostenloses WLAN",
-      ],
-    },
-    "deluxe-family-room": {
-      name: "Deluxe-Familienhütte",
-      blurb: "Deluxe-Familienhütte — Doppelbett plus ein Einzelbett, mit privatem Bad.",
-      features: [
-        "Kapazität: 3 Erwachsene",
-        "1 Doppelbett + 1 Einzelbett",
+        "Kapazität: 1 Erwachsener",
+        "1 Einzelbett",
         "Mahlzeiten inklusive",
         "Warme Dusche",
         "Kostenloses WLAN",
