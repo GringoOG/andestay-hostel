@@ -1,7 +1,7 @@
 import type { Messages } from "../types";
 
 export const en: Messages = {
-  nav: { home: "Home", about: "About", rooms: "Cabanas", contact: "Contact" },
+  nav: { home: "Home", about: "About", rooms: "Cabins", contact: "Contact" },
   common: {
     bookStay: "Book a stay",
     perNight: "/ night",
