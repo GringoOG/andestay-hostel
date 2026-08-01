@@ -27,11 +27,11 @@ export const navHrefs = [
 
 /**
  * Photo map (foto Leňa):
- * hero.jpg — landing hero (complex / cabins overview)
+ * 8365 → hero (landing)
  * 8107, 8109, 8114, 8272, 8321, 8322, 8335, 8363, 8364 → used across sections
  */
 export const images = {
-  /** Landing hero — property overview */
+  /** IMG_8365 — landing hero */
   hero: "/images/hero.jpg",
   /** IMG_8322 */
   aboutHero: "/images/lena-8322.jpg",

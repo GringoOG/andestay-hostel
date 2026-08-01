@@ -299,6 +299,21 @@ img {
   );
 }
 
+/* Softer overlays — About / Nosotros banner (text at top, keep photo brighter) */
+.photo-green-veil--soft {
+  background: rgba(28, 42, 32, 0.14);
+  mix-blend-mode: multiply;
+}
+
+.photo-green-shade--soft {
+  background: linear-gradient(
+    to bottom,
+    rgba(12, 20, 14, 0.28) 0%,
+    rgba(18, 30, 22, 0.1) 42%,
+    rgba(24, 38, 30, 0.06) 100%
+  );
+}
+
 .photo-ph {
   position: relative;
   overflow: hidden;

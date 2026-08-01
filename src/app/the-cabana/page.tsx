@@ -24,24 +24,24 @@ export default function AboutPage() {
               label="About AndeStay Hostel"
               src={images.aboutHero}
               priority
-              objectPosition="50% 78%"
-              sizes="(max-width: 768px) 100vw, 1180px"
-              quality={88}
+              objectPosition="50% 55%"
+              sizes="(max-width: 768px) 100vw, 1400px"
+              quality={90}
               className="aspect-[4/5] min-h-[280px] rounded-[1.25rem] sm:aspect-[2.35/1] sm:min-h-[240px] sm:rounded-[var(--radius-lg)] md:aspect-[2.6/1] md:min-h-0"
             />
-            <div className="pointer-events-none absolute inset-0 photo-green-veil" />
-            <div className="pointer-events-none absolute inset-0 photo-green-shade" />
+            <div className="pointer-events-none absolute inset-0 photo-green-veil photo-green-veil--soft" />
+            <div className="pointer-events-none absolute inset-0 photo-green-shade photo-green-shade--soft" />
 
-            <div className="absolute inset-0 flex flex-col justify-end p-5 text-white sm:p-8 md:p-10 lg:p-12">
+            <div className="absolute inset-0 flex flex-col justify-start p-5 text-white sm:p-8 md:p-10 lg:p-12">
               <span className="badge badge-light w-fit text-[0.62rem]">
                 {t.aboutPage.welcomeBadge}
               </span>
 
-              <div className="mt-3 flex flex-col gap-4 sm:mt-4 sm:gap-5 md:mt-5 md:flex-row md:items-end md:justify-between md:gap-12 lg:gap-20">
+              <div className="mt-3 flex flex-col gap-4 sm:mt-4 sm:gap-5 md:mt-5 md:flex-row md:items-start md:justify-between md:gap-12 lg:gap-20">
                 <h1 className="max-w-xl text-[1.25rem] font-light leading-[1.22] tracking-[-0.03em] sm:text-[1.65rem] md:max-w-[28rem] md:text-[1.85rem] lg:text-[2.05rem]">
                   {t.aboutPage.heroTitle}
                 </h1>
-                <p className="max-w-sm text-[0.8rem] font-light leading-relaxed text-white/85 sm:text-[0.82rem] md:max-w-[15.5rem] md:pb-0.5 md:text-[0.88rem]">
+                <p className="max-w-sm text-[0.8rem] font-light leading-relaxed text-white/85 sm:text-[0.82rem] md:max-w-[15.5rem] md:pt-0.5 md:text-[0.88rem]">
                   {t.aboutPage.heroSupport}
                 </p>
               </div>

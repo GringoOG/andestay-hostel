@@ -9,7 +9,7 @@ export function HeroTitle() {
   return (
     <AnimatedHeading
       as="h1"
-      className="hero-title mt-6 text-left text-white"
+      className="hero-title mt-6 text-center text-white"
       trigger="immediate"
       delayMs={220}
       staggerMs={28}
