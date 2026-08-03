@@ -24,42 +24,37 @@ export function HomeView() {
       <Header tone="over-hero" />
 
       <section className="relative min-h-[100svh] overflow-hidden bg-[var(--forest-deep)] text-white">
-        {/*
-          Mobile: photo sits in a 4:3 frame (matches the landscape file) so the whole image is visible.
-          Desktop: full-bleed cover + soft zoom, as before.
-        */}
-        <div className="absolute inset-x-0 top-0 aspect-[4/3] overflow-hidden md:inset-0 md:aspect-auto">
+        {/* Full-bleed hero on all breakpoints — copy sits on the photo */}
+        <div className="absolute inset-0 overflow-hidden">
           <PhotoPlaceholder
             label="AndeStay Hostel hero"
             src={images.hero}
             priority
             fillParent
-            objectPosition="42% 40%"
+            objectPosition="42% 38%"
             sizes="100vw"
             quality={88}
             imageClassName="object-cover"
-            className="rounded-none md:origin-center md:scale-105 md:animate-[heroZoom_18s_ease-out_forwards]"
+            className="rounded-none origin-center scale-105 animate-[heroZoom_18s_ease-out_forwards] md:scale-105"
           />
         </div>
 
-        {/* Desktop soft forest veil */}
-        <div className="pointer-events-none absolute inset-0 hidden photo-green-veil md:block" />
-        <div className="pointer-events-none absolute inset-0 hidden photo-green-shade md:block" />
+        {/* Readability: soft forest veil + bottom shade so white type stays on the photo */}
+        <div className="pointer-events-none absolute inset-0 photo-green-veil opacity-70 md:opacity-100" />
+        <div className="pointer-events-none absolute inset-0 photo-green-shade opacity-80 md:opacity-100" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--forest-deep)]/80 via-[var(--forest-deep)]/25 to-black/25 md:from-[var(--forest-deep)]/55 md:via-transparent md:to-black/15" />
 
-        {/* Mobile: fade from photo into deep forest so copy stays readable below */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent from-0% via-transparent via-[28%] to-[var(--forest-deep)] to-[48%] md:hidden" />
-
-        <div className="site-wrap relative flex min-h-[100svh] flex-col items-center justify-center pb-[max(2.25rem,calc(1rem+var(--safe-bottom)))] pt-[calc(var(--nav-h)+1.25rem)] text-center sm:pb-16 sm:pt-[calc(var(--nav-h)+2rem)] md:pb-24 md:pt-[calc(var(--nav-h)+3rem)]">
-          <div className="flex w-full max-w-3xl flex-col items-center px-0.5">
+        <div className="site-wrap relative flex min-h-[100svh] flex-col items-center justify-end pb-[max(1.75rem,calc(0.75rem+var(--safe-bottom)))] pt-[calc(var(--nav-h)+0.75rem)] text-center sm:justify-center sm:pb-16 sm:pt-[calc(var(--nav-h)+2rem)] md:pb-24 md:pt-[calc(var(--nav-h)+3rem)]">
+          <div className="flex w-full max-w-3xl flex-col items-center px-0.5 pb-1 sm:pb-0">
             <span className="badge badge-light animate-[fadeUp_0.8s_ease_both]">
               {t.hero.badge}
             </span>
             <HeroTitle />
-            <p className="mt-4 max-w-[20.5rem] text-[0.92rem] leading-relaxed text-white/90 sm:mt-6 sm:max-w-md sm:text-base md:text-lg animate-[fadeUp_1s_ease_0.35s_both]">
+            <p className="mt-3 max-w-[20.5rem] text-[0.9rem] leading-relaxed text-white/92 drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)] sm:mt-6 sm:max-w-md sm:text-base md:text-lg animate-[fadeUp_1s_ease_0.35s_both]">
               {t.hero.support}
             </p>
 
-            <div className="mt-7 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 animate-[fadeUp_1s_ease_0.55s_both]">
+            <div className="mt-5 flex flex-col items-center gap-2.5 sm:mt-10 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 animate-[fadeUp_1s_ease_0.55s_both]">
               <div className="flex items-center">
                 {images.avatars.map((src) => (
                   <div
@@ -73,7 +68,7 @@ export function HomeView() {
                   +56
                 </div>
               </div>
-              <p className="max-w-[17.5rem] text-center text-[0.8rem] leading-snug text-white/88 sm:max-w-[16rem] sm:text-sm">
+              <p className="max-w-[17.5rem] text-center text-[0.8rem] leading-snug text-white/90 sm:max-w-[16rem] sm:text-sm">
                 {t.hero.socialProofBefore}
                 <strong className="font-semibold text-white">{t.hero.socialProofBold}</strong>
                 {t.hero.socialProofAfter}
@@ -102,6 +97,24 @@ export function HomeView() {
         </div>
       </section>
 
+      <section className="bg-[var(--bg-soft)] py-10 sm:py-12 md:py-14">
+        <div className="site-wrap">
+          <Reveal>
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-6">
+              <p className="max-w-2xl text-[1.15rem] font-medium leading-snug text-[var(--serif-green)] sm:text-xl md:text-[1.35rem]">
+                {t.accommodations.directSaveBefore}
+                <strong className="font-semibold">{t.accommodations.directSaveBold}</strong>
+                {t.accommodations.directSaveAfter}
+              </p>
+              <BookButton
+                source="home-direct-save"
+                className="w-full justify-between sm:w-auto"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <AboutStickyGallery />
 
       <section className="bg-[var(--bg-soft)] py-14 sm:py-20 md:py-28">
@@ -119,14 +132,6 @@ export function HomeView() {
             <p className="mt-5 max-w-xl text-[0.95rem] font-light leading-[1.6] text-[var(--ink-soft)] sm:mt-7 sm:text-[0.98rem]">
               {t.accommodations.body}
             </p>
-            <div className="mt-7 flex flex-col gap-4 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center sm:gap-5">
-              <p className="max-w-xl text-[1.05rem] font-medium leading-snug text-[var(--serif-green)] sm:text-lg">
-                {t.accommodations.directSaveBefore}
-                <strong className="font-semibold">{t.accommodations.directSaveBold}</strong>
-                {t.accommodations.directSaveAfter}
-              </p>
-              <BookButton source="home-direct-save" className="w-full justify-between sm:w-auto" />
-            </div>
           </Reveal>
 
           <div className="mt-10 space-y-7 sm:mt-14 sm:space-y-10 md:mt-16">

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BookButton } from "@/components/BookButton";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -11,19 +12,30 @@ type HeaderProps = {
   tone?: "over-hero" | "light";
 };
 
+function scrollHomeToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 export function Header({ tone = "light" }: HeaderProps) {
   const { t } = useI18n();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const overHero = tone === "over-hero" && !scrolled && !open;
   const glass = scrolled || tone === "light" || open;
   const navColor = overHero ? "#ffffff" : "var(--ink-soft)";
   const switcherTone = overHero ? "over-hero" : "light";
+  const onHome = pathname === "/";
 
   const links = navHrefs.map((item) => ({
     href: item.href,
     label: t.nav[item.key],
   }));
+
+  const goHome = () => {
+    setOpen(false);
+    if (onHome) scrollHomeToTop();
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -62,7 +74,7 @@ export function Header({ tone = "light" }: HeaderProps) {
             overHero ? "drop-shadow-[0_1px_8px_rgba(0,0,0,0.45)]" : ""
           }`}
           style={{ color: navColor }}
-          onClick={() => setOpen(false)}
+          onClick={goHome}
         >
           AndeStay
           <span className="hidden min-[360px]:inline"> Hostel</span>
@@ -73,7 +85,14 @@ export function Header({ tone = "light" }: HeaderProps) {
           style={{ color: navColor }}
         >
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="transition hover:opacity-70">
+            <Link
+              key={link.href}
+              href={link.href}
+              className="transition hover:opacity-70"
+              onClick={() => {
+                if (link.href === "/" && onHome) scrollHomeToTop();
+              }}
+            >
               {link.label}
             </Link>
           ))}
@@ -116,7 +135,10 @@ export function Header({ tone = "light" }: HeaderProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false);
+                  if (link.href === "/" && onHome) scrollHomeToTop();
+                }}
                 className="rounded-xl px-3 py-3.5 transition active:bg-white/45"
               >
                 {link.label}

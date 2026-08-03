@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navHrefs, site } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
 
@@ -53,6 +54,8 @@ function WhatsAppIcon({ className = "" }: { className?: string }) {
 
 export function Footer() {
   const { t } = useI18n();
+  const pathname = usePathname();
+  const onHome = pathname === "/";
   const links = navHrefs.map((item) => ({
     href: item.href,
     label: t.nav[item.key],
@@ -68,6 +71,11 @@ export function Footer() {
                 key={link.href}
                 href={link.href}
                 className="inline-flex min-h-11 items-center py-2 hover:text-white"
+                onClick={() => {
+                  if (link.href === "/" && onHome) {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }
+                }}
               >
                 {link.label}
               </Link>
