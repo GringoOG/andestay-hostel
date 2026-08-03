@@ -86,16 +86,21 @@ export function CabinCard({ cabin, reverse = false }: { cabin: CabinMeta; revers
 
             <div className="flex flex-col gap-3.5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
               <div>
-                <p className="text-[1.05rem] font-semibold tracking-tight sm:text-xl">
-                  ${totalPrice.usd}{" "}
-                  <span className="text-[var(--ink-muted)]">·</span> PEN {totalPrice.pen}{" "}
+                <p className="tracking-tight">
+                  <span className="text-[1.05rem] font-semibold sm:text-xl">
+                    PEN {totalPrice.pen}
+                  </span>{" "}
+                  <span className="text-[var(--ink-muted)]">·</span>{" "}
+                  <span className="text-sm font-normal text-[var(--ink-muted)] sm:text-[0.95rem]">
+                    ${totalPrice.usd}
+                  </span>{" "}
                   <span className="text-sm font-normal text-[var(--ink-muted)]">
                     {t.common.perNight}
                   </span>
                 </p>
                 {showQty && quantity > 1 ? (
                   <p className="mt-0.5 text-sm text-[var(--ink-muted)]">
-                    ${unitPrice.usd} · PEN {unitPrice.pen} {t.common.perCabin}
+                    PEN {unitPrice.pen} · ${unitPrice.usd} {t.common.perCabin}
                   </p>
                 ) : null}
               </div>

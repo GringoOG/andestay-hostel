@@ -25,10 +25,10 @@ export const PEN_PER_USD = 3.4;
  * Seasonal / dynamic rules will live here later — not in providers.
  */
 export const roomRates: RoomRate[] = [
-  { roomId: "simple-room", nightly: { amount: 80, currency: "PEN" } },
-  { roomId: "double-room", nightly: { amount: 120, currency: "PEN" } },
-  { roomId: "triple-room", nightly: { amount: 180, currency: "PEN" } },
-  { roomId: "matrimonial-room", nightly: { amount: 120, currency: "PEN" } },
+  { roomId: "simple-room", nightly: { amount: 55, currency: "PEN" } },
+  { roomId: "double-room", nightly: { amount: 110, currency: "PEN" } },
+  { roomId: "triple-room", nightly: { amount: 160, currency: "PEN" } },
+  { roomId: "matrimonial-room", nightly: { amount: 110, currency: "PEN" } },
 ];
 
 export function getRoomNightlyPen(roomId: HotelRoomId): number {
