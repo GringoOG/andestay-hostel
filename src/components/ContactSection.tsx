@@ -3,7 +3,7 @@
 import { AnimatedHeading } from "@/components/AnimatedHeading";
 import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/Reveal";
-import { site } from "@/lib/content";
+import { site, telHref, whatsappHref } from "@/lib/content";
 import { useI18n } from "@/lib/i18n";
 
 export function ContactSection() {
@@ -36,9 +36,26 @@ export function ContactSection() {
               <p className="font-ui text-[0.7rem] tracking-[0.14em] text-[var(--ink-muted)]">
                 {t.contact.telephone}
               </p>
-              <a href={site.phoneHref} className="mt-1 block text-base hover:opacity-70 sm:text-lg">
-                {site.phone}
-              </a>
+              <div className="mt-1 space-y-2">
+                {site.phones.map((phone) => (
+                  <div
+                    key={phone.e164}
+                    className="flex flex-wrap items-center gap-x-3 gap-y-1 text-base sm:text-lg"
+                  >
+                    <a href={telHref(phone)} className="hover:opacity-70">
+                      {phone.label}
+                    </a>
+                    <a
+                      href={whatsappHref(phone)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-[var(--serif-green)] hover:opacity-70"
+                    >
+                      WhatsApp
+                    </a>
+                  </div>
+                ))}
+              </div>
             </li>
             <li>
               <p className="font-ui text-[0.7rem] tracking-[0.14em] text-[var(--ink-muted)]">

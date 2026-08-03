@@ -12,7 +12,7 @@ export type HotelSettings = {
   taxIncludedInRate: boolean;
   contact: {
     email: string;
-    phone: string;
+    phones: string[];
     address: string;
   };
 };
@@ -25,8 +25,8 @@ export const hotelSettings: HotelSettings = {
   currency: "PEN",
   taxIncludedInRate: true,
   contact: {
-    email: "hello@andestayhostel.com",
-    phone: "+51 000 000 000",
-    address: "Colpapampa, Peru",
+    email: "andestayhostel@gmail.com",
+    phones: ["+51 906 067 917", "+51 958 163 200"],
+    address: "CU-109 Cabañas, Colpapampa, Peru",
   },
 };

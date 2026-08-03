@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { BookButton } from "@/components/BookButton";
 import { AnimatedHeading } from "@/components/AnimatedHeading";
 import { AboutStickyGallery } from "@/components/AboutStickyGallery";
 import { CabinCard } from "@/components/CabinCard";
@@ -118,6 +119,14 @@ export function HomeView() {
             <p className="mt-5 max-w-xl text-[0.95rem] font-light leading-[1.6] text-[var(--ink-soft)] sm:mt-7 sm:text-[0.98rem]">
               {t.accommodations.body}
             </p>
+            <div className="mt-7 flex flex-col gap-4 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center sm:gap-5">
+              <p className="max-w-xl text-[1.05rem] font-medium leading-snug text-[var(--serif-green)] sm:text-lg">
+                {t.accommodations.directSaveBefore}
+                <strong className="font-semibold">{t.accommodations.directSaveBold}</strong>
+                {t.accommodations.directSaveAfter}
+              </p>
+              <BookButton source="home-direct-save" className="w-full justify-between sm:w-auto" />
+            </div>
           </Reveal>
 
           <div className="mt-10 space-y-7 sm:mt-14 sm:space-y-10 md:mt-16">

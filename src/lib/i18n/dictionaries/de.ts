@@ -1,7 +1,7 @@
 import type { Messages } from "../types";
 
 export const de: Messages = {
-  nav: { home: "Startseite", about: "Über uns", rooms: "Hütten", contact: "Kontakt" },
+  nav: { home: "Startseite", about: "Über uns", rooms: "Hütten", transport: "Transport", contact: "Kontakt" },
   common: {
     bookStay: "Aufenthalt buchen",
     perNight: "/ Nacht",
@@ -34,6 +34,9 @@ export const de: Messages = {
     titleBefore: "Jede Hütte wurde gestaltet für Wohlbefinden, Privatsphäre und eine ",
     titleBold: "echte Verbindung zur Natur.",
     body: "AndeStay Hostel verbindet Komfort und Natur — gemütliches Design, Gastfreundschaft und eine Atmosphäre zum Entspannen oder Feiern.",
+    directSaveBefore: "Buche direkt auf unserer Website und ",
+    directSaveBold: "spare 20 %",
+    directSaveAfter: " im Vergleich zu anderen Plattformen.",
   },
   aboutPage: {
     welcomeBadge: "Willkommen im AndeStay Hostel",
@@ -168,6 +171,53 @@ export const de: Messages = {
     pageTitle: "Schreib uns",
     pageBody:
       "Fragen zu einem Aufenthalt, zur Verfügbarkeit oder zu einer privaten Feier — schick uns eine Nachricht, und wir melden uns in Kürze bei dir.",
+    openInMaps: "In Google Maps öffnen",
+    mapHint: "Das Hostel liegt auf halber Strecke zwischen Chaullay und Colpapampa.",
+  },
+  transportPage: {
+    badge: "Anreise",
+    title: "Transport organisiert von AndeStay",
+    body: "Wir helfen Gästen, sicher zwischen Cusco, Colpapampa und den nächsten Etappen des Salkantay-Treks zu reisen. Nennt uns eure Daten — wir bestätigen die beste Option.",
+    askWhatsApp: "Per WhatsApp anfragen",
+    note: "Preise hängen von Gruppengröße, Saison und Abholort ab. Schreibt uns für ein Angebot.",
+    offers: [
+      {
+        id: "cusco-colpapampa",
+        title: "Cusco ↔ Colpapampa",
+        route: "Privater oder geteilter Transfer",
+        blurb:
+          "Tür-zu-Tür-Transfer zwischen Cusco und AndeStay Hostel — ideal nach der Ankunft oder vor dem Rückflug.",
+        features: [
+          "Abholung am Hotel oder Flughafen (auf Anfrage)",
+          "Fahrer mit Erfahrung auf Bergstraßen",
+          "Flexible Abfahrtszeiten",
+        ],
+      },
+      {
+        id: "colpapampa-santa-teresa",
+        title: "Colpapampa ↔ Santa Teresa / Hydroelectric",
+        route: "Weiter auf der Salkantay-Route",
+        blurb:
+          "Weiterfahrt Richtung Santa Teresa und Hydroelectric für Aguas Calientes / Machu Picchu.",
+        features: [
+          "Abgestimmt auf Trek-Etappen",
+          "Fahrzeuge geeignet für Gepäck",
+          "Koordination mit eurem Aufenthalt",
+        ],
+      },
+      {
+        id: "private-charter",
+        title: "Privater Charter",
+        route: "Individuelle Route",
+        blurb:
+          "Ganztägiger oder mehrstopiger Privattransport für Familien, kleine Gruppen und Feiern.",
+        features: [
+          "Euer Zeitplan, eure Stopps",
+          "Geeignet für größere Gruppen",
+          "Vorab-Angebot per WhatsApp",
+        ],
+      },
+    ],
   },
   bookPage: {
     badge: "Reservierungen",

@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatedHeading } from "@/components/AnimatedHeading";
+import { ContactMap } from "@/components/ContactMap";
 import { ContactSection } from "@/components/ContactSection";
 import { Header } from "@/components/Header";
 import { Reveal } from "@/components/Reveal";
@@ -30,6 +31,14 @@ export default function ContactPage() {
       </section>
 
       <ContactSection />
+
+      <section className="bg-[var(--bg-contact)] pb-14 sm:pb-20 md:pb-28">
+        <div className="site-wrap">
+          <Reveal>
+            <ContactMap />
+          </Reveal>
+        </div>
+      </section>
     </>
   );
 }

@@ -1,7 +1,7 @@
 import type { Messages } from "../types";
 
 export const cs: Messages = {
-  nav: { home: "Domů", about: "O nás", rooms: "Chaty", contact: "Kontakt" },
+  nav: { home: "Domů", about: "O nás", rooms: "Chaty", transport: "Transport", contact: "Kontakt" },
   common: {
     bookStay: "Rezervovat pobyt",
     perNight: "/ noc",
@@ -34,6 +34,9 @@ export const cs: Messages = {
     titleBefore: "Každá chata byla navržena tak, aby nabídla pohodu, soukromí a ",
     titleBold: "opravdové spojení s přírodou.",
     body: "AndeStay Hostel spojuje pohodlí a přírodu. Útulný design, pohostinnost a atmosféra ideální k odpočinku i oslavám.",
+    directSaveBefore: "Rezervujte přímo na našem webu a ",
+    directSaveBold: "ušetřete 20 %",
+    directSaveAfter: " oproti jiným platformám.",
   },
   aboutPage: {
     welcomeBadge: "Vítejte v AndeStay Hostel",
@@ -168,6 +171,53 @@ export const cs: Messages = {
     pageTitle: "Ozvěte se nám",
     pageBody:
       "Otázky ohledně pobytu, dostupnosti nebo soukromé oslavy — napište nám a my se vám brzy ozveme.",
+    openInMaps: "Otevřít v Google Maps",
+    mapHint: "Hostel leží uprostřed mezi Chaullay a Colpapampa.",
+  },
+  transportPage: {
+    badge: "Jak se k nám dostat",
+    title: "Transport zajištěný AndeStay",
+    body: "Pomůžeme vám bezpečně se přesunout mezi Cuscem, Colpapampou a dalšími etapami treku Salkantay. Napište termíny — potvrdíme nejlepší variantu.",
+    askWhatsApp: "Zeptat se na WhatsAppu",
+    note: "Ceny závisí na velikosti skupiny, sezóně a místě vyzvednutí. Napište nám pro nabídku.",
+    offers: [
+      {
+        id: "cusco-colpapampa",
+        title: "Cusco ↔ Colpapampa",
+        route: "Soukromý nebo sdílený transfer",
+        blurb:
+          "Transfer z domu do domu mezi Cuscem a AndeStay Hostel — ideální po příletu nebo před odletem.",
+        features: [
+          "Vyzvednutí u hotelu nebo na letišti (na vyžádání)",
+          "Řidiči zkušení s horskými silnicemi",
+          "Flexibilní časy odjezdu",
+        ],
+      },
+      {
+        id: "colpapampa-santa-teresa",
+        title: "Colpapampa ↔ Santa Teresa / Hydroelectric",
+        route: "Pokračování po Salkantay",
+        blurb:
+          "Pokračování směrem na Santa Teresa a Hydroelectric pro Aguas Calientes / Machu Picchu.",
+        features: [
+          "Načasování podle etap treku",
+          "Vozidla vhodná pro zavazadla",
+          "Koordinace s vaším pobytem",
+        ],
+      },
+      {
+        id: "private-charter",
+        title: "Soukromý charter",
+        route: "Vlastní itinerář",
+        blurb:
+          "Celodenní nebo vícekrokový soukromý transport pro rodiny, malé skupiny a oslavy.",
+        features: [
+          "Váš rozvrh, vaše zastávky",
+          "Vhodné i pro větší skupiny",
+          "Cena předem přes WhatsApp",
+        ],
+      },
+    ],
   },
   bookPage: {
     badge: "Rezervace",

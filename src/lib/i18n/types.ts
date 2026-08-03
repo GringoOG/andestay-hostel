@@ -5,7 +5,7 @@ export type CabinId =
   | "simple-room";
 
 export type Messages = {
-  nav: { home: string; about: string; rooms: string; contact: string };
+  nav: { home: string; about: string; rooms: string; transport: string; contact: string };
   common: {
     bookStay: string;
     perNight: string;
@@ -37,6 +37,9 @@ export type Messages = {
     titleBefore: string;
     titleBold: string;
     body: string;
+    directSaveBefore: string;
+    directSaveBold: string;
+    directSaveAfter: string;
   };
   aboutPage: {
     welcomeBadge: string;
@@ -82,6 +85,22 @@ export type Messages = {
     pageBadge: string;
     pageTitle: string;
     pageBody: string;
+    openInMaps: string;
+    mapHint: string;
+  };
+  transportPage: {
+    badge: string;
+    title: string;
+    body: string;
+    askWhatsApp: string;
+    note: string;
+    offers: Array<{
+      id: string;
+      title: string;
+      route: string;
+      blurb: string;
+      features: [string, string, string];
+    }>;
   };
   bookPage: {
     badge: string;
