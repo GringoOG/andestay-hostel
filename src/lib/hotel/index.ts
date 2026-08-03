@@ -1,6 +1,6 @@
 /**
  * Hotel domain barrel — operational data for booking / rates / policies.
- * Marketing copy & imagery stay in `@/lib/content`.
+ * Marketing presentation is served via ContentRepository (`@/lib/content`).
  */
 
 export {

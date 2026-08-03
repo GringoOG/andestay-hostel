@@ -176,45 +176,34 @@ export const cs: Messages = {
   },
   transportPage: {
     badge: "Jak se k nám dostat",
-    title: "Transport zajištěný AndeStay",
-    body: "Pomůžeme vám bezpečně se přesunout mezi Cuscem, Colpapampou a dalšími etapami treku Salkantay. Napište termíny — potvrdíme nejlepší variantu.",
+    title: "Transport z hostelu",
+    body: "Zajišťujeme přesuny z AndeStay Hostel na další zastávky trasy Salkantay. Můžete jet sdíleným colectivem, nebo soukromým vozem podle velikosti skupiny.",
     askWhatsApp: "Zeptat se na WhatsAppu",
-    note: "Ceny závisí na velikosti skupiny, sezóně a místě vyzvednutí. Napište nám pro nabídku.",
+    note: "Ceny za colectivo jsou za osobu v solech (PEN). Soukromý transfer na Hidroeléctrica se odvíjí od počtu cestujících. Napište nám pro potvrzení odjezdů.",
     offers: [
       {
-        id: "cusco-colpapampa",
-        title: "Cusco ↔ Colpapampa",
-        route: "Soukromý nebo sdílený transfer",
+        id: "colectivo",
+        title: "Colectivo (sdílený)",
+        route: "Z hostelu · sdílený",
         blurb:
-          "Transfer z domu do domu mezi Cuscem a AndeStay Hostel — ideální po příletu nebo před odletem.",
+          "Sdílený přesun z AndeStay Hostel na nejčastější destinace treku.",
         features: [
-          "Vyzvednutí u hotelu nebo na letišti (na vyžádání)",
-          "Řidiči zkušení s horskými silnicemi",
-          "Flexibilní časy odjezdu",
+          "Hostel → Santa Teresa — 40 soles",
+          "Hostel → Hidroeléctrica — 60 soles",
+          "Hostel → Lucmabamba — 30 soles",
+          "Hostel → Playa — 30 soles",
         ],
       },
       {
-        id: "colpapampa-santa-teresa",
-        title: "Colpapampa ↔ Santa Teresa / Hydroelectric",
-        route: "Pokračování po Salkantay",
+        id: "privado-hidroelectrica",
+        title: "Soukromě na Hidroeléctrica",
+        route: "Soukromé vozidlo · z hostelu",
         blurb:
-          "Pokračování směrem na Santa Teresa a Hydroelectric pro Aguas Calientes / Machu Picchu.",
+          "Soukromý transfer z hostelu na Hidroeléctrica. Cena závisí na počtu cestujících.",
         features: [
-          "Načasování podle etap treku",
-          "Vozidla vhodná pro zavazadla",
-          "Koordinace s vaším pobytem",
-        ],
-      },
-      {
-        id: "private-charter",
-        title: "Soukromý charter",
-        route: "Vlastní itinerář",
-        blurb:
-          "Celodenní nebo vícekrokový soukromý transport pro rodiny, malé skupiny a oslavy.",
-        features: [
-          "Váš rozvrh, vaše zastávky",
-          "Vhodné i pro větší skupiny",
-          "Cena předem přes WhatsApp",
+          "Hostel → Hidroeléctrica — 250 až 300 soles",
+          "Cena podle počtu cestujících",
+          "Potvrďte skupinu přes WhatsApp",
         ],
       },
     ],

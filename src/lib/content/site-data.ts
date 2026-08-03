@@ -1,11 +1,10 @@
+/**
+ * Site / marketing static data (local source only).
+ * Consumed by ContentRepository local provider — not by React directly long-term.
+ */
+
 import type { CabinId } from "@/lib/i18n";
-import {
-  getHotelRoom,
-  getRoomNightlyPen,
-  hotelRooms,
-  PEN_PER_USD,
-  type HotelRoomId,
-} from "@/lib/hotel";
+import { PEN_PER_USD } from "@/lib/hotel";
 
 export type SitePhone = {
   /** Display label, e.g. +51 906 067 917 */
@@ -85,16 +84,11 @@ export type CabinMarketing = {
   photoLabel: string;
 };
 
-export type CabinMeta = CabinMarketing & {
-  units: number;
-  capacity: number;
-  pricePen: number;
-};
-
 /**
- * Marketing-only fields. Inventory / capacity / price come from `@/lib/hotel`.
+ * Marketing-only fields. Inventory / capacity / price come from `@/lib/hotel`
+ * via the local ContentRepository provider.
  */
-const cabinMarketing: CabinMarketing[] = [
+export const cabinMarketing: CabinMarketing[] = [
   {
     id: "simple-room",
     photoLabel: "Simple cabin for one guest",
@@ -117,37 +111,17 @@ const cabinMarketing: CabinMarketing[] = [
   },
 ];
 
-function toCabinMeta(m: CabinMarketing): CabinMeta {
-  const roomId = m.id as HotelRoomId;
-  const room = getHotelRoom(roomId);
-  return {
-    ...m,
-    units: room?.inventory ?? 1,
-    capacity: room?.capacity ?? 1,
-    pricePen: getRoomNightlyPen(roomId),
-  };
-}
-
-/**
- * Cabin cards for the website — marketing + hotel operational join.
- * Order follows `hotelRooms`.
- */
-export const cabins: CabinMeta[] = hotelRooms.map((room) => {
-  const marketing = cabinMarketing.find((c) => c.id === room.id);
-  if (!marketing) {
-    throw new Error(`Missing marketing presentation for room "${room.id}"`);
-  }
-  return toCabinMeta(marketing);
-});
-
-/** Re-export for existing imports — source of truth is `@/lib/hotel/rates`. */
 export { PEN_PER_USD };
 
 export function priceUsdFromPen(pricePen: number): number {
   return Math.round(pricePen / PEN_PER_USD);
 }
 
-export function formatRoomPrice(pricePen: number): { usd: number; pen: number; label: string } {
+export function formatRoomPrice(pricePen: number): {
+  usd: number;
+  pen: number;
+  label: string;
+} {
   const usd = priceUsdFromPen(pricePen);
   return {
     usd,

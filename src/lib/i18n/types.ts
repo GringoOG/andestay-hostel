@@ -99,7 +99,7 @@ export type Messages = {
       title: string;
       route: string;
       blurb: string;
-      features: [string, string, string];
+      features: string[];
     }>;
   };
   bookPage: {

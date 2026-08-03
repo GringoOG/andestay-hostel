@@ -176,45 +176,34 @@ export const en: Messages = {
   },
   transportPage: {
     badge: "Getting here",
-    title: "Transport arranged by AndeStay",
-    body: "We help guests move safely between Cusco, Colpapampa, and the next stages of the Salkantay trek. Tell us your dates — we’ll confirm the best option.",
+    title: "Transport from the hostel",
+    body: "We arrange transfers from AndeStay Hostel to the next stops on the Salkantay route. Choose a shared colectivo or a private vehicle, depending on your group.",
     askWhatsApp: "Ask on WhatsApp",
-    note: "Prices depend on group size, season, and pickup point. Message us for a quote.",
+    note: "Colectivo prices are per person in soles (PEN). Private transfer to Hidroeléctrica varies with the number of passengers. Message us to confirm departure times.",
     offers: [
       {
-        id: "cusco-colpapampa",
-        title: "Cusco ↔ Colpapampa",
-        route: "Private or shared transfer",
+        id: "colectivo",
+        title: "Colectivo (shared)",
+        route: "From the hostel · shared",
         blurb:
-          "Door-to-door transfer between Cusco and AndeStay Hostel — ideal after arrival or before your return flight.",
+          "Shared transfer from AndeStay Hostel to the most common trek destinations.",
         features: [
-          "Pickup at hotel or airport (on request)",
-          "Mountain road experienced drivers",
-          "Flexible departure times",
+          "Hostel → Santa Teresa — 40 soles",
+          "Hostel → Hidroeléctrica — 60 soles",
+          "Hostel → Lucmabamba — 30 soles",
+          "Hostel → Playa — 30 soles",
         ],
       },
       {
-        id: "colpapampa-santa-teresa",
-        title: "Colpapampa ↔ Santa Teresa / Hydroelectric",
-        route: "Continue the Salkantay route",
+        id: "privado-hidroelectrica",
+        title: "Private to Hidroeléctrica",
+        route: "Private vehicle · from the hostel",
         blurb:
-          "Continue toward Santa Teresa and the Hydroelectric station for Aguas Calientes / Machu Picchu.",
+          "Private transfer from the hostel to Hidroeléctrica. The price depends on the number of passengers.",
         features: [
-          "Timed for trek stages",
-          "Luggage-friendly vehicles",
-          "Coordination with your stay",
-        ],
-      },
-      {
-        id: "private-charter",
-        title: "Private charter",
-        route: "Custom itinerary",
-        blurb:
-          "Full-day or multi-stop private transport for families, small groups, and celebrations.",
-        features: [
-          "Your schedule, your stops",
-          "Suitable for larger groups",
-          "Quoted in advance via WhatsApp",
+          "Hostel → Hidroeléctrica — 250 to 300 soles",
+          "Price depends on passenger count",
+          "Confirm your group on WhatsApp",
         ],
       },
     ],

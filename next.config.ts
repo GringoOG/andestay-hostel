@@ -10,6 +10,13 @@ const nextConfig: NextConfig = {
     // Allow high-quality requests from <Image quality={…}>
     qualities: [70, 75, 80, 85, 90],
     minimumCacheTTL: 60 * 60 * 24 * 30,
+    // Sanity CDN (ContentRepository media)
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
+    ],
   },
 };
 

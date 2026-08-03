@@ -176,45 +176,34 @@ export const es: Messages = {
   },
   transportPage: {
     badge: "Cómo llegar",
-    title: "Transporte organizado por AndeStay",
-    body: "Ayudamos a los huéspedes a moverse con seguridad entre Cusco, Colpapampa y las siguientes etapas del trek Salkantay. Cuéntanos tus fechas y confirmamos la mejor opción.",
+    title: "Transporte desde el hostel",
+    body: "Organizamos traslados desde AndeStay Hostel hacia los siguientes puntos de la ruta Salkantay. Elige colectivo compartido o servicio privado según tu grupo.",
     askWhatsApp: "Consultar por WhatsApp",
-    note: "Los precios dependen del tamaño del grupo, la temporada y el punto de recogida. Escríbenos para una cotización.",
+    note: "Los precios del colectivo son por persona en soles (PEN). El privado a Hidroeléctrica varía según el número de pasajeros. Escríbenos para confirmar horarios.",
     offers: [
       {
-        id: "cusco-colpapampa",
-        title: "Cusco ↔ Colpapampa",
-        route: "Traslado privado o compartido",
+        id: "colectivo",
+        title: "Colectivo",
+        route: "Desde el hostel · compartido",
         blurb:
-          "Traslado puerta a puerta entre Cusco y AndeStay Hostel — ideal tras llegar o antes del vuelo de regreso.",
+          "Traslado compartido desde AndeStay Hostel hacia los destinos más frecuentes del trek.",
         features: [
-          "Recogida en hotel o aeropuerto (bajo pedido)",
-          "Conductores experimentados en rutas de montaña",
-          "Horarios de salida flexibles",
+          "Hostel → Santa Teresa — 40 soles",
+          "Hostel → Hidroeléctrica — 60 soles",
+          "Hostel → Lucmabamba — 30 soles",
+          "Hostel → Playa — 30 soles",
         ],
       },
       {
-        id: "colpapampa-santa-teresa",
-        title: "Colpapampa ↔ Santa Teresa / Hidroeléctrica",
-        route: "Continuar la ruta Salkantay",
+        id: "privado-hidroelectrica",
+        title: "Privado a Hidroeléctrica",
+        route: "Vehículo privado · desde el hostel",
         blurb:
-          "Continúa hacia Santa Teresa y la estación Hidroeléctrica para Aguas Calientes / Machu Picchu.",
+          "Traslado privado del hostel a Hidroeléctrica. El precio depende de la cantidad de pasajeros.",
         features: [
-          "Coordinado con las etapas del trek",
-          "Vehículos aptos para equipaje",
-          "Coordinación con tu estadía",
-        ],
-      },
-      {
-        id: "private-charter",
-        title: "Charter privado",
-        route: "Itinerario a medida",
-        blurb:
-          "Transporte privado de día completo o con varias paradas para familias, grupos pequeños y celebraciones.",
-        features: [
-          "Tu horario, tus paradas",
-          "Apto para grupos más grandes",
-          "Cotización previa por WhatsApp",
+          "Hostel → Hidroeléctrica — 250 a 300 soles",
+          "Precio según el número de pasajeros",
+          "Confirma tu grupo por WhatsApp",
         ],
       },
     ],

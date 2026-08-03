@@ -19,7 +19,7 @@ BookingProviderFactory
 ```
 
 Hotel operational data lives in `src/lib/hotel/` (rooms, rates, policies, settings).  
-Marketing copy / photos stay in `src/lib/content.ts`.
+Marketing / room presentation goes through `ContentService` → `ContentRepository` (`src/lib/content/`).
 
 API contract types (no runtime yet): `src/lib/booking/api/types.ts`.
 

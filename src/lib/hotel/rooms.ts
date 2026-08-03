@@ -1,6 +1,6 @@
 /**
  * Hotel domain — operational room catalog (not marketing copy).
- * Marketing presentation lives in `src/lib/content.ts`.
+ * Marketing presentation is assembled by ContentRepository local provider.
  */
 
 export type HotelRoomId =
