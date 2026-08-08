@@ -17,9 +17,8 @@ function TransportVideo() {
   return (
     <div className="relative w-full overflow-hidden rounded-[1.15rem] bg-[var(--bg-muted)] shadow-[0_10px_32px_rgba(20,24,20,0.08)] ring-1 ring-black/5 sm:rounded-[1.35rem]">
       <div className="relative aspect-video w-full overflow-hidden">
-        {/* Slight zoom + crop hides residual Gemini sparkle in the source corner */}
         <video
-          className="absolute inset-0 h-full w-full origin-top-left scale-[1.07] object-cover"
+          className="absolute inset-0 h-full w-full object-cover"
           poster="/videos/transporte-auto-poster.jpg"
           preload="metadata"
           autoPlay
