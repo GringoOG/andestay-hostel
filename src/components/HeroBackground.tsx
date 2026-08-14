@@ -27,7 +27,7 @@ export function HeroBackground() {
     ...shared,
     src: images.heroMobile,
     width: 1290,
-    height: 1720,
+    height: 1290,
   });
 
   return (
