@@ -63,8 +63,10 @@ export const navHrefs = [
  * 8107, 8109, 8114, 8272, 8321, 8322, 8335, 8363, 8364 → used across sections
  */
 export const images = {
-  /** IMG_8365 — landing hero */
+  /** IMG_8365 — landing hero (tablet / desktop) */
   hero: "/images/hero.jpg",
+  /** Portrait hero — phones only (< md) */
+  heroMobile: "/images/hero-mobile.jpg",
   /** IMG_8322 */
   aboutHero: "/images/lena-8322.jpg",
   lastingA: "/images/lena-8321.jpg",

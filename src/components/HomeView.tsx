@@ -8,9 +8,9 @@ import { CabinCard } from "@/components/CabinCard";
 import { ContactSection } from "@/components/ContactSection";
 import { FaqSection } from "@/components/FaqSection";
 import { Header } from "@/components/Header";
+import { HeroBackground } from "@/components/HeroBackground";
 import { HeroTitle } from "@/components/HeroTitle";
 import { LastingExperience } from "@/components/LastingExperience";
-import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { Reveal } from "@/components/Reveal";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { cabins, images } from "@/lib/content";
@@ -24,20 +24,7 @@ export function HomeView() {
       <Header tone="over-hero" />
 
       <section className="relative min-h-[100svh] overflow-hidden bg-[var(--forest-deep)] text-white">
-        {/* Full-bleed hero on all breakpoints — copy sits on the photo */}
-        <div className="absolute inset-0 overflow-hidden">
-          <PhotoPlaceholder
-            label="AndeStay Hostel hero"
-            src={images.hero}
-            priority
-            fillParent
-            objectPosition="42% 38%"
-            sizes="100vw"
-            quality={88}
-            imageClassName="object-cover"
-            className="rounded-none origin-center scale-105 animate-[heroZoom_18s_ease-out_forwards] md:scale-105"
-          />
-        </div>
+        <HeroBackground />
 
         {/* Readability: soft forest veil + bottom shade so white type stays on the photo */}
         <div className="pointer-events-none absolute inset-0 photo-green-veil opacity-70 md:opacity-100" />
