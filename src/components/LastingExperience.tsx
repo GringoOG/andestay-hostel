@@ -60,7 +60,7 @@ export function LastingExperience() {
         }
       >
         <PhotoPlaceholder
-          label="Misty mountains"
+          label="Misty Andean mountains near AndeStay Hostel on the Salkantay Trek"
           src={images.lastingA}
           sizes="(max-width: 640px) 100vw, 50vw"
           quality={85}
@@ -75,7 +75,7 @@ export function LastingExperience() {
         }
       >
         <PhotoPlaceholder
-          label="Cabins at night"
+          label="AndeStay Hostel wooden cabins at dusk in Colpapampa"
           src={images.lastingB}
           sizes="(max-width: 640px) 100vw, 50vw"
           quality={85}

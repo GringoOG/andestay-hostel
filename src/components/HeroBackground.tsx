@@ -10,7 +10,7 @@ import { images } from "@/lib/content";
  */
 export function HeroBackground() {
   const shared = {
-    alt: "AndeStay Hostel hero",
+    alt: "Wooden A-frame cabins at AndeStay Hostel in Colpapampa on the Salkantay Trek",
     sizes: "100vw",
     quality: 90,
     priority: true,

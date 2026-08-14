@@ -119,13 +119,28 @@ export function createLocalContentProvider(): ContentRepository {
 
     async getHomepage(): Promise<HomeContent> {
       return {
-        heroImage: { src: images.hero, alt: "AndeStay Hostel" },
-        aboutHeroImage: { src: images.aboutHero, alt: "AndeStay Hostel" },
+        heroImage: {
+          src: images.hero,
+          alt: "Wooden A-frame cabins at AndeStay Hostel in Colpapampa on the Salkantay Trek",
+        },
+        aboutHeroImage: {
+          src: images.aboutHero,
+          alt: "AndeStay Hostel cabins and mountain views in Colpapampa on the Salkantay Trek",
+        },
         lastingImages: [
-          { src: images.lastingA, alt: "AndeStay Hostel" },
-          { src: images.lastingB, alt: "AndeStay Hostel" },
+          {
+            src: images.lastingA,
+            alt: "Misty Andean mountains near AndeStay Hostel on the Salkantay Trek",
+          },
+          {
+            src: images.lastingB,
+            alt: "AndeStay Hostel wooden cabins at dusk in Colpapampa",
+          },
         ],
-        avatarImages: images.avatars.map((src) => ({ src })),
+        avatarImages: images.avatars.map((src) => ({
+          src,
+          alt: "AndeStay Hostel guest",
+        })),
       };
     },
   };

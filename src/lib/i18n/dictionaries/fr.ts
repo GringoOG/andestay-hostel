@@ -19,14 +19,14 @@ export const fr: Messages = {
     refuge: "refuge",
     inNature: "en pleine nature.",
     support:
-      "Reposez-vous après le trek du Salkantay. Le petit-déjeuner et le dîner fait maison sont toujours inclus.",
+      "Reposez-vous après le col Salkantay à Colpapampa (Chaullay). Douches chaudes, cabanes confortables et repas maison inclus.",
     socialProofBefore: "L’un des ",
     socialProofBold: "hébergements les plus appréciés",
     socialProofAfter: " par nos hôtes.",
   },
   intro: {
     badge: "Évadez-vous. Respirez. Restez.",
-    before: "Niché à Colpapampa, AndeStay Hostel est le lieu où ",
+    before: "Niché à Colpapampa sur le trek du Salkantay, AndeStay Hostel est le lieu où ",
     bold: "le confort rencontre les Andes.",
   },
   accommodations: {
@@ -136,24 +136,24 @@ export const fr: Messages = {
     title: "Foire aux questions",
     items: [
       {
+        q: "Où se trouve AndeStay sur le sentier du Salkantay ?",
+        a: "Nous sommes à Colpapampa (aussi Collpapampa / Chaullay), l’étape habituelle du jour 2 après le col Salkantay — directement sur la route du trek dans la région de Cusco, sans long détour hors du sentier.",
+      },
+      {
+        q: "Faut-il réserver à l’avance si je marche sans guide ?",
+        a: "Oui — surtout en haute saison. Les randonneurs indépendants devraient nous écrire sur WhatsApp avant d’arriver pour réserver une cabane et le dîner. Les arrivées spontanées sont parfois possibles, mais les places sont limitées.",
+      },
+      {
+        q: "Les douches chaudes et l’électricité sont-elles incluses ?",
+        a: "Oui. Les hôtes ont de vraies douches à eau chaude, la recharge des appareils et le Wi-Fi pour se reposer et se reconnecter après une longue journée de marche.",
+      },
+      {
+        q: "Proposez-vous des options végétariennes ou véganes pour les trekkeurs ?",
+        a: "Le dîner maison et le petit-déjeuner américain sont inclus. Indiquez vos besoins végétariens ou véganes lors de la réservation — nous préparons des options adaptées dans la mesure du possible.",
+      },
+      {
         q: "À quelle heure sont l’arrivée et le départ ?",
         a: "L’arrivée se fait à partir de 15 h et le départ jusqu’à 11 h. Une arrivée anticipée ou un départ tardif peuvent être possibles sur demande, selon disponibilité.",
-      },
-      {
-        q: "Quelle est votre politique d’annulation ?",
-        a: "Annulation gratuite jusqu’à 7 jours avant l’arrivée. Les annulations effectuées dans les 7 jours précédant l’arrivée ne sont pas remboursables. Nous recommandons une assurance voyage en cas d’imprévu.",
-      },
-      {
-        q: "Les animaux sont-ils acceptés à AndeStay Hostel ?",
-        a: "Veuillez nous contacter avant de réserver si vous prévoyez de voyager avec un animal. La disponibilité dépend du type de chambre et des hôtes présents.",
-      },
-      {
-        q: "Pouvons-nous venir avec des enfants ou des bébés ?",
-        a: "Oui — les enfants et les bébés sont les bienvenus. Prévenez-nous à l’avance afin que nous puissions préparer la chambre adaptée.",
-      },
-      {
-        q: "Où se trouve AndeStay Hostel et comment s’y rendre ?",
-        a: "Nous sommes à Colpapampa, au Pérou. Les instructions détaillées pour l’arrivée sont envoyées après la confirmation de votre réservation.",
       },
     ],
   },

@@ -21,7 +21,7 @@ export default function AboutPage() {
         <div className="site-wrap pb-8 sm:pb-10">
           <div className="relative overflow-hidden rounded-[1.25rem] sm:rounded-[var(--radius-lg)]">
             <PhotoPlaceholder
-              label="About AndeStay Hostel"
+              label="AndeStay Hostel cabins and mountain views in Colpapampa on the Salkantay Trek"
               src={images.aboutHero}
               priority
               objectPosition="50% 78%"

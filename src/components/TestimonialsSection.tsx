@@ -35,7 +35,7 @@ export function TestimonialsSection() {
                   <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full bg-[var(--bg-muted)]">
                     <Image
                       src={testimonialAvatars[i] ?? testimonialAvatars[0]}
-                      alt=""
+                      alt={`${item.name}, AndeStay Hostel guest`}
                       fill
                       className="object-cover"
                       sizes="44px"

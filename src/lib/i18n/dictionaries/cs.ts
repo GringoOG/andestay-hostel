@@ -19,14 +19,14 @@ export const cs: Messages = {
     refuge: "útočiště",
     inNature: "v přírodě.",
     support:
-      "Odpočiň si po treku na Salkantay. Snídaně a domácí večeře jsou vždy v ceně.",
+      "Odpočiň si po průsmyku Salkantay v Colpapampě (Chaullay). Teplé sprchy, útulné chaty a domácí jídlo v ceně.",
     socialProofBefore: "Jedno z ",
     socialProofBold: "nejoblíbenějších ubytování",
     socialProofAfter: " mezi našimi hosty.",
   },
   intro: {
     badge: "Unikni. Vydechni. Zůstaň.",
-    before: "AndeStay Hostel v Colpapampě je místo, kde se ",
+    before: "AndeStay Hostel v Colpapampě na trase Salkantay je místo, kde se ",
     bold: "pohodlí setkává s Andami.",
   },
   accommodations: {
@@ -136,24 +136,24 @@ export const cs: Messages = {
     title: "Často kladené otázky",
     items: [
       {
+        q: "Kde leží AndeStay na trase Salkantay?",
+        a: "Jsme v Colpapampě (také Collpapampa / Chaullay), obvyklé zastávce 2. dne po průchodu průsmykem Salkantay — přímo na trekové trase v regionu Cusco, bez dlouhé okliky mimo stezku.",
+      },
+      {
+        q: "Musím rezervovat předem, když jdu bez průvodce?",
+        a: "Ano — zvláště v hlavní sezóně. Nezávislí turisté by nám měli napsat na WhatsApp před příjezdem, abychom zajistili chatu a večeři. Walk-in je někdy možný, ale míst je omezeně.",
+      },
+      {
+        q: "Jsou teplé sprchy a elektřina v ceně?",
+        a: "Ano. Hosté mají opravdu teplou vodu ve sprše, nabíjení zařízení a Wi‑Fi, abyste si po dlouhém dni na trase odpočinuli a znovu se připojili.",
+      },
+      {
+        q: "Nabízíte vegetariánské nebo veganské jídlo pro trekaře?",
+        a: "Domácí večeře a americká snídaně jsou v ceně pobytu. Dejte nám vědět o vegetariánských nebo veganských potřebách při rezervaci — připravíme vhodné varianty, kdykoli to půjde.",
+      },
+      {
         q: "V kolik hodin je check-in a check-out?",
         a: "Check-in probíhá od 15:00 a check-out do 11:00. Dřívější příjezd nebo pozdější odjezd lze na požádání domluvit podle dostupnosti.",
-      },
-      {
-        q: "Jaké jsou storno podmínky?",
-        a: "Bezplatné storno až do 7 dnů před příjezdem. Storna provedená méně než 7 dnů před check-inem jsou nevratná. Doporučujeme cestovní pojištění pro případ neočekávaných změn.",
-      },
-      {
-        q: "Jsou v AndeStay Hostel vítáni domácí mazlíčci?",
-        a: "Pokud plánujete cestovat s domácím mazlíčkem, kontaktujte nás prosím před rezervací. Dostupnost závisí na typu pokoje a aktuálních hostech.",
-      },
-      {
-        q: "Můžeme přijet s dětmi nebo miminky?",
-        a: "Ano — děti i miminka jsou vítány. Dejte nám vědět předem, abychom mohli připravit vhodný pokoj.",
-      },
-      {
-        q: "Kde se AndeStay Hostel nachází a jak se tam dostanu?",
-        a: "Jsme v Colpapampě v Peru. Podrobné pokyny k příjezdu vám zašleme po potvrzení rezervace.",
       },
     ],
   },

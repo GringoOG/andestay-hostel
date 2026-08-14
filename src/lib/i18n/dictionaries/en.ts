@@ -19,14 +19,14 @@ export const en: Messages = {
     refuge: "refuge",
     inNature: "in nature.",
     support:
-      "Rest after the Salkantay trek. Breakfast and homemade dinner are always included.",
+      "Rest after Salkantay Pass in Colpapampa (Chaullay). Hot showers, cozy cabins, and homemade meals included.",
     socialProofBefore: "One of the ",
     socialProofBold: "most popular",
     socialProofAfter: " places to stay among our guests.",
   },
   intro: {
     badge: "Escape. Breathe. Belong.",
-    before: "Nestled in Colpapampa, AndeStay Hostel is where ",
+    before: "Nestled in Colpapampa on the Salkantay Trek, AndeStay Hostel is where ",
     bold: "comfort meets the Andes.",
   },
   accommodations: {
@@ -136,24 +136,24 @@ export const en: Messages = {
     title: "Frequently asked questions",
     items: [
       {
+        q: "Where is AndeStay located on the Salkantay trail?",
+        a: "We’re in Colpapampa (also spelled Collpapampa / Chaullay), the usual Day 2 rest stop after crossing Salkantay Pass — right on the trek route in the Cusco region of Peru, with no long detour off the trail.",
+      },
+      {
+        q: "Do I need to book in advance if I hike without a guide?",
+        a: "Yes — especially in high season. Independent hikers should message us on WhatsApp before arriving so we can hold a cabin and plan dinner. Walk-ins are sometimes possible, but space is limited.",
+      },
+      {
+        q: "Are hot showers and electricity included?",
+        a: "Yes. Guests get real hot-water showers, device charging, and Wi-Fi so you can rest and reconnect after a long trail day.",
+      },
+      {
+        q: "Do you offer vegetarian or vegan meal options for trekkers?",
+        a: "Homemade dinner and American breakfast are included with your stay. Tell us about vegetarian or vegan needs when you book and we’ll prepare suitable options whenever possible.",
+      },
+      {
         q: "What time is check-in and check-out?",
         a: "Check-in is from 3:00 PM and check-out is until 11:00 AM. Early check-in or late check-out may be available upon request, depending on availability.",
-      },
-      {
-        q: "What is your cancellation policy?",
-        a: "Free cancellation up to 7 days before arrival. Cancellations made within 7 days of check-in are non-refundable. We recommend travel insurance for unexpected changes.",
-      },
-      {
-        q: "Are pets welcome at AndeStay Hostel?",
-        a: "Please contact us before booking if you plan to travel with a pet. Availability depends on the room type and current guests.",
-      },
-      {
-        q: "Can we bring children or babies?",
-        a: "Yes — children and babies are welcome. Let us know in advance so we can prepare the right room setup.",
-      },
-      {
-        q: "Where is AndeStay Hostel located, and how do I get there?",
-        a: "We’re in Colpapampa, Peru. Detailed arrival instructions are sent after your reservation is confirmed.",
       },
     ],
   },
