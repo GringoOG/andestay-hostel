@@ -7,6 +7,8 @@ export const cs: Messages = {
     perNight: "/ noc",
     perCabin: "za chatu",
     cabinsToBook: "Počet chat",
+    cabinsAvailableOne: "{count} chata tohoto typu",
+    cabinsAvailableFew: "{count} chaty tohoto typu",
     cabinsAvailable: "{count} chat tohoto typu",
     dinnerBreakfastIncluded: "Večeře a snídaně v ceně",
     closeMenu: "Zavřít menu",
@@ -51,7 +53,7 @@ export const cs: Messages = {
     badge: "O AndeStay",
     title: "Odpočiňte si po treku. Dobře se najezte. Naberte síly na to, co přijde dál.",
     paragraphs: [
-      "Odpočiňte si po náročném dni na treku Salkantay v útulném hostelu obklopeném majestátními peruánskými Andami. AndeStay Hostel Colpapampa je místo, kde se zotavíte po dlouhé cestě, dobře se najíte a naberete síly na další dobrodružství.",
+      "Odpočiňte si po náročném dni na treku Salkantay v útulných chatách obklopených majestátními peruánskými Andami. AndeStay Hostel Colpapampa je místo, kde se zotavíte po dlouhé cestě, dobře se najíte a naberete síly na další dobrodružství.",
       "Každý host dostává zdarma americkou snídani a domácí večeři, takže po příjezdu nemusíte hledat restauraci. Stačí si užívat klidnou atmosféru, pohodlné pokoje a přírodu kolem sebe.",
       "Nabízíme pohodlné pokoje pro jednotlivce, páry i rodiny, bezplatné Wi-Fi, zahradu k odpočinku a přátelské prostředí, ve kterém se budete cítit jako doma.",
     ],

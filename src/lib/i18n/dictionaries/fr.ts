@@ -7,6 +7,8 @@ export const fr: Messages = {
     perNight: "/ nuit",
     perCabin: "par cabane",
     cabinsToBook: "Cabanes à réserver",
+    cabinsAvailableOne: "{count} cabane de ce type",
+    cabinsAvailableFew: "{count} cabanes de ce type",
     cabinsAvailable: "{count} cabanes de ce type",
     dinnerBreakfastIncluded: "Dîner et petit-déjeuner inclus",
     closeMenu: "Fermer le menu",
@@ -51,7 +53,7 @@ export const fr: Messages = {
     badge: "À propos d’AndeStay",
     title: "Reposez-vous après la piste. Mangez bien. Reprenez des forces pour la suite.",
     paragraphs: [
-      "Reposez-vous après une journée exigeante sur le trek du Salkantay dans une auberge chaleureuse entourée des majestueuses Andes péruviennes. AndeStay Hostel Colpapampa est l’endroit où vous récupérez après un long voyage, mangez bien et reprenez des forces pour la prochaine aventure.",
+      "Reposez-vous après une journée exigeante sur le trek du Salkantay dans de chaleureuses cabanes entourées des majestueuses Andes péruviennes. AndeStay Hostel Colpapampa est l’endroit où vous récupérez après un long voyage, mangez bien et reprenez des forces pour la prochaine aventure.",
       "Chaque hôte reçoit gratuitement un petit-déjeuner américain et un dîner fait maison, vous n’avez donc pas besoin de chercher un restaurant à votre arrivée. Profitez simplement de l’atmosphère paisible, des chambres confortables et de la nature environnante.",
       "Nous proposons des chambres confortables pour voyageurs seuls, couples et familles, le Wi-Fi gratuit, un jardin pour se détendre et une ambiance chaleureuse où vous vous sentirez comme chez vous.",
     ],

@@ -14,10 +14,13 @@ export function CabinCard({ cabin, reverse = false }: { cabin: CabinMeta; revers
   const unitPrice = formatRoomPrice(cabin.pricePen);
   const totalPen = cabin.pricePen * quantity;
   const totalPrice = formatRoomPrice(totalPen);
-  const availableLabel = t.common.cabinsAvailable.replace(
-    "{count}",
-    String(cabin.units),
-  );
+  const availableTemplate =
+    cabin.units === 1
+      ? t.common.cabinsAvailableOne
+      : cabin.units >= 2 && cabin.units <= 4
+        ? t.common.cabinsAvailableFew
+        : t.common.cabinsAvailable;
+  const availableLabel = availableTemplate.replace("{count}", String(cabin.units));
 
   return (
     <article

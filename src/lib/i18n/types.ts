@@ -11,6 +11,11 @@ export type Messages = {
     perNight: string;
     perCabin: string;
     cabinsToBook: string;
+    /** Singular, e.g. "1 cabin of this type" */
+    cabinsAvailableOne: string;
+    /** Slavic few (2–4); same as many in EN/ES/DE/FR */
+    cabinsAvailableFew: string;
+    /** Plural / 5+, e.g. "{count} cabins of this type" */
     cabinsAvailable: string;
     dinnerBreakfastIncluded: string;
     closeMenu: string;
