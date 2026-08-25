@@ -3,10 +3,10 @@ import { site, sitePhones, images } from "@/lib/content/site-data";
 /** Canonical site origin — override with NEXT_PUBLIC_SITE_URL when custom domain is live. */
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://andestay-hostel.vercel.app";
+  "https://www.andestay.com";
 
 export const seo = {
-  title: "AndeStay Hostel Colpapampa | Authentic Lodging & Cabins on Salkantay Trek",
+  title: "AndeStay Hostel | Cabins on Salkantay Trek in Colpapampa",
   description:
     "Relax after Salkantay Pass at AndeStay Hostel in Colpapampa (Chaullay). Cozy private cabins, real hot showers, hearty mountain meals & Wi-Fi for independent hikers. Book directly via WhatsApp.",
   ogImage: images.hero,
