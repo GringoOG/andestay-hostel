@@ -13,7 +13,7 @@ export function useBooking() {
     isExternal: BookingService.isExternal(),
     isEnabled: BookingService.isEnabled(),
     capabilities: BookingService.capabilities(),
-    getUrl: () => BookingService.getUrl(),
+    getUrl: (options?: OpenBookingOptions) => BookingService.getUrl(options),
     getRoomUrl: (roomSlug: RoomSlug, options?: OpenBookingOptions) =>
       BookingService.getRoomUrl(roomSlug, options),
     open: (options?: OpenBookingOptions) => BookingService.open(options),

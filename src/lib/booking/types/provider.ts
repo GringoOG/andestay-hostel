@@ -43,6 +43,16 @@ export type OpenBookingOptions = {
   source?: string;
   /** How many units of this room type to book (default 1). */
   quantity?: number;
+  /** UI locale — mapped to QloApps path (en|es|cs). */
+  locale?: string;
+  /** Check-in YYYY-MM-DD */
+  checkIn?: string;
+  /** Check-out YYYY-MM-DD */
+  checkOut?: string;
+  /** Adults in occupancy[0] (default 1 when dates present). */
+  adults?: number;
+  /** Children in occupancy[0] (default 0 when dates present). */
+  children?: number;
 };
 
 /**
@@ -67,6 +77,8 @@ export type BookingConfig = {
   external: boolean;
   baseUrl: string;
   defaultPath: string;
+  /** QloApps hotel listing slug, e.g. "8-andestay-hostel". */
+  hotelListingSlug: string;
 };
 
 /**
@@ -79,6 +91,6 @@ export interface BookingProvider {
 
   open(options?: OpenBookingOptions): void;
   openRoom(roomSlug: RoomSlug, options?: OpenBookingOptions): void;
-  getUrl(): string;
+  getUrl(options?: OpenBookingOptions): string;
   getRoomUrl(roomSlug: RoomSlug, options?: OpenBookingOptions): string;
 }

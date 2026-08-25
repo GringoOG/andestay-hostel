@@ -26,8 +26,8 @@ export class BookingEngine {
     return this.provider().capabilities;
   }
 
-  getUrl(): string {
-    return this.provider().getUrl();
+  getUrl(options: OpenBookingOptions = {}): string {
+    return this.provider().getUrl(options);
   }
 
   getRoomUrl(roomSlug: RoomSlug, options: OpenBookingOptions = {}): string {

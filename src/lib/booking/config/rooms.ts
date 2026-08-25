@@ -4,6 +4,9 @@
  * UI / content uses slugs only (e.g. "double-room").
  * Providers never hardcode marketing names — they resolve via this map.
  *
+ * Phase 1: QloAppsProvider opens hotel listing only (see qloapps.ts).
+ * These product IDs / URL overrides are reserved for phase 2 per-cabin deep links.
+ *
  * Inventory: 4 doble · 3 matrimonial · 1 triple · 1 simple
  */
 

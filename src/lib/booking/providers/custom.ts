@@ -34,18 +34,19 @@ export function createCustomProvider(): BookingProvider {
       availabilityMode: "none",
     },
 
-    getUrl() {
+    getUrl(opts: OpenBookingOptions = {}) {
+      void opts;
       return base ? joinUrl(base, path) : path.startsWith("/") ? path : `/${path}`;
     },
 
     getRoomUrl(roomSlug: RoomSlug, opts: OpenBookingOptions = {}) {
       const mapped = getMappedRoom(roomSlug, BookingProviderId.CUSTOM);
-      const fallback = `${provider.getUrl()}${provider.getUrl().includes("?") ? "&" : "?"}room=${encodeURIComponent(roomSlug)}`;
+      const fallback = `${provider.getUrl(opts)}${provider.getUrl(opts).includes("?") ? "&" : "?"}room=${encodeURIComponent(roomSlug)}`;
       return applyQuantity(buildRoomUrl(base, path, mapped, fallback), opts.quantity);
     },
 
     open(opts = {}) {
-      const url = provider.getUrl();
+      const url = provider.getUrl(opts);
       const newTab = opts.newTab ?? false;
       BookingLogger.info("custom_open", { url });
       navigateTo(url, newTab);

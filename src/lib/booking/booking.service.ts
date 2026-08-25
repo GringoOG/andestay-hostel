@@ -58,8 +58,8 @@ export const BookingService = {
     return bookingEngine.capabilities();
   },
 
-  getUrl(): string {
-    return bookingEngine.getUrl();
+  getUrl(options: OpenBookingOptions = {}): string {
+    return bookingEngine.getUrl(options);
   },
 
   getRoomUrl(roomSlug: RoomSlug, options: OpenBookingOptions = {}): string {
@@ -67,14 +67,14 @@ export const BookingService = {
       return bookingEngine.getRoomUrl(roomSlug, options);
     } catch (err) {
       reportError(err, roomSlug);
-      return bookingEngine.getUrl();
+      return bookingEngine.getUrl(options);
     }
   },
 
   open(options: OpenBookingOptions = {}): void {
     if (!guardEnabled()) return;
     try {
-      const url = bookingEngine.getUrl();
+      const url = bookingEngine.getUrl(options);
       trackBookingClick({
         provider: bookingConfig.provider,
         source: options.source,

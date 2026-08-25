@@ -11,6 +11,10 @@ type BookButtonProps = {
   variant?: "solid" | "outline";
   children?: React.ReactNode;
   source?: string;
+  checkIn?: string;
+  checkOut?: string;
+  adults?: number;
+  childrenCount?: number;
 };
 
 export function BookButton({
@@ -21,11 +25,23 @@ export function BookButton({
   variant = "solid",
   children,
   source,
+  checkIn,
+  checkOut,
+  adults,
+  childrenCount,
 }: BookButtonProps) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const slug = roomSlug ?? roomId;
   const label = children ?? t.common.bookStay;
-  const options = { source, quantity: quantity > 1 ? quantity : undefined };
+  const options = {
+    source,
+    locale,
+    quantity: quantity > 1 ? quantity : undefined,
+    checkIn,
+    checkOut,
+    adults,
+    children: childrenCount,
+  };
 
   if (!BookingService.isEnabled()) {
     return null;
@@ -33,7 +49,7 @@ export function BookButton({
 
   const href = slug
     ? BookingService.getRoomUrl(slug, options)
-    : BookingService.getUrl();
+    : BookingService.getUrl(options);
   const external = BookingService.isExternal();
 
   return (
@@ -46,7 +62,7 @@ export function BookButton({
         if (slug) {
           BookingService.openRoom(slug, options);
         } else {
-          BookingService.open({ source });
+          BookingService.open(options);
         }
       }}
     >

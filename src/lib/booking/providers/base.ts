@@ -36,7 +36,8 @@ export function createExternalUrlProvider(
     id,
     capabilities,
 
-    getUrl() {
+    getUrl(opts: OpenBookingOptions = {}) {
+      void opts;
       return joinUrl(bookingConfig.baseUrl, bookingConfig.defaultPath);
     },
 
@@ -47,21 +48,21 @@ export function createExternalUrlProvider(
           throw BookingError.roomNotFound(roomSlug);
         }
         BookingLogger.warn("room_mapping_missing_fallback", { roomSlug, provider: id });
-        return applyQuantity(provider.getUrl(), opts.quantity);
+        return applyQuantity(provider.getUrl(opts), opts.quantity);
       }
       return applyQuantity(
         buildRoomUrl(
           bookingConfig.baseUrl,
           bookingConfig.defaultPath,
           mapped,
-          provider.getUrl(),
+          provider.getUrl(opts),
         ),
         opts.quantity,
       );
     },
 
     open(opts: OpenBookingOptions = {}) {
-      const url = provider.getUrl();
+      const url = provider.getUrl(opts);
       const newTab =
         opts.newTab ?? (bookingConfig.external && bookingConfig.openInNewTab);
       BookingLogger.info("provider_open", { provider: id, url });

@@ -12,6 +12,7 @@ export const bookingConfig: BookingConfig = {
   enabled: envFlag("NEXT_PUBLIC_BOOKING_ENABLED", true),
   openInNewTab: envFlag("NEXT_PUBLIC_BOOKING_OPEN_IN_NEW_TAB", true),
   external: envFlag("NEXT_PUBLIC_BOOKING_EXTERNAL", true),
-  baseUrl: env("NEXT_PUBLIC_BOOKING_BASE_URL", "https://book.example-hostel.com"),
+  baseUrl: env("NEXT_PUBLIC_BOOKING_BASE_URL", "https://book.andestay.com"),
   defaultPath: env("NEXT_PUBLIC_BOOKING_DEFAULT_PATH", "/"),
+  hotelListingSlug: env("NEXT_PUBLIC_BOOKING_HOTEL_SLUG", "8-andestay-hostel"),
 };

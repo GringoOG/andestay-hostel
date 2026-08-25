@@ -14,6 +14,7 @@ export { registerBookingAnalyticsSink, trackBookingClick } from "./analytics";
 export { useBooking, useBookingCapabilities } from "./hooks";
 export { bookingConfig } from "./config";
 export { getMappedRoom, listRoomSlugs } from "./config/rooms";
+export { buildQloAppsHotelUrl, mapBookingLocale } from "./utils";
 
 export { BookingProviderId, EMPTY_CAPABILITIES } from "./types";
 export type {
