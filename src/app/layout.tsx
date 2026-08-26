@@ -31,13 +31,23 @@ export const metadata: Metadata = {
   },
   description: seo.description,
   applicationName: "AndeStay Hostel",
+  // New paths on purpose: browsers cache /favicon.ico very aggressively
+  // (often ignoring content changes), so we point tabs at /icons/andestay-*.
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+      { url: "/icons/andestay-32.png", type: "image/png", sizes: "32x32" },
+      { url: "/icons/andestay-48.png", type: "image/png", sizes: "48x48" },
+      { url: "/icons/andestay-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icons/andestay.ico", sizes: "any" },
     ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
-    shortcut: ["/favicon.ico"],
+    apple: [
+      {
+        url: "/icons/andestay-180.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+    shortcut: ["/icons/andestay-32.png"],
   },
   openGraph: {
     type: "website",
