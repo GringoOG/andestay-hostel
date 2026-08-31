@@ -21,7 +21,7 @@ repeat the solo Double case in that currency and confirm the displayed amount is
 | Room type   | Expected |
 |-------------|---------:|
 | Double      |      110 |
-| Triple      |      160 |
+| Triple      |      110 |
 | Matrimonial |      110 |
 
 ## Search — 3 adults

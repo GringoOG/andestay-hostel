@@ -2,8 +2,8 @@
 <module>
 	<name>andestayoccupancypricing</name>
 	<displayName><![CDATA[AndeStay Occupancy Pricing]]></displayName>
-	<version><![CDATA[1.0.0]]></version>
-	<description><![CDATA[Special solo (1 adult) overnight price for selected cabin types.]]></description>
+	<version><![CDATA[1.0.1]]></version>
+	<description><![CDATA[Special overnight prices for exact occupancy on selected cabin types.]]></description>
 	<author><![CDATA[AndeStay]]></author>
 	<tab><![CDATA[pricing_promotion]]></tab>
 	<is_configurable>1</is_configurable>

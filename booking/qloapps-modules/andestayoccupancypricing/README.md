@@ -1,20 +1,19 @@
 # AndeStay Occupancy Pricing (`andestayoccupancypricing`)
 
-QloApps 1.7.0.0 module. Applies a **solo overnight price** only when:
+QloApps 1.7.0.0 module. Applies **exact occupancy** overnight prices when an
+active rule matches `(id_product, adults, children)`.
 
-- room type has an **active** solo rule, and
-- occupancy is unambiguously **1 adult + 0 children** (every occupancy row).
-
-All other cases are a **no-op** → standard QloApps pricing (incl. seasonal/feature pricing).
-
-## AndeStay price intent
+Typical AndeStay matrix (configure in BO — product IDs are not hardcoded):
 
 | Type | 1 adult | 2 adults | 3 adults |
 |------|--------:|---------:|---------:|
-| Single | core 55 | — | — |
+| Simple | core 55 | — | — |
 | Double | **module 55** | core 110 | — |
-| Triple | **module 55** | core 160 | core 160 |
+| Triple | **module 55** | **module 110** | core 160 |
 | Matrimonial | core 110 | core 110 | — |
+
+All other cases (children, missing occupancy, mixed aggregate, disabled module)
+are a **no-op** → standard QloApps pricing (incl. seasonal/feature pricing).
 
 ## Hook proof (multi-room)
 
@@ -107,12 +106,16 @@ Emails/invoices should use **stored order line prices**; this module does not re
 1. Upload ZIP so archive root is `andestayoccupancypricing/`.
 2. Modules → Install **AndeStay Occupancy Pricing**.
 3. Configure:
-   - Solo price TE = `55`
-   - Enable solo on **Double** and **Triple** only (by `id_product`, not name)
-   - Leave Single / Matrimonial disabled
+   - 1-adult price TE = `55`
+   - 2-adult price TE = `110`
+   - Enable **1 adult** on **Double** and **Triple** only
+   - Enable **2 adults** on **Triple** only
+   - Leave Simple / Matrimonial (and Double 2A) disabled
    - Then turn **global enable** ON
 4. Clear cache (Advanced Parameters → Performance).
-5. Run checklist in README Test section.
+5. Run checklist in `CHECKLIST.md`.
+
+Upgrade from 1.0.0: upload 1.0.1 and run module Upgrade in BO (or reinstall zip over existing folder then Upgrade). Existing solo rules stay; enable Triple **2 adults** rule after upgrade.
 
 Default after install: **global enable OFF** (safe).
 

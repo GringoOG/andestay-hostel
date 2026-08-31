@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1
+
+- Exact occupancy rules beyond solo: support active **2 adults / 0 children** price (AndeStay Triple → 110).
+- BO: separate enable switches for 1-adult and 2-adult rules per room type; dual default price config.
+- Compatible upgrade from 1.0.0 (`upgrade-1.0.1.php`); existing solo rules preserved.
+- Triple 3 adults, Simple, Matrimonial, children, mixed occupancy remain core no-op.
+- Expanded offline unit tests for the AndeStay price matrix.
+
 ## 1.0.0
 
 - Initial release.

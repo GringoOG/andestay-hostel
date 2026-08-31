@@ -1,9 +1,12 @@
 <?php
 /**
- * AndeStay Occupancy Pricing — solo-rate override for selected room types.
+ * AndeStay Occupancy Pricing — occupancy-based overnight overrides.
  *
- * Only adjusts Double/Triple (configurable) when occupancy is exactly
- * 1 adult + 0 children. All other cases leave QloApps core pricing untouched.
+ * Configurable exact (adults, children) rules for selected room types.
+ * Typical AndeStay matrix:
+ *   Double 1A/0C → 55; Triple 1A/0C → 55; Triple 2A/0C → 110.
+ * Everything else (Simple, Matrimonial, Triple 3A, children, missing occupancy)
+ * leaves QloApps core pricing untouched.
  *
  * @author AndeStay
  * @license AFL-3.0
@@ -21,13 +24,15 @@ class AndeStayOccupancyPricing extends Module
     const CONFIG_ENABLED = 'ANDESTAY_OCC_ENABLED';
     const CONFIG_DEBUG = 'ANDESTAY_OCC_DEBUG';
     const CONFIG_DEFAULT_SOLO_PRICE = 'ANDESTAY_OCC_SOLO_PRICE_TE';
+    const CONFIG_DEFAULT_DUAL_PRICE = 'ANDESTAY_OCC_DUAL_PRICE_TE';
     const DEFAULT_SOLO_PRICE_TE = 55.0;
+    const DEFAULT_DUAL_PRICE_TE = 110.0;
 
     public function __construct()
     {
         $this->name = 'andestayoccupancypricing';
         $this->tab = 'pricing_promotion';
-        $this->version = '1.0.0';
+        $this->version = '1.0.1';
         $this->author = 'AndeStay';
         $this->need_instance = 0;
         $this->bootstrap = true;
@@ -37,7 +42,7 @@ class AndeStayOccupancyPricing extends Module
 
         $this->displayName = $this->l('AndeStay Occupancy Pricing');
         $this->description = $this->l(
-            'Applies a special solo (1 adult) room-night price for selected cabin types. All other occupancies keep QloApps core pricing.'
+            'Applies special overnight prices for exact occupancy (e.g. Triple 1–2 adults). All other cases keep QloApps core pricing.'
         );
         $this->confirmUninstall = $this->l('Remove AndeStay Occupancy Pricing configuration and rules?');
     }
@@ -49,7 +54,8 @@ class AndeStayOccupancyPricing extends Module
             && $this->installDb()
             && Configuration::updateValue(self::CONFIG_ENABLED, 0)
             && Configuration::updateValue(self::CONFIG_DEBUG, 0)
-            && Configuration::updateValue(self::CONFIG_DEFAULT_SOLO_PRICE, self::DEFAULT_SOLO_PRICE_TE);
+            && Configuration::updateValue(self::CONFIG_DEFAULT_SOLO_PRICE, self::DEFAULT_SOLO_PRICE_TE)
+            && Configuration::updateValue(self::CONFIG_DEFAULT_DUAL_PRICE, self::DEFAULT_DUAL_PRICE_TE);
     }
 
     public function uninstall()
@@ -58,6 +64,7 @@ class AndeStayOccupancyPricing extends Module
         Configuration::deleteByName(self::CONFIG_ENABLED);
         Configuration::deleteByName(self::CONFIG_DEBUG);
         Configuration::deleteByName(self::CONFIG_DEFAULT_SOLO_PRICE);
+        Configuration::deleteByName(self::CONFIG_DEFAULT_DUAL_PRICE);
 
         return parent::uninstall();
     }
@@ -100,7 +107,7 @@ class AndeStayOccupancyPricing extends Module
         }
 
         $service = new AndestayOccupancyPriceService($this);
-        $service->applySoloOverride($params);
+        $service->applyOccupancyOverride($params);
     }
 
     public function getContent()
@@ -127,16 +134,22 @@ class AndeStayOccupancyPricing extends Module
         $enabled = (int) Tools::getValue(self::CONFIG_ENABLED);
         $debug = (int) Tools::getValue(self::CONFIG_DEBUG);
         $soloPriceRaw = str_replace(',', '.', trim((string) Tools::getValue(self::CONFIG_DEFAULT_SOLO_PRICE)));
+        $dualPriceRaw = str_replace(',', '.', trim((string) Tools::getValue(self::CONFIG_DEFAULT_DUAL_PRICE)));
 
         if ($soloPriceRaw === '' || !is_numeric($soloPriceRaw) || (float) $soloPriceRaw < 0) {
-            return $this->displayError($this->l('Solo price must be a valid non-negative number.'));
+            return $this->displayError($this->l('1-adult price must be a valid non-negative number.'));
+        }
+        if ($dualPriceRaw === '' || !is_numeric($dualPriceRaw) || (float) $dualPriceRaw < 0) {
+            return $this->displayError($this->l('2-adult price must be a valid non-negative number.'));
         }
 
         $soloPrice = (float) $soloPriceRaw;
+        $dualPrice = (float) $dualPriceRaw;
 
         Configuration::updateValue(self::CONFIG_ENABLED, $enabled ? 1 : 0);
         Configuration::updateValue(self::CONFIG_DEBUG, $debug ? 1 : 0);
         Configuration::updateValue(self::CONFIG_DEFAULT_SOLO_PRICE, $soloPrice);
+        Configuration::updateValue(self::CONFIG_DEFAULT_DUAL_PRICE, $dualPrice);
 
         $repo = new AndestayOccupancyPricingRepository();
         $roomTypes = $repo->getRoomTypesForConfig();
@@ -144,14 +157,12 @@ class AndeStayOccupancyPricing extends Module
 
         foreach ($roomTypes as $roomType) {
             $idProduct = (int) $roomType['id_product'];
-            $active = (int) Tools::getValue('solo_active_'.$idProduct);
-            $repo->upsertSoloRule(
-                $idProduct,
-                (int) $roomType['id_hotel'],
-                $soloPrice,
-                $active ? 1 : 0,
-                $now
-            );
+            $idHotel = (int) $roomType['id_hotel'];
+            $soloActive = (int) Tools::getValue('solo_active_'.$idProduct);
+            $dualActive = (int) Tools::getValue('dual_active_'.$idProduct);
+
+            $repo->upsertRule($idProduct, $idHotel, 1, 0, $soloPrice, $soloActive ? 1 : 0, $now);
+            $repo->upsertRule($idProduct, $idHotel, 2, 0, $dualPrice, $dualActive ? 1 : 0, $now);
         }
 
         if (method_exists('Tools', 'clearSmartyCache')) {
@@ -168,12 +179,13 @@ class AndeStayOccupancyPricing extends Module
     {
         $repo = new AndestayOccupancyPricingRepository();
         $roomTypes = $repo->getRoomTypesForConfig();
-        $rulesByProduct = $repo->getSoloRulesIndexedByProduct();
+        $soloByProduct = $repo->getRulesIndexedByProduct(1, 0);
+        $dualByProduct = $repo->getRulesIndexedByProduct(2, 0);
 
         $inputs = array(
             array(
                 'type' => 'switch',
-                'label' => $this->l('Enable occupancy solo pricing'),
+                'label' => $this->l('Enable occupancy pricing'),
                 'name' => self::CONFIG_ENABLED,
                 'is_bool' => true,
                 'values' => array(
@@ -186,11 +198,20 @@ class AndeStayOccupancyPricing extends Module
             ),
             array(
                 'type' => 'text',
-                'label' => $this->l('Solo price (tax excl., default currency)'),
+                'label' => $this->l('1-adult price (tax excl., default currency)'),
                 'name' => self::CONFIG_DEFAULT_SOLO_PRICE,
                 'class' => 'fixed-width-sm',
                 'desc' => $this->l(
-                    'Amount in the shop default currency (AndeStay: PEN / S/). For other FO currencies QloApps Tools::convertPrice is used — never treat 55 as USD/EUR. Applied only for exactly 1 adult and 0 children. Seasonal/feature pricing is skipped for this solo override; tax incl. follows the room type tax rate.'
+                    'Amount in the shop default currency (AndeStay: PEN / S/). Converted via Tools::convertPrice for other FO currencies. Used when a room type has the 1 adult / 0 children rule enabled.'
+                ),
+            ),
+            array(
+                'type' => 'text',
+                'label' => $this->l('2-adult price (tax excl., default currency)'),
+                'name' => self::CONFIG_DEFAULT_DUAL_PRICE,
+                'class' => 'fixed-width-sm',
+                'desc' => $this->l(
+                    'Used when a room type has the 2 adults / 0 children rule enabled (AndeStay Triple → 110). Leave disabled on Double so core 110 is used.'
                 ),
             ),
             array(
@@ -208,7 +229,7 @@ class AndeStayOccupancyPricing extends Module
 
         foreach ($roomTypes as $roomType) {
             $idProduct = (int) $roomType['id_product'];
-            $label = sprintf(
+            $labelBase = sprintf(
                 '%s (id_product=%d, hotel=%d, max_adults=%d, base=%s)',
                 $roomType['name'],
                 $idProduct,
@@ -218,14 +239,25 @@ class AndeStayOccupancyPricing extends Module
             );
             $inputs[] = array(
                 'type' => 'switch',
-                'label' => $label,
+                'label' => $labelBase.' — '.$this->l('1 adult / 0 children'),
                 'name' => 'solo_active_'.$idProduct,
                 'is_bool' => true,
                 'values' => array(
                     array('id' => 'solo_'.$idProduct.'_on', 'value' => 1, 'label' => $this->l('Yes')),
                     array('id' => 'solo_'.$idProduct.'_off', 'value' => 0, 'label' => $this->l('No')),
                 ),
-                'desc' => $this->l('Enable special solo (1 adult / 0 children) price for this room type.'),
+                'desc' => $this->l('Enable special 1-adult overnight price for this room type. Leave OFF for Simple and Matrimonial.'),
+            );
+            $inputs[] = array(
+                'type' => 'switch',
+                'label' => $labelBase.' — '.$this->l('2 adults / 0 children'),
+                'name' => 'dual_active_'.$idProduct,
+                'is_bool' => true,
+                'values' => array(
+                    array('id' => 'dual_'.$idProduct.'_on', 'value' => 1, 'label' => $this->l('Yes')),
+                    array('id' => 'dual_'.$idProduct.'_off', 'value' => 0, 'label' => $this->l('No')),
+                ),
+                'desc' => $this->l('Enable special 2-adult overnight price (AndeStay: Triple only). Leave OFF for Double, Simple, Matrimonial.'),
             );
         }
 
@@ -251,15 +283,24 @@ class AndeStayOccupancyPricing extends Module
             .'&configure='.$this->name.'&tab_module='.$this->tab.'&module_name='.$this->name;
         $helper->token = Tools::getAdminTokenLite('AdminModules');
 
+        $dualPrice = Configuration::get(self::CONFIG_DEFAULT_DUAL_PRICE);
+        if ($dualPrice === false || $dualPrice === null || $dualPrice === '') {
+            $dualPrice = self::DEFAULT_DUAL_PRICE_TE;
+        }
+
         $fieldsValue = array(
             self::CONFIG_ENABLED => (int) Configuration::get(self::CONFIG_ENABLED),
             self::CONFIG_DEBUG => (int) Configuration::get(self::CONFIG_DEBUG),
             self::CONFIG_DEFAULT_SOLO_PRICE => Configuration::get(self::CONFIG_DEFAULT_SOLO_PRICE),
+            self::CONFIG_DEFAULT_DUAL_PRICE => $dualPrice,
         );
         foreach ($roomTypes as $roomType) {
             $idProduct = (int) $roomType['id_product'];
-            $fieldsValue['solo_active_'.$idProduct] = isset($rulesByProduct[$idProduct])
-                ? (int) $rulesByProduct[$idProduct]['active']
+            $fieldsValue['solo_active_'.$idProduct] = isset($soloByProduct[$idProduct])
+                ? (int) $soloByProduct[$idProduct]['active']
+                : 0;
+            $fieldsValue['dual_active_'.$idProduct] = isset($dualByProduct[$idProduct])
+                ? (int) $dualByProduct[$idProduct]['active']
                 : 0;
         }
 
@@ -276,7 +317,7 @@ class AndeStayOccupancyPricing extends Module
                     'icon' => 'icon-money',
                 ),
                 'description' => $this->l(
-                    'Only Double/Triple solo stays (1 adult, 0 children) should use the special price. Single and Matrimonial stay on core QloApps prices. Leave global enable OFF until rules are configured.'
+                    'AndeStay: enable 1-adult on Double+Triple, and 2-adult only on Triple. Simple/Matrimonial stay on core prices. Triple 3 adults stays on core 160. Leave global enable OFF until rules are configured.'
                 ),
                 'input' => $inputs,
                 'submit' => array(

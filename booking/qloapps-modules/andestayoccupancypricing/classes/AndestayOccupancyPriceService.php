@@ -1,14 +1,16 @@
 <?php
 /**
- * Applies solo (1 adult / 0 children) overnight price via actionRoomTypeTotalPriceModifier.
+ * Applies occupancy overnight overrides via actionRoomTypeTotalPriceModifier.
  *
  * Safety rules (multi-room):
  * - Cart/order paths call getRoomTypeTotalPrice once per physical room with
  *   occupancy = [ [adults, children, child_ages] ] → quantity = 1.
  * - Search/product paths may pass N occupancy rows; quantity = count(occupancy).
- *   Solo override is applied only when EVERY row is exactly 1 adult / 0 children.
+ *   Override applies only when EVERY row has the same adults/children AND an
+ *   active rule exists for that exact pair.
  *   Mixed occupancy in one call → no-op (leave core price).
- * - Missing / unusable occupancy → no-op (never invent 55).
+ * - Missing / unusable occupancy → no-op (never invent a special price).
+ * - Children / unmatched occupancy → no-op unless an exact active rule exists.
  */
 
 if (!defined('_PS_VERSION_')) {
@@ -32,7 +34,7 @@ class AndestayOccupancyPriceService
     /**
      * @param array $params Hook params from actionRoomTypeTotalPriceModifier
      */
-    public function applySoloOverride(array &$params)
+    public function applyOccupancyOverride(array &$params)
     {
         if (!(int) Configuration::get(AndeStayOccupancyPricing::CONFIG_ENABLED)) {
             return;
@@ -47,19 +49,28 @@ class AndestayOccupancyPriceService
             return;
         }
 
-        $rule = $this->repository->getActiveSoloRule($idProduct);
-        if (!$rule) {
-            $this->log('skip_no_active_rule', array('id_product' => $idProduct));
+        $occupancy = isset($params['occupancy']) ? $params['occupancy'] : null;
+        $uniform = $this->resolveUniformOccupancy($occupancy);
+        if ($uniform === false) {
+            $this->log('skip_occupancy_not_uniform', array(
+                'id_product' => $idProduct,
+                'occupancy_type' => gettype($occupancy),
+                'occupancy_count' => is_array($occupancy) ? count($occupancy) : null,
+            ));
 
             return;
         }
 
-        $occupancy = isset($params['occupancy']) ? $params['occupancy'] : null;
-        if (!$this->isEligibleSoloOccupancy($occupancy)) {
-            $this->log('skip_occupancy_not_solo', array(
+        $rule = $this->repository->getActiveRule(
+            $idProduct,
+            (int) $uniform['adults'],
+            (int) $uniform['children']
+        );
+        if (!$rule) {
+            $this->log('skip_no_active_rule', array(
                 'id_product' => $idProduct,
-                'occupancy_type' => gettype($occupancy),
-                'occupancy_count' => is_array($occupancy) ? count($occupancy) : null,
+                'adults' => (int) $uniform['adults'],
+                'children' => (int) $uniform['children'],
             ));
 
             return;
@@ -79,7 +90,7 @@ class AndestayOccupancyPriceService
         // price_te is stored in the shop DEFAULT currency (AndeStay: PEN).
         // getRoomTypeTotalPrice builds $total_prices in the CURRENT context currency
         // (Product::getPriceStatic already ran Tools::convertPrice). Hook therefore
-        // runs AFTER currency conversion of core prices — we must convert solo too.
+        // runs AFTER currency conversion of core prices — we must convert too.
         $priceTePerNightDefault = (float) $rule['price_te'];
         if ($priceTePerNightDefault < 0) {
             $this->log('skip_invalid_price', array('id_product' => $idProduct));
@@ -101,8 +112,10 @@ class AndestayOccupancyPriceService
         $params['total_prices']['total_price_tax_excl'] = $priceTePerNight * $nights;
         $params['total_prices']['total_price_tax_incl'] = $priceTiPerNight * $nights;
 
-        $this->log('applied_solo', array(
+        $this->log('applied_occupancy_rule', array(
             'id_product' => $idProduct,
+            'adults' => (int) $uniform['adults'],
+            'children' => (int) $uniform['children'],
             'nights' => $nights,
             'price_te_night_default_currency' => $priceTePerNightDefault,
             'id_currency' => $idCurrency,
@@ -116,17 +129,30 @@ class AndestayOccupancyPriceService
     }
 
     /**
-     * Solo eligible when occupancy unambiguously means every priced unit is 1A/0C.
+     * BC alias for 1.0.0 call sites / tests.
+     *
+     * @param array $params
+     */
+    public function applySoloOverride(array &$params)
+    {
+        $this->applyOccupancyOverride($params);
+    }
+
+    /**
+     * Returns uniform adults/children when every occupancy row matches, else false.
      *
      * @param mixed $occupancy
      *
-     * @return bool
+     * @return array|false array('adults' => int, 'children' => int)
      */
-    public function isEligibleSoloOccupancy($occupancy)
+    public function resolveUniformOccupancy($occupancy)
     {
         if (!is_array($occupancy) || !count($occupancy)) {
             return false;
         }
+
+        $adults = null;
+        $children = null;
 
         foreach ($occupancy as $row) {
             if (!is_array($row)) {
@@ -135,12 +161,47 @@ class AndestayOccupancyPriceService
             if (!isset($row['adults']) || !isset($row['children'])) {
                 return false;
             }
-            if ((int) $row['adults'] !== 1 || (int) $row['children'] !== 0) {
+            if (!is_numeric($row['adults']) || !is_numeric($row['children'])) {
+                return false;
+            }
+
+            $rowAdults = (int) $row['adults'];
+            $rowChildren = (int) $row['children'];
+            if ($rowAdults < 1 || $rowChildren < 0) {
+                return false;
+            }
+
+            if ($adults === null) {
+                $adults = $rowAdults;
+                $children = $rowChildren;
+                continue;
+            }
+
+            if ($rowAdults !== $adults || $rowChildren !== $children) {
                 return false;
             }
         }
 
-        return true;
+        return array(
+            'adults' => (int) $adults,
+            'children' => (int) $children,
+        );
+    }
+
+    /**
+     * Solo eligible when occupancy unambiguously means every priced unit is 1A/0C.
+     *
+     * @param mixed $occupancy
+     *
+     * @return bool
+     */
+    public function isEligibleSoloOccupancy($occupancy)
+    {
+        $uniform = $this->resolveUniformOccupancy($occupancy);
+
+        return $uniform !== false
+            && (int) $uniform['adults'] === 1
+            && (int) $uniform['children'] === 0;
     }
 
     /**
