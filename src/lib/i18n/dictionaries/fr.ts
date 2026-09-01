@@ -3,7 +3,7 @@ import type { Messages } from "../types";
 export const fr: Messages = {
   nav: { home: "Accueil", about: "À propos", rooms: "Cabanes", transport: "Transport", contact: "Contact" },
   common: {
-    bookStay: "Réserver un séjour",
+    bookStay: "Réservez ici — économisez 20 %",
     perNight: "/ nuit",
     perCabin: "par cabane",
     cabinsToBook: "Cabanes à réserver",
@@ -21,7 +21,7 @@ export const fr: Messages = {
     refuge: "refuge",
     inNature: "en pleine nature.",
     support:
-      "Reposez-vous après le col Salkantay à Colpapampa (Chaullay). Douches chaudes, cabanes confortables et repas maison inclus.",
+      "Reposez-vous après le col Salkantay à Colpapampa (Chaullay). Douches chaudes, cabanes confortables et repas maison inclus. Réservez sur ce site et économisez 20 % par rapport aux autres plateformes.",
     socialProofBefore: "L’un des ",
     socialProofBold: "hébergements les plus appréciés",
     socialProofAfter: " par nos hôtes.",

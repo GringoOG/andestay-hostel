@@ -3,7 +3,7 @@ import type { Messages } from "../types";
 export const de: Messages = {
   nav: { home: "Startseite", about: "Über uns", rooms: "Hütten", transport: "Transport", contact: "Kontakt" },
   common: {
-    bookStay: "Aufenthalt buchen",
+    bookStay: "Direkt buchen — 20 % sparen",
     perNight: "/ Nacht",
     perCabin: "pro Hütte",
     cabinsToBook: "Hütten buchen",
@@ -21,7 +21,7 @@ export const de: Messages = {
     refuge: "Refugium",
     inNature: "in der Natur.",
     support:
-      "Erhole dich nach dem Salkantay-Pass in Colpapampa (Chaullay). Warme Duschen, gemütliche Hütten und hausgemachte Mahlzeiten inklusive.",
+      "Erhole dich nach dem Salkantay-Pass in Colpapampa (Chaullay). Warme Duschen, gemütliche Hütten und hausgemachte Mahlzeiten inklusive. Buche auf dieser Website und spare 20 % gegenüber anderen Plattformen.",
     socialProofBefore: "Eine der ",
     socialProofBold: "beliebtesten Unterkünfte",
     socialProofAfter: " bei unseren Gästen.",

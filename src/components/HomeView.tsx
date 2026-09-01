@@ -37,7 +37,7 @@ export function HomeView() {
               {t.hero.badge}
             </span>
             <HeroTitle />
-            <p className="mt-3 max-w-[20.5rem] text-[0.9rem] leading-relaxed text-white/92 drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)] sm:mt-6 sm:max-w-md sm:text-base md:text-lg animate-[fadeUp_1s_ease_0.35s_both]">
+            <p className="mt-3 max-w-[22rem] text-[0.9rem] leading-relaxed text-white/92 drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)] sm:mt-6 sm:max-w-lg sm:text-base md:text-lg animate-[fadeUp_1s_ease_0.35s_both]">
               {t.hero.support}
             </p>
 
@@ -60,6 +60,12 @@ export function HomeView() {
                 <strong className="font-semibold text-white">{t.hero.socialProofBold}</strong>
                 {t.hero.socialProofAfter}
               </p>
+            </div>
+
+            <div className="mt-6 animate-[fadeUp_1s_ease_0.7s_both] sm:mt-8">
+              <BookButton source="home-hero" className="justify-between shadow-lg shadow-black/20">
+                {t.common.bookStay}
+              </BookButton>
             </div>
           </div>
         </div>
