@@ -3,7 +3,7 @@ import type { Messages } from "../types";
 export const cs: Messages = {
   nav: { home: "Domů", about: "O nás", rooms: "Chaty", transport: "Transport", contact: "Kontakt" },
   common: {
-    bookStay: "Rezervovat pobyt",
+    bookStay: "Rezervujte přímo — ušetříte 20 %",
     perNight: "/ noc",
     perCabin: "za chatu",
     cabinsToBook: "Počet chat",
@@ -21,7 +21,7 @@ export const cs: Messages = {
     refuge: "útočiště",
     inNature: "v přírodě.",
     support:
-      "Odpočiň si po průsmyku Salkantay v Colpapampě (Chaullay). Teplé sprchy, útulné chaty a domácí jídlo v ceně.",
+      "Odpočiň si po průsmyku Salkantay v Colpapampě (Chaullay). Teplé sprchy, útulné chaty a domácí jídlo v ceně. Rezervujte na tomto webu a ušetřete 20 % oproti jiným platformám.",
     socialProofBefore: "Jedno z ",
     socialProofBold: "nejoblíbenějších ubytování",
     socialProofAfter: " mezi našimi hosty.",
