@@ -94,7 +94,7 @@ export const cabinMarketing: CabinMarketing[] = [
   {
     id: "simple-room",
     photoLabel: "Simple cabin for one guest",
-    images: ["/images/lena-8109.jpg"],
+    images: ["/images/room-double-01.jpg", "/images/room-double-02.jpg"],
   },
   {
     id: "double-room",
