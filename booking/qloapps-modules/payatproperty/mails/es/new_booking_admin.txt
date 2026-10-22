@@ -1,0 +1,21 @@
+Nueva reserva – AndeStay Hostel
+
+Se ha creado una nueva reserva con pago en el alojamiento.
+
+Referencia de reserva: {booking_reference}
+ID del pedido: {order_id}
+Huésped: {firstname} {lastname}
+Email del huésped: {guest_email}
+Teléfono del huésped: {guest_phone}
+Check-in: {check_in}
+Check-out: {check_out}
+Habitación / tipo: {room_type}
+Adultos: {adults}
+Niños: {children}
+Precio total: {total_price}
+Moneda: {currency}
+Método de pago: {payment_method}
+Estado: {order_status}
+
+{shop_name}
+{shop_url}

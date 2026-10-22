@@ -1,0 +1,16 @@
+Hola {firstname} {lastname},
+
+Reserva confirmada – pago en el alojamiento
+
+Referencia del pedido: {order_name}
+Método de pago: {payment_method}
+Importe a pagar en el alojamiento: {total_paid}
+
+{extra_mail_content_txt}
+
+Pague en efectivo al llegar al alojamiento. Su habitación está reservada.
+
+Historial de pedidos: {history_url}
+
+{shop_name}
+{shop_url}

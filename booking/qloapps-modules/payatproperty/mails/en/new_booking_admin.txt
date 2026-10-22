@@ -1,0 +1,21 @@
+New booking – AndeStay Hostel
+
+A new Pay at Property reservation was created.
+
+Booking reference: {booking_reference}
+Order ID: {order_id}
+Guest: {firstname} {lastname}
+Guest email: {guest_email}
+Guest phone: {guest_phone}
+Check-in: {check_in}
+Check-out: {check_out}
+Room / room type: {room_type}
+Adults: {adults}
+Children: {children}
+Total price: {total_price}
+Currency: {currency}
+Payment method: {payment_method}
+Status: {order_status}
+
+{shop_name}
+{shop_url}

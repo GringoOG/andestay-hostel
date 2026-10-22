@@ -1,0 +1,42 @@
+<?php
+
+global $_MODULE;
+$_MODULE = array();
+
+$_MODULE['<{payatproperty}prestashop>payatproperty_a04c7a07a217a0b02d158abcf920d05f'] = 'Platba na místě';
+$_MODULE['<{payatproperty}prestashop>payatproperty_8eb26964079ded3cd5528fba0b0b15c5'] = 'Zaplaťte v hotovosti při příjezdu.';
+$_MODULE['<{payatproperty}prestashop>payatproperty_bb8956c67b82c7444a80c6b2433dd8b4'] = 'Opravdu chcete tento modul odinstalovat?';
+$_MODULE['<{payatproperty}prestashop>payatproperty_a02758d758e8bec77a33d7f392eb3f8a'] = 'Pro tento modul není nastavena žádná měna.';
+$_MODULE['<{payatproperty}prestashop>payatproperty_c888438d14855d7d96a2724ee9c306bd'] = 'Nastavení aktualizováno';
+$_MODULE['<{payatproperty}prestashop>payatproperty_f31589ca2437ccbe76df067f37f0a7ec'] = 'E-mail pro upozornění na rezervaci';
+$_MODULE['<{payatproperty}prestashop>payatproperty_7d240b06e80330d65785606cd53a7755'] = 'Odeslat e-mailové upozornění majiteli, když vznikne nová rezervace Pay at Property.';
+$_MODULE['<{payatproperty}prestashop>payatproperty_a75752378376cae88241ae9bce7ff711'] = 'Zadejte platný e-mail, nebo pole nechte prázdné.';
+$_MODULE['<{payatproperty}prestashop>payatproperty_13c734fff2ac6a27e29accdb18069f8a'] = 'Stav objednávky tohoto modulu: %s (ID %d). Recepce může po přijetí hotovosti změnit stav na Payment accepted.';
+$_MODULE['<{payatproperty}prestashop>payatproperty_9eb61cb4ab2294a0db14db97f5ddb601'] = 'Rezervace potvrzena – platba na místě';
+$_MODULE['<{payatproperty}prestashop>payatproperty_ace33580e2bd4056a5222f6bc491ee99'] = 'Platba na místě / hotově v hotelu';
+$_MODULE['<{payatproperty}prestashop>payatproperty_6403bac6685ade25e2f9e47438d92ef3'] = 'Modul umožňuje hostům dokončit rezervaci a zaplatit hotově na místě.';
+$_MODULE['<{payatproperty}prestashop>validation_e2b7dec8fa4b498156dfee6e4c84b156'] = 'Tato platební metoda není dostupná.';
+$_MODULE['<{payatproperty}prestashop>payment_a04c7a07a217a0b02d158abcf920d05f'] = 'Platba na místě';
+$_MODULE['<{payatproperty}prestashop>payment_e37b9e4cfec25d765b774b4955fc78cf'] = '(zaplaťte při příjezdu)';
+$_MODULE['<{payatproperty}prestashop>payment_execution_a04c7a07a217a0b02d158abcf920d05f'] = 'Platba na místě';
+$_MODULE['<{payatproperty}prestashop>payment_execution_f1d3b424cd68795ecaa552883759aceb'] = 'Shrnutí objednávky';
+$_MODULE['<{payatproperty}prestashop>payment_execution_879f6b8877752685a966564d072f498f'] = 'Váš košík je prázdný.';
+$_MODULE['<{payatproperty}prestashop>payment_execution_8f2ca4a5972d065c583b3662d1e95bf0'] = 'Zvolili jste platbu na místě.';
+$_MODULE['<{payatproperty}prestashop>payment_execution_c884ed19483d45970c5bf23a681e2dd2'] = 'Zde je krátké shrnutí vaší objednávky:';
+$_MODULE['<{payatproperty}prestashop>payment_execution_3b3b41f131194e747489ef93e778ed0d'] = 'Celková částka vaší objednávky je:';
+$_MODULE['<{payatproperty}prestashop>payment_execution_1f87346a16cf80c372065de3c54c86d9'] = '(vč. daně)';
+$_MODULE['<{payatproperty}prestashop>payment_execution_1d9561ad4c3cbb44caedbbea9bad9fd9'] = 'Potvrďte objednávku kliknutím na „Potvrzuji objednávku“.';
+$_MODULE['<{payatproperty}prestashop>payment_execution_46b9e3665f187c739c55983f757ccda0'] = 'Potvrzuji objednávku';
+$_MODULE['<{payatproperty}prestashop>payment_execution_569fd05bdafa1712c4f6be5b153b8418'] = 'Jiné platební metody';
+$_MODULE['<{payatproperty}prestashop>payment_execution_8eb26964079ded3cd5528fba0b0b15c5'] = 'Zaplaťte v hotovosti při příjezdu.';
+$_MODULE['<{payatproperty}prestashop>payment_return_1c1c7f95f0a651db5a71ec5f2649f0ea'] = 'Vaše rezervace byla úspěšně vytvořena!';
+$_MODULE['<{payatproperty}prestashop>payment_return_c3e598636e66db672174375b74bec101'] = 'Vaše rezervace byly úspěšně vytvořeny!';
+$_MODULE['<{payatproperty}prestashop>payment_return_11a1a002ea2edb0d020c6b97f6ebcd10'] = 'Částka k úhradě na místě:';
+$_MODULE['<{payatproperty}prestashop>payment_return_8eb26964079ded3cd5528fba0b0b15c5'] = 'Zaplaťte v hotovosti při příjezdu.';
+$_MODULE['<{payatproperty}prestashop>payment_return_fce8dbda0c1a7f04a04018deac24cafd'] = 'Nezapomeňte na referenci objednávky %s.';
+$_MODULE['<{payatproperty}prestashop>payment_return_d15feee53d81ea16269e54d4784fa123'] = 'Zaznamenali jsme problém s vaší objednávkou. Pokud se domníváte, že jde o chybu, kontaktujte naše';
+$_MODULE['<{payatproperty}prestashop>payment_return_decce112a9e64363c997b04aa71b7cb8'] = 'oddělení zákaznické péče.';
+$_MODULE['<{payatproperty}prestashop>infos_ace33580e2bd4056a5222f6bc491ee99'] = 'Platba na místě / hotově v hotelu';
+$_MODULE['<{payatproperty}prestashop>infos_6403bac6685ade25e2f9e47438d92ef3'] = 'Modul umožňuje hostům dokončit rezervaci a zaplatit hotově na místě.';
+$_MODULE['<{payatproperty}prestashop>infos_ce523d437972946799c1ddff83d4ef5e'] = 'Pokud host zvolí tuto metodu, rezervace vznikne ve stavu „Čeká na platbu na místě“.';
+$_MODULE['<{payatproperty}prestashop>infos_59a7e6886246c60e49d69d8cb3135030'] = 'Recepce může po příjezdu a zaplacení označit objednávku jako uhrazenou.';

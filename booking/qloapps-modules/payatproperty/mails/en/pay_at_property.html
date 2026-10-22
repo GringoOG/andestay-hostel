@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="color-scheme" content="light dark">
+	<meta name="supported-color-schemes" content="light dark">
+	<title>Message from {shop_name}</title>
+	<!--[if mso]>
+	<style type="text/css">
+		table, td { font-family: Arial, Helvetica, sans-serif !important; }
+	</style>
+	<![endif]-->
+	<style type="text/css">
+		:root { color-scheme: light dark; supported-color-schemes: light dark; }
+		@media (prefers-color-scheme: dark) {
+			.email-bg { background-color: #111111 !important; }
+			.email-card { background-color: #1e1e1e !important; }
+			.email-text, .email-text p, .email-text td, .email-text a { color: #f2f2f2 !important; }
+			.email-muted { color: #c8c8c8 !important; }
+			.email-border { border-color: #444444 !important; }
+		}
+	</style>
+</head>
+<body class="email-bg" style="margin:0;padding:0;background-color:#f4f4f4;font-family:Arial, Helvetica, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+	<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="email-bg" style="width:100%;background-color:#f4f4f4;margin:0;padding:0;">
+		<tr>
+			<td align="center" style="padding:24px 16px;">
+				<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="email-card" style="width:100%;max-width:600px;background-color:#ffffff;border-collapse:collapse;">
+					<tr>
+						<td align="center" class="email-border" style="padding:24px 24px 16px 24px;border-bottom:2px solid #dddddd;">
+							<a href="{shop_url}" style="text-decoration:none;">
+								<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100" style="width:100px;max-width:100px;margin:0 auto;border-collapse:collapse;">
+									<tr>
+										<td align="center" width="100" height="100" style="width:100px;max-width:100px;height:100px;line-height:0;font-size:0;">
+											<img src="{shop_logo}" alt="{shop_name}" width="100" height="100" border="0" style="width:100px !important;max-width:100px !important;height:100px !important;display:block;margin:0 auto;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;">
+										</td>
+									</tr>
+								</table>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="email-text" style="padding:24px;font-family:Arial, Helvetica, sans-serif;font-size:16px;line-height:1.5;color:#222222;">
+							<p style="margin:0 0 16px 0;font-size:16px;line-height:1.5;color:#222222;">Hi {firstname} {lastname},</p>
+							<p style="margin:0 0 20px 0;font-size:18px;line-height:1.4;font-weight:bold;color:#222222;">Booking confirmed – payment at property</p>
+
+							<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border-collapse:collapse;">
+								<tr>
+									<td class="email-muted" style="padding:8px 0;font-size:16px;line-height:1.5;color:#555555;vertical-align:top;width:42%;">Order reference</td>
+									<td class="email-text" style="padding:8px 0;font-size:16px;line-height:1.5;color:#222222;vertical-align:top;"><strong>{order_name}</strong></td>
+								</tr>
+								<tr>
+									<td class="email-muted" style="padding:8px 0;font-size:16px;line-height:1.5;color:#555555;vertical-align:top;">Payment method</td>
+									<td class="email-text" style="padding:8px 0;font-size:16px;line-height:1.5;color:#222222;vertical-align:top;">{payment_method}</td>
+								</tr>
+								<tr>
+									<td class="email-muted" style="padding:8px 0;font-size:16px;line-height:1.5;color:#555555;vertical-align:top;">Amount to pay at the property</td>
+									<td class="email-text" style="padding:8px 0;font-size:16px;line-height:1.5;color:#222222;vertical-align:top;"><strong>{total_paid}</strong></td>
+								</tr>
+							</table>
+
+							<div style="margin:20px 0 0 0;font-size:16px;line-height:1.5;color:#222222;">
+								{extra_mail_content_html}
+							</div>
+
+							<p style="margin:20px 0 16px 0;font-size:16px;line-height:1.5;color:#222222;">Please pay in cash when you arrive at the property. Your room is reserved.</p>
+							<p style="margin:0;font-size:16px;line-height:1.5;color:#222222;">You can review your order in <a href="{history_url}" style="color:#1a5fb4;text-decoration:underline;">Order history</a>.</p>
+						</td>
+					</tr>
+					<tr>
+						<td class="email-border email-muted" style="padding:20px 24px;border-top:1px solid #dddddd;font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:1.5;color:#666666;">
+							{shop_name}<br>
+							<a href="{shop_url}" style="color:#1a5fb4;text-decoration:underline;word-break:break-all;">{shop_url}</a>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

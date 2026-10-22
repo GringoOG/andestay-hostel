@@ -1,0 +1,42 @@
+<?php
+
+global $_MODULE;
+$_MODULE = array();
+
+$_MODULE['<{payatproperty}prestashop>payatproperty_a04c7a07a217a0b02d158abcf920d05f'] = 'Pay at property';
+$_MODULE['<{payatproperty}prestashop>payatproperty_8eb26964079ded3cd5528fba0b0b15c5'] = 'Pay in cash when you arrive at the property.';
+$_MODULE['<{payatproperty}prestashop>payatproperty_bb8956c67b82c7444a80c6b2433dd8b4'] = 'Are you sure you want to uninstall this module?';
+$_MODULE['<{payatproperty}prestashop>payatproperty_a02758d758e8bec77a33d7f392eb3f8a'] = 'No currency has been set for this module.';
+$_MODULE['<{payatproperty}prestashop>payatproperty_c888438d14855d7d96a2724ee9c306bd'] = 'Settings updated';
+$_MODULE['<{payatproperty}prestashop>payatproperty_f31589ca2437ccbe76df067f37f0a7ec'] = 'Booking notification email';
+$_MODULE['<{payatproperty}prestashop>payatproperty_7d240b06e80330d65785606cd53a7755'] = 'Send an email notification to the property when a new Pay at Property booking is created.';
+$_MODULE['<{payatproperty}prestashop>payatproperty_a75752378376cae88241ae9bce7ff711'] = 'Please enter a valid email address or leave the field empty.';
+$_MODULE['<{payatproperty}prestashop>payatproperty_13c734fff2ac6a27e29accdb18069f8a'] = 'Order status used by this module: %s (ID %d). Reception can change the order to Payment accepted after cash is received.';
+$_MODULE['<{payatproperty}prestashop>payatproperty_9eb61cb4ab2294a0db14db97f5ddb601'] = 'Booking confirmed – payment at property';
+$_MODULE['<{payatproperty}prestashop>payatproperty_ace33580e2bd4056a5222f6bc491ee99'] = 'Pay at Property / Cash at Hotel';
+$_MODULE['<{payatproperty}prestashop>payatproperty_6403bac6685ade25e2f9e47438d92ef3'] = 'This module allows guests to complete a booking and pay in cash at the property.';
+$_MODULE['<{payatproperty}prestashop>validation_e2b7dec8fa4b498156dfee6e4c84b156'] = 'This payment method is not available.';
+$_MODULE['<{payatproperty}prestashop>payment_a04c7a07a217a0b02d158abcf920d05f'] = 'Pay at property';
+$_MODULE['<{payatproperty}prestashop>payment_e37b9e4cfec25d765b774b4955fc78cf'] = '(pay when you arrive)';
+$_MODULE['<{payatproperty}prestashop>payment_execution_a04c7a07a217a0b02d158abcf920d05f'] = 'Pay at property';
+$_MODULE['<{payatproperty}prestashop>payment_execution_f1d3b424cd68795ecaa552883759aceb'] = 'Order summary';
+$_MODULE['<{payatproperty}prestashop>payment_execution_879f6b8877752685a966564d072f498f'] = 'Your shopping cart is empty.';
+$_MODULE['<{payatproperty}prestashop>payment_execution_8f2ca4a5972d065c583b3662d1e95bf0'] = 'You have chosen to pay at the property.';
+$_MODULE['<{payatproperty}prestashop>payment_execution_c884ed19483d45970c5bf23a681e2dd2'] = 'Here is a short summary of your order:';
+$_MODULE['<{payatproperty}prestashop>payment_execution_3b3b41f131194e747489ef93e778ed0d'] = 'The total amount of your order comes to:';
+$_MODULE['<{payatproperty}prestashop>payment_execution_1f87346a16cf80c372065de3c54c86d9'] = '(tax incl.)';
+$_MODULE['<{payatproperty}prestashop>payment_execution_1d9561ad4c3cbb44caedbbea9bad9fd9'] = 'Please confirm your order by clicking \'I confirm my order\'.';
+$_MODULE['<{payatproperty}prestashop>payment_execution_46b9e3665f187c739c55983f757ccda0'] = 'I confirm my order';
+$_MODULE['<{payatproperty}prestashop>payment_execution_569fd05bdafa1712c4f6be5b153b8418'] = 'Other payment methods';
+$_MODULE['<{payatproperty}prestashop>payment_execution_8eb26964079ded3cd5528fba0b0b15c5'] = 'Pay in cash when you arrive at the property.';
+$_MODULE['<{payatproperty}prestashop>payment_return_1c1c7f95f0a651db5a71ec5f2649f0ea'] = 'Your booking has been created successfully!';
+$_MODULE['<{payatproperty}prestashop>payment_return_c3e598636e66db672174375b74bec101'] = 'Your bookings have been created successfully!';
+$_MODULE['<{payatproperty}prestashop>payment_return_11a1a002ea2edb0d020c6b97f6ebcd10'] = 'Amount to pay at the property:';
+$_MODULE['<{payatproperty}prestashop>payment_return_8eb26964079ded3cd5528fba0b0b15c5'] = 'Pay in cash when you arrive at the property.';
+$_MODULE['<{payatproperty}prestashop>payment_return_fce8dbda0c1a7f04a04018deac24cafd'] = 'Do not forget your order reference %s.';
+$_MODULE['<{payatproperty}prestashop>payment_return_d15feee53d81ea16269e54d4784fa123'] = 'We noticed a problem with your order. If you think this is an error, feel free to contact our';
+$_MODULE['<{payatproperty}prestashop>payment_return_decce112a9e64363c997b04aa71b7cb8'] = 'customer service department.';
+$_MODULE['<{payatproperty}prestashop>infos_ace33580e2bd4056a5222f6bc491ee99'] = 'Pay at Property / Cash at Hotel';
+$_MODULE['<{payatproperty}prestashop>infos_6403bac6685ade25e2f9e47438d92ef3'] = 'This module allows guests to complete a booking and pay in cash at the property.';
+$_MODULE['<{payatproperty}prestashop>infos_ce523d437972946799c1ddff83d4ef5e'] = 'If the guest chooses this method, the booking is created with status "Awaiting payment at property".';
+$_MODULE['<{payatproperty}prestashop>infos_59a7e6886246c60e49d69d8cb3135030'] = 'Reception can mark the order as paid when the guest pays on arrival.';

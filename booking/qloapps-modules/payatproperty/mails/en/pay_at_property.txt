@@ -1,0 +1,16 @@
+Hi {firstname} {lastname},
+
+Booking confirmed – payment at property
+
+Order reference: {order_name}
+Payment method: {payment_method}
+Amount to pay at the property: {total_paid}
+
+{extra_mail_content_txt}
+
+Please pay in cash when you arrive at the property. Your room is reserved.
+
+Order history: {history_url}
+
+{shop_name}
+{shop_url}

@@ -1,0 +1,14 @@
+/* AndeStay homepage hero readability */
+#index .header-desc-wrapper {
+    background: rgba(0, 0, 0, 0.30);
+}
+
+#index .header-desc-welcome,
+#index .header-hotel-name,
+#index .header-hotel-desc {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.90);
+}
+
+#index .header-hotel-name {
+    font-weight: 500;
+}

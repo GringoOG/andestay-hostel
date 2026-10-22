@@ -1,0 +1,16 @@
+Dobrý den {firstname} {lastname},
+
+Rezervace potvrzena – platba na místě
+
+Reference objednávky: {order_name}
+Platební metoda: {payment_method}
+Částka k úhradě na místě: {total_paid}
+
+{extra_mail_content_txt}
+
+Zaplaťte prosím v hotovosti při příjezdu. Váš pokoj je rezervovaný.
+
+Historie objednávek: {history_url}
+
+{shop_name}
+{shop_url}

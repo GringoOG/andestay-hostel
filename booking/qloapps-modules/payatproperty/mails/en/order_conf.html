@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="color-scheme" content="light dark">
+		<meta name="supported-color-schemes" content="light dark">
+		<title>Message from {shop_name}</title>
+		<!--[if mso]>
+		<style type="text/css">
+			table, td { font-family: Arial, Helvetica, sans-serif !important; }
+			img { width: 100px !important; max-width: 100px !important; height: auto !important; }
+		</style>
+		<![endif]-->
+	</head>
+	<body style="margin:0;padding:0;background-color:#f4f4f4;width:100%;font-family:Arial, Helvetica, sans-serif;color:#222222;font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+		<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;background-color:#f4f4f4;margin:0;padding:0;">
+			<tr>
+				<td align="center" style="padding:20px 12px;">
+					<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff" style="width:100%;max-width:600px;background-color:#ffffff;border-collapse:collapse;">
+						<tr>
+							<td align="center" style="border-bottom:2px solid #333333;padding:16px 16px 12px 16px;">
+								<a title="{shop_name}" href="{shop_url}" target="_blank" style="color:#1a5fb4;text-decoration:none;">
+									<!-- Fixed logo size for Gmail/Apple Mail/Outlook (natural image size must not win) -->
+									<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100" style="width:100px;max-width:100px;margin:0 auto;border-collapse:collapse;">
+										<tr>
+											<td align="center" width="100" height="100" style="width:100px;max-width:100px;height:100px;line-height:0;font-size:0;">
+												<img src="{shop_logo}" alt="{shop_name}" width="100" height="100" border="0" style="width:100px !important;max-width:100px !important;height:100px !important;display:block;margin:0 auto;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;">
+											</td>
+										</tr>
+									</table>
+								</a>
+							</td>
+						</tr>
+
+						<tr>
+							<td align="center" style="padding:20px 20px 8px 20px;font-family:Arial, Helvetica, sans-serif;font-size:16px;line-height:1.5;color:#222222;">
+								<p style="margin:0 0 10px 0;font-size:20px;line-height:1.3;font-weight:bold;color:#222222;">Hi {firstname} {lastname},</p>
+								<p style="margin:0;font-size:15px;line-height:1.5;color:#222222;">{order_header_line_html}</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td style="padding:12px 20px;">
+								<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border:1px solid #D6D4D4;background-color:#f8f8f8;border-collapse:collapse;">
+									<tr>
+										<td style="padding:16px 18px;font-family:Arial, Helvetica, sans-serif;font-size:15px;line-height:1.5;color:#222222;">
+											<p style="border-bottom:1px solid #D6D4D4;margin:0 0 10px 0;text-transform:uppercase;font-weight:bold;font-size:14px;padding-bottom:8px;color:#222222;">Customer details</p>
+											<p style="margin:0 0 6px 0;"><strong>Name:</strong> {firstname} {lastname}</p>
+											<p style="margin:0;"><strong>Email:</strong> {email}</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<tr>
+							<td style="padding:0 20px 12px 20px;">
+								<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border:1px solid #D6D4D4;background-color:#f8f8f8;border-collapse:collapse;">
+									<tr>
+										<td style="padding:16px 18px;font-family:Arial, Helvetica, sans-serif;font-size:15px;line-height:1.5;color:#222222;">
+											<p style="border-bottom:1px solid #D6D4D4;margin:0 0 10px 0;text-transform:uppercase;font-weight:bold;font-size:14px;padding-bottom:8px;color:#222222;">Order details</p>
+											<p style="margin:0 0 6px 0;"><strong>Order:</strong> {order_name}</p>
+											<p style="margin:0 0 6px 0;"><strong>Placed on:</strong> {date}</p>
+											<p style="margin:0;"><strong>Payment:</strong> {payment}</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<tr>
+							<td style="padding:8px 20px;font-family:Arial, Helvetica, sans-serif;font-size:15px;line-height:1.5;color:#222222;text-align:left;">
+								{cart_booking_data_html}
+							</td>
+						</tr>
+						<tr>
+							<td style="padding:8px 20px;font-family:Arial, Helvetica, sans-serif;font-size:15px;line-height:1.5;color:#222222;text-align:left;">
+								{extra_demands_details_html}
+							</td>
+						</tr>
+						<tr>
+							<td style="padding:8px 20px;font-family:Arial, Helvetica, sans-serif;font-size:15px;line-height:1.5;color:#222222;text-align:left;">
+								{normal_products_data_html}
+							</td>
+						</tr>
+						<tr>
+							<td style="padding:8px 20px;font-family:Arial, Helvetica, sans-serif;font-size:15px;line-height:1.5;color:#222222;text-align:left;">
+								{order_total_info_html}
+							</td>
+						</tr>
+
+						<tr>
+							<td style="padding:16px 20px 8px 20px;font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:1.5;color:#222222;">
+								You can review your order and download your invoice from the <a href="{history_url}" target="_blank" style="color:#1a5fb4;text-decoration:underline;">"Order history"</a> section of your customer account by clicking <a href="{my_account_url}" target="_blank" style="color:#1a5fb4;text-decoration:underline;">"My account"</a> on our website.
+							</td>
+						</tr>
+						<tr>
+							<td style="padding:8px 20px 20px 20px;font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:1.5;color:#222222;">
+								If you have a guest account, you can follow your order via the <a href="{guest_tracking_url}?id_order={order_name}" target="_blank" style="color:#1a5fb4;text-decoration:underline;">"Guest Tracking"</a> section on our website.
+							</td>
+						</tr>
+
+						<tr>
+							<td style="border-top:2px solid #333333;padding:16px 20px;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:1.5;color:#666666;">
+								<a href="{shop_url}" target="_blank" style="color:#1a5fb4;text-decoration:underline;">{shop_name}</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

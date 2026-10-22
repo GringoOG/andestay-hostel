@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>AndeStay Hostel — Guía de lanzamiento</title>
+  <style>
+    @page { size: A4; margin: 18mm 16mm; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #1a1f1a;
+      font-size: 11pt;
+      line-height: 1.45;
+      margin: 0;
+    }
+    h1 {
+      font-size: 20pt;
+      margin: 0 0 4px;
+      color: #1f3d2a;
+    }
+    .subtitle {
+      font-size: 12pt;
+      color: #3a463a;
+      margin: 0 0 18px;
+      font-weight: 600;
+    }
+    h2 {
+      font-size: 13.5pt;
+      margin: 18px 0 8px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid #c5d1c3;
+      color: #1f3d2a;
+    }
+    h3 {
+      font-size: 11.5pt;
+      margin: 13px 0 6px;
+      color: #2d4a35;
+    }
+    h4 {
+      font-size: 11pt;
+      margin: 11px 0 4px;
+      color: #2d4a35;
+    }
+    p, li { margin: 0 0 6px; }
+    ul, ol { margin: 0 0 9px; padding-left: 1.25em; }
+    .box {
+      background: #f3f6f2;
+      border: 1px solid #d5ddd4;
+      border-radius: 8px;
+      padding: 11px 13px;
+      margin: 9px 0 11px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 12px;
+      font-size: 10.5pt;
+    }
+    th, td {
+      border: 1px solid #d0d8cf;
+      padding: 7px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #e8efe6; color: #1f3d2a; }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 9.5pt;
+      background: #eef2ec;
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+    .footer {
+      margin-top: 22px;
+      padding-top: 10px;
+      border-top: 1px solid #d0d8cf;
+      font-size: 9.5pt;
+      color: #5a655a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>AndeStay Hostel</h1>
+  <p class="subtitle">Guía de lanzamiento — dominio, sitio web y sistema de reservas</p>
+
+  <h2>1. Qué vamos a lanzar</h2>
+  <ol>
+    <li>Sitio web AndeStay Hostel (ya está publicado en Vercel).</li>
+    <li>Dominio propio (ejemplo: <span class="mono">andestayhostel.com</span>) — lo compras tú.</li>
+    <li>Sistema de reservas (QloApps).</li>
+  </ol>
+
+  <h2>2. Lista rápida — lo que necesito de ti</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Tarea</th>
+        <th>¿Quién?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Decidir y comprar el dominio</td>
+        <td>Tú</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Enviar acceso DNS o configurar DNS con la guía</td>
+        <td>Tú + yo</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Conectar dominio + reservas al sitio</td>
+        <td>Yo</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. Paso 1 — Comprar el dominio (tú)</h2>
+
+  <h3>3.1 Elegir el nombre</h3>
+  <ul>
+    <li>Buenos ejemplos: <span class="mono">andestayhostel.com</span>, <span class="mono">andestay.com</span> (si está libre).</li>
+    <li>Evita nombres muy largos o difíciles de escribir / dictar por teléfono.</li>
+  </ul>
+
+  <h3>3.2 Dónde comprarlo (elige uno)</h3>
+  <ul>
+    <li>Cloudflare Registrar — recomendado, simple: cloudflare.com</li>
+    <li>Namecheap — namecheap.com</li>
+    <li>Google / Squarespace Domains</li>
+    <li>O el registrador que uses normalmente en Perú</li>
+  </ul>
+
+  <h3>3.3 Qué hacer al comprar</h3>
+  <ol>
+    <li>Crea una cuenta en el registrador.</li>
+    <li>Busca el dominio y cómpralo (mínimo 1 año).</li>
+    <li>Activa renovación automática (para no perder el dominio).</li>
+    <li>Guarda usuario y contraseña en un lugar seguro.</li>
+    <li>No configures una “página en construcción” del registrador — el sitio real estará en Vercel.</li>
+  </ol>
+
+  <h3>3.4 Qué enviarme después de comprar</h3>
+  <p>Por WhatsApp o email, manda:</p>
+  <ol>
+    <li>El dominio exacto (ej. <span class="mono">andestayhostel.com</span>)</li>
+    <li>Dónde lo compraste (Cloudflare / Namecheap / otro)</li>
+    <li>Una de estas opciones:</li>
+  </ol>
+  <div class="box">
+    <p><strong>Opción A (más fácil para ti):</strong><br />
+      “Te doy acceso al DNS” (me agregas como usuario o pasas login temporal).</p>
+    <p style="margin-bottom:0"><strong>Opción B:</strong><br />
+      “Yo pongo los DNS” — te mando 2–3 líneas exactas para copiar (Paso 2).</p>
+  </div>
+
+  <h2>4. Paso 2 — Conectar el dominio al sitio</h2>
+  <p>El sitio vive en Vercel. Hay que apuntar el dominio hacia Vercel.</p>
+  <p><strong>Si eliges Opción B (tú configuras DNS)</strong><br />
+    Te enviaré algo parecido a esto (los valores exactos salen de Vercel):</p>
+
+  <h4>Dominio principal (sin www)</h4>
+  <ul>
+    <li>Tipo: <span class="mono">A</span></li>
+    <li>Nombre / Host: <span class="mono">@</span></li>
+    <li>Valor: el que indique Vercel (a menudo <span class="mono">76.76.21.21</span>)</li>
+  </ul>
+
+  <h4>Para www</h4>
+  <ul>
+    <li>Tipo: <span class="mono">CNAME</span></li>
+    <li>Nombre / Host: <span class="mono">www</span></li>
+    <li>Valor: el que indique Vercel (a menudo <span class="mono">cname.vercel-dns.com</span>)</li>
+  </ul>
+
+  <h3>Namecheap — cómo se hace</h3>
+  <ol>
+    <li>Entra a Namecheap → Domain List → tu dominio → Manage.</li>
+    <li>Pestaña Advanced DNS.</li>
+    <li>Borra registros viejos A/CNAME que apunten a otra web (si existen).</li>
+    <li>Add New Record con lo que te mande.</li>
+    <li>Guarda.</li>
+    <li>Espera de 15 minutos a 48 horas (normalmente menos de 2 horas).</li>
+    <li>Avísame: “DNS listo”.</li>
+  </ol>
+
+  <h3>Cloudflare — cómo se hace</h3>
+  <ol>
+    <li>Entra a Cloudflare → selecciona el dominio.</li>
+    <li>Menú DNS → Records.</li>
+    <li>Añade los registros A / CNAME que te envíe.</li>
+    <li>Proxy (nubecita): sigue la instrucción (a veces debe estar en DNS only / gris).</li>
+    <li>Avísame cuando esté guardado.</li>
+  </ol>
+
+  <div class="footer">
+    AndeStay Hostel · Guía de lanzamiento (cliente)<br />
+    Sitio provisional: https://andestay-hostel.vercel.app
+  </div>
+
+</body>
+</html>

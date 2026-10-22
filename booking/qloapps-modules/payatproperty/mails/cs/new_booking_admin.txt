@@ -1,0 +1,21 @@
+Nová rezervace – AndeStay Hostel
+
+Byla vytvořena nová rezervace s platbou na místě.
+
+Reference rezervace: {booking_reference}
+ID objednávky: {order_id}
+Host: {firstname} {lastname}
+E-mail hosta: {guest_email}
+Telefon hosta: {guest_phone}
+Check-in: {check_in}
+Check-out: {check_out}
+Pokoj / typ pokoje: {room_type}
+Dospělí: {adults}
+Děti: {children}
+Celková cena: {total_price}
+Měna: {currency}
+Platební metoda: {payment_method}
+Stav: {order_status}
+
+{shop_name}
+{shop_url}

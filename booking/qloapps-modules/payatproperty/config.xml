@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>payatproperty</name>
+	<displayName><![CDATA[Pay at property]]></displayName>
+	<version><![CDATA[1.1.4]]></version>
+	<description><![CDATA[Pay in cash when you arrive at the property.]]></description>
+	<author><![CDATA[AndeStay]]></author>
+	<tab><![CDATA[payments_gateways]]></tab>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>
